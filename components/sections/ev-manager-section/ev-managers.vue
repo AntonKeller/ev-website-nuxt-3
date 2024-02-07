@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import {employees} from "@/configs/employees"
+import {employees} from "~configs/employees"
 
 
 export default {
@@ -45,7 +45,7 @@ export default {
   @apply px-[calc(8vw-6px)] sm:px-[12vw] md:px-[12vw] lg:px-10 xl:px-12;
   @apply py-6 sm:py-8 md:py-10 lg:py-16 xl:py-14;
   @apply mt-4 sm:mt-6;
-  background: rgba(235, 239, 248, 0.99) top / cover no-repeat fixed url("@/assets/background/bg-lines-color-no-color.png");
+  background: rgba(235, 239, 248, 0.99) top / cover no-repeat fixed url("assets/background/bg-lines-color-no-color.png");
 }
 
 .manager-section-title {

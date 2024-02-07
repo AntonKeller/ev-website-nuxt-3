@@ -67,9 +67,9 @@
 
 <script>
 
-import evChip from "@/components/ev-chip";
-import evChipDark from "@/components/ev-chip-dark";
-import {experienceGroup} from "@/configs/experience";
+import evChip from "~components/ev-chip";
+import evChipDark from "~components/ev-chip-dark";
+import {experienceGroup} from "~configs/experience";
 import {Hooper, Slide} from 'hooper';
 import 'hooper/dist/hooper.css';
 
@@ -101,7 +101,7 @@ export default {
   @apply px-[calc(8vw-6px)] sm:px-[12vw] md:px-[12vw] lg:px-10 xl:px-12;
   @apply py-6 sm:py-8 md:py-10 lg:py-16 xl:py-14 mt-4 sm:mt-6;
   @apply space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8;
-  background: top / cover no-repeat fixed url("@/assets/background/bg-lines-color.png");
+  background: top / cover no-repeat fixed url("assets/background/bg-lines-color.png");
 
   & p, h2 {
     @apply text-center md:text-left;

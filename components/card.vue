@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import {servicesCards} from '@/configs/servicesCards'
+import {servicesCards} from '~configs/servicesCards'
 
 export default {
   name: "cards",

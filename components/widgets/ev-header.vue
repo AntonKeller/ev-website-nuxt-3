@@ -7,7 +7,7 @@
         <img
           @click="activePage=0"
           class="hidden sm:block select-none w-10 h-10 sm:w-12 sm:h-8 md:w-16 md:h-10 opacity-80"
-          src="@/assets/logotypes/ev-logotype-4-gray.png"
+          src="~assets/logotypes/ev-logotype-4-gray.png"
           alt="no img"
         >
         <h2 class="hover:text-red-800 transition-colors duration-300 font-sans font-medium text-base lg:text-lg">Everest consulting</h2>
@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import {navLinks} from '@/configs/headerConfig';
+import {navLinks} from '~configs/headerConfig';
 
 export default {
   name: "ev-header",

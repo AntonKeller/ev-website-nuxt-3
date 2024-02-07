@@ -38,8 +38,8 @@
 
 <script>
 
-import {infoBannerContentCards} from "@/configs/infoBannerCarousel";
-import evTabloid from "@/components/ev-tabloid";
+import {infoBannerContentCards} from "~configs/infoBannerCarousel";
+import evTabloid from "~components/ev-tabloid";
 
 export default {
   name: "ev-banner",
@@ -62,7 +62,7 @@ export default {
   @apply w-full flex flex-row justify-start items-start h-auto lg:min-h-[calc(100vh-65px)];
   @apply px-[1px] py-[1vw] sm:p-[7vw] md:p-[15vw] lg:px-[12vw] xl:pt-32;
   @apply bg-blend-multiply;
-  background: rgba(103, 99, 99, 0.75) top / cover no-repeat fixed url("@/assets/background/main_page/bg-everest.jpg");
+  background: rgba(103, 99, 99, 0.75) top / cover no-repeat fixed url("assets/background/main_page/bg-everest.jpg");
 }
 
 .banner--title {
