@@ -1,4 +1,5 @@
 import {resolve} from "path";
+import {fileURLToPath} from "url";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // @ts-ignore
@@ -16,12 +17,12 @@ export default defineNuxtConfig({
   ssr: false,
 
   alias: {
-    '~': resolve("./")
+    '~/*': './'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Оценочная компания ООО "Эверест Консалтинг", работаем с 2010 года.', // ev_nuxt_js_website
+    title: 'Оценочная компания ООО "Эверест Консалтинг", работаем с 2010 года.',
     htmlAttrs: {
       lang: 'ru'
     },

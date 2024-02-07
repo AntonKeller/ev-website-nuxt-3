@@ -67,9 +67,9 @@
 
 <script>
 
-import evChip from "~components/ev-chip";
-import evChipDark from "~components/ev-chip-dark";
-import {experienceGroup} from "~configs/experience";
+import evChip from "~/components/ev-chip";
+import evChipDark from "~/components/ev-chip-dark";
+import {experienceGroup} from "~/configs/experience";
 import {Hooper, Slide} from 'hooper';
 import 'hooper/dist/hooper.css';
 

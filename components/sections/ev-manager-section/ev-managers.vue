@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import {employees} from "~configs/employees"
+import {employees} from "~/configs/employees"
 
 
 export default {
