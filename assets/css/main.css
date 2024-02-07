@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "SF Pro Display", "Golos", "system-ui", sans-serif;
+}
+/*'SF Pro Display',*/
+/*'ui-sans-serif',*/
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar {
+  @apply w-1.5 h-3;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-gray-600/50 rounded-xl;
+}
+
+body {
+  background-color: rgb(31 41 55);
+}
+
+.home-enter-active, .home-leave-active {
+  transition: opacity .5s ease;
+}
+
+.home-enter, .home-leave-active {
+  opacity: 0;
+}
+
+@keyframes years-buttons-animate {
+  from {
+    transform: translateX(100vw);
+  }
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.55s ease;
+}
+
+.bounce-leave-active {
+  animation: bounce-in 0.55s reverse ease;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
