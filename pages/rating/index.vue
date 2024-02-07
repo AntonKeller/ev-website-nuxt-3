@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import {rating} from "@/configs/ratingConfig.ts"
+import {rating} from "~configs/ratingConfig.ts"
 import {Hooper, Slide} from "hooper";
 import 'hooper/dist/hooper.css';
 

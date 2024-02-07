@@ -9,7 +9,7 @@
 
 <script>
 
-import evHeader from "@/components/widgets/ev-header.vue"
+import evHeader from "~components/widgets/ev-header.vue"
 
 export default {
   name: "default",

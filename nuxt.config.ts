@@ -1,3 +1,5 @@
+import {resolve} from "path";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // @ts-ignore
 export default defineNuxtConfig({
@@ -13,6 +15,9 @@ export default defineNuxtConfig({
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
+  alias: {
+    '~': resolve("./")
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {

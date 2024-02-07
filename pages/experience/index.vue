@@ -56,7 +56,7 @@
 
 <script>
 
-import {experienceGroup} from "@/configs/experience"
+import {experienceGroup} from "~configs/experience"
 
 export default {
   name: "experience",

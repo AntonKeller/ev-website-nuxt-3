@@ -70,8 +70,8 @@
 
 <script>
 
-import {serviceTabContent, serviceTabs} from "@/configs/servicesConfig"
-import evFooter from "@/components/widgets/ev-footer"
+import {serviceTabContent, serviceTabs} from "~configs/servicesConfig"
+import evFooter from "~components/widgets/ev-footer"
 
 export default {
   name: "services",
