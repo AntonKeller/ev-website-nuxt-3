@@ -14,5 +14,8 @@
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
     "vue-carousel": "^0.18.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
