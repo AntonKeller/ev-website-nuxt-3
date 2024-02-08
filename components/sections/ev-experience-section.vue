@@ -8,8 +8,8 @@
         <evChip text="Международный опыт"/>
         <evChip text="Множество крупных проектов"/>
         <evChip text="-----"/>
-        <evChipDark text="Работа на результат"/>
-        <evChipDark text="Сотни закрытых проектов"/>
+        <evChip theme="dark" text="Работа на результат"/>
+        <evChip theme="dark" text="Сотни закрытых проектов"/>
         <evChip text="......"/>
       </div>
     </div>
@@ -37,7 +37,7 @@
       <div class="experience-box">
         <div v-for="element of experienceGroup" class="experience-element">
           <img class="mx-auto w-full max-w-[14rem]"
-               :src="require(`../../../assets/experience_logotypes/${element.img}.png`)" alt="err">
+               :src="getImageURL(element.img)" alt="err">
           <div class="experience-element--services">
               <span v-for="currService of element.services" :key="currService.id" class="service">
                 {{ currService.title }}
@@ -48,42 +48,46 @@
     </div>
 
     <!--    https://vuejsexamples.com/a-customizable-carousel-slider-optimized-for-vue/    -->
-    <Hooper class="slider" autoPlay playSpeed=4000 itemsToShow=1>
-      <Slide v-for="element of experienceGroup" :key="element.id" class="flex flex-col justify-evenly">
-        <img class="mx-auto w-full max-w-[14rem]"
-             :src="require(`../../../assets/experience_logotypes/${element.img}.png`)" alt="err">
-        <div class="flex flex-wrap justify-center gap-1 text-xs">
-              <span
-                class="px-2 py-0.5 rounded-xl font-medium border border-gray-700/60 bg-gray-100 backdrop-blur-sm text-gray-800"
-                v-for="currService of element.services"
-                :key="currService.id"
-              >{{ currService.title }}</span>
-        </div>
-      </Slide>
-    </Hooper>
+    <!--    <Hooper class="slider" autoPlay playSpeed=4000 itemsToShow=1>-->
+    <!--      <Slide v-for="element of experienceGroup" :key="element.id" class="flex flex-col justify-evenly">-->
+    <!--        <img class="mx-auto w-full max-w-[14rem]"-->
+    <!--             :src="require(`../../../assets/experience_logotypes/${element.img}.png`)" alt="err">-->
+    <!--        <div class="flex flex-wrap justify-center gap-1 text-xs">-->
+    <!--              <span-->
+    <!--                class="px-2 py-0.5 rounded-xl font-medium border border-gray-700/60 bg-gray-100 backdrop-blur-sm text-gray-800"-->
+    <!--                v-for="currService of element.services"-->
+    <!--                :key="currService.id"-->
+    <!--              >{{ currService.title }}</span>-->
+    <!--        </div>-->
+    <!--      </Slide>-->
+    <!--    </Hooper>-->
 
   </div>
 </template>
 
 <script>
 
-import evChip from "~/components/ev-chip";
-import evChipDark from "~/components/ev-chip-dark";
-import {experienceGroup} from "~/configs/experience";
-import {Hooper, Slide} from 'hooper';
-import 'hooper/dist/hooper.css';
+import evChip from "../../components/ev-chip";
+import {experienceGroup} from "../../configs/experience";
 
 export default {
-  name: "experience-section",
+
+  name: "ev-experience-section",
+
   components: {
-    Hooper,
-    Slide,
+    evChip,
   },
-  methods: {},
+
+  methods: {
+
+    getImageURL(name) {
+      return new URL(`../../assets/experience_logotypes/${name}.png`, import.meta.url).href
+    }
+
+  },
+
   data() {
     return {
-      evChip,
-      evChipDark,
       experienceGroup,
       customerTitle: "Our experience",
       customerDescription: "We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our clients."
@@ -101,7 +105,7 @@ export default {
   @apply px-[calc(8vw-6px)] sm:px-[12vw] md:px-[12vw] lg:px-10 xl:px-12;
   @apply py-6 sm:py-8 md:py-10 lg:py-16 xl:py-14 mt-4 sm:mt-6;
   @apply space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8;
-  background: top / cover no-repeat fixed url("assets/background/bg-lines-color.png");
+  background: top / cover no-repeat fixed url("../../assets/background/bg-lines-color.png");
 
   & p, h2 {
     @apply text-center md:text-left;
@@ -122,7 +126,7 @@ export default {
   }
 
   .chips {
-    @apply text-center md:text-left space-y-2;
+    @apply gap-x-4 text-center md:text-left space-y-2;
   }
 
   .customer-section--content {

@@ -56,7 +56,7 @@
 
 <script>
 
-import {experienceGroup} from "~configs/experience"
+import {experienceGroup} from "@/configs/experience"
 
 export default {
   name: "experience",
@@ -115,6 +115,6 @@ export default {
   }
 }
 .bg-main{
-  background: url("assets/background/f-10.png") no-repeat center / cover;
+  background: url("@/assets/background/f-10.png") no-repeat center / cover;
 }
 </style>

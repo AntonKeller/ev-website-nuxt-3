@@ -1,149 +1,152 @@
 <template>
   <div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolores eaque, exercitationem incidunt magnam nam
+    necessitatibus numquam quod, quos sapiente sint tempora unde. A architecto autem eos nesciunt officiis pariatur
+    possimus quia velit? Animi, aperiam asperiores assumenda consequuntur cupiditate debitis earum hic nisi non quaerat
+    quibusdam, reiciendis repudiandae sequi voluptatibus.
+    <!--    <Hooper-->
+    <!--      class="tabloid"-->
+    <!--      :class="{hidden: !m1024}"-->
+    <!--      :itemsToShow="3"-->
+    <!--      autoPlay-->
+    <!--    >-->
+    <!--      <Slide-->
+    <!--        class="w-fit"-->
+    <!--        v-for="elem of tabloids"-->
+    <!--        :key="elem.id"-->
+    <!--      >-->
+    <!--        <div class="slide-content w-fit">-->
+    <!--          <div class="slide-content&#45;&#45;wrapper w-fit">-->
+    <!--            <div class="slide-mark">everest</div>-->
+    <!--            <div class="tabloid&#45;&#45;title">{{ elem.title }}</div>-->
+    <!--            <div class="tabloid&#45;&#45;subtitle">{{ elem.subtitle }}</div>-->
+    <!--            <div class="tabloid&#45;&#45;description">{{ elem.text }}</div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </Slide>-->
 
-    <Hooper
-      class="tabloid"
-      :class="{hidden: !m1024}"
-      :itemsToShow="3"
-      autoPlay
-    >
-      <Slide
-        class="w-fit"
-        v-for="elem of tabloids"
-        :key="elem.id"
-      >
-        <div class="slide-content w-fit">
-          <div class="slide-content--wrapper w-fit">
-            <div class="slide-mark">everest</div>
-            <div class="tabloid--title">{{ elem.title }}</div>
-            <div class="tabloid--subtitle">{{ elem.subtitle }}</div>
-            <div class="tabloid--description">{{ elem.text }}</div>
-          </div>
-        </div>
-      </Slide>
+    <!--      <hooper-pagination slot="hooper-addons"></hooper-pagination>-->
+    <!--    </Hooper>-->
 
-      <hooper-pagination slot="hooper-addons"></hooper-pagination>
-    </Hooper>
+    <!--    <Hooper-->
+    <!--      class="tabloid"-->
+    <!--      :class="{hidden: !p1024}"-->
+    <!--      :itemsToShow="2"-->
+    <!--      autoPlay-->
+    <!--    >-->
+    <!--      <Slide-->
+    <!--        class="w-fit"-->
+    <!--        v-for="elem of tabloids"-->
+    <!--        :key="elem.id"-->
+    <!--      >-->
+    <!--        <div class="slide-content w-fit">-->
+    <!--          <div class="slide-content&#45;&#45;wrapper w-fit">-->
+    <!--            <div class="slide-mark">everest</div>-->
+    <!--            <div class="tabloid&#45;&#45;title">{{ elem.title }}</div>-->
+    <!--            <div class="tabloid&#45;&#45;subtitle">{{ elem.subtitle }}</div>-->
+    <!--            <div class="tabloid&#45;&#45;description">{{ elem.text }}</div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </Slide>-->
 
-    <Hooper
-      class="tabloid"
-      :class="{hidden: !p1024}"
-      :itemsToShow="2"
-      autoPlay
-    >
-      <Slide
-        class="w-fit"
-        v-for="elem of tabloids"
-        :key="elem.id"
-      >
-        <div class="slide-content w-fit">
-          <div class="slide-content--wrapper w-fit">
-            <div class="slide-mark">everest</div>
-            <div class="tabloid--title">{{ elem.title }}</div>
-            <div class="tabloid--subtitle">{{ elem.subtitle }}</div>
-            <div class="tabloid--description">{{ elem.text }}</div>
-          </div>
-        </div>
-      </Slide>
+    <!--      <hooper-pagination slot="hooper-addons"></hooper-pagination>-->
+    <!--    </Hooper>-->
 
-      <hooper-pagination slot="hooper-addons"></hooper-pagination>
-    </Hooper>
+    <!--    <Hooper-->
+    <!--      class="tabloid"-->
+    <!--      :class="{hidden: !p640}"-->
+    <!--      autoPlay-->
+    <!--      :itemsToShow="1"-->
+    <!--    >-->
+    <!--      <Slide-->
+    <!--        class="w-fit"-->
+    <!--        v-for="elem of tabloids"-->
+    <!--        :key="elem.id"-->
+    <!--      >-->
+    <!--        <div class="slide-content w-fit">-->
+    <!--          <div class="slide-content&#45;&#45;wrapper w-fit">-->
+    <!--            <div class="slide-mark">everest</div>-->
+    <!--            <div class="tabloid&#45;&#45;title">{{ elem.title }}</div>-->
+    <!--            <div class="tabloid&#45;&#45;subtitle">{{ elem.subtitle }}</div>-->
+    <!--            <div class="tabloid&#45;&#45;description">{{ elem.text }}</div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </Slide>-->
 
-    <Hooper
-      class="tabloid"
-      :class="{hidden: !p640}"
-      autoPlay
-      :itemsToShow="1"
-    >
-      <Slide
-        class="w-fit"
-        v-for="elem of tabloids"
-        :key="elem.id"
-      >
-        <div class="slide-content w-fit">
-          <div class="slide-content--wrapper w-fit">
-            <div class="slide-mark">everest</div>
-            <div class="tabloid--title">{{ elem.title }}</div>
-            <div class="tabloid--subtitle">{{ elem.subtitle }}</div>
-            <div class="tabloid--description">{{ elem.text }}</div>
-          </div>
-        </div>
-      </Slide>
-
-      <hooper-pagination slot="hooper-addons"></hooper-pagination>
-    </Hooper>
+    <!--      <hooper-pagination slot="hooper-addons"></hooper-pagination>-->
+    <!--    </Hooper>-->
 
   </div>
 </template>
 
 <script>
 
-import 'hooper/dist/hooper.css';
-import 'primeicons/primeicons.css';
-import {Hooper, Slide, Pagination as HooperPagination} from "hooper";
+// import 'hooper/dist/hooper.css';
+// import 'primeicons/primeicons.css';
+// import {Hooper, Slide, Pagination as HooperPagination} from "hooper";
 
 export default {
 
   name: "ev-tabloid",
 
   components: {
-    Hooper,
-    Slide,
-    HooperPagination,
+    // Hooper,
+    // Slide,
+    // HooperPagination,
   },
 
   data: () => ({
-    p640: true,
-    p1024: true,
-    m1024: true,
-    windowWidth: 0,
-    tabloids: [
-      {
-        id: 1,
-        title: "80+",
-        subtitle: "Lorem ipsum dolor",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos, dolor, doloremque eum explicabo ipsum iusto libero molestiae, nam nostrum officiis quas rem suscipit totam velit! Architecto nihil similique ut!"
-      },
-      {
-        id: 2,
-        title: "5",
-        subtitle: "Lorem ipsum dolor",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos, dolor, doloremque eum explicabo ipsum iusto libero molestiae, nam nostrum officiis quas rem suscipit totam velit! Architecto nihil similique ut!"
-      },
-      {
-        id: 3,
-        title: "15",
-        subtitle: "Lorem ipsum dolor",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos, dolor, doloremque eum explicabo ipsum iusto libero molestiae, nam nostrum officiis quas rem suscipit totam velit! Architecto nihil similique ut!"
-      },
-      {
-        id: 4,
-        title: "10",
-        subtitle: "Lorem ipsum dolor",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos, dolor, doloremque eum explicabo ipsum iusto libero molestiae, nam nostrum officiis quas rem suscipit totam velit! Architecto nihil similique ut!"
-      },
-      {
-        id: 5,
-        title: "50",
-        subtitle: "Lorem ipsum dolor",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos, dolor, doloremque eum explicabo ipsum iusto libero molestiae, nam nostrum officiis quas rem suscipit totam velit! Architecto nihil similique ut!"
-      },
-    ]
+    // p640: true,
+    // p1024: true,
+    // m1024: true,
+    // windowWidth: 0,
+    // tabloids: [
+    //   {
+    //     id: 1,
+    //     title: "80+",
+    //     subtitle: "Lorem ipsum dolor",
+    //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos, dolor, doloremque eum explicabo ipsum iusto libero molestiae, nam nostrum officiis quas rem suscipit totam velit! Architecto nihil similique ut!"
+    //   },
+    //   {
+    //     id: 2,
+    //     title: "5",
+    //     subtitle: "Lorem ipsum dolor",
+    //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos, dolor, doloremque eum explicabo ipsum iusto libero molestiae, nam nostrum officiis quas rem suscipit totam velit! Architecto nihil similique ut!"
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "15",
+    //     subtitle: "Lorem ipsum dolor",
+    //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos, dolor, doloremque eum explicabo ipsum iusto libero molestiae, nam nostrum officiis quas rem suscipit totam velit! Architecto nihil similique ut!"
+    //   },
+    //   {
+    //     id: 4,
+    //     title: "10",
+    //     subtitle: "Lorem ipsum dolor",
+    //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos, dolor, doloremque eum explicabo ipsum iusto libero molestiae, nam nostrum officiis quas rem suscipit totam velit! Architecto nihil similique ut!"
+    //   },
+    //   {
+    //     id: 5,
+    //     title: "50",
+    //     subtitle: "Lorem ipsum dolor",
+    //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos, dolor, doloremque eum explicabo ipsum iusto libero molestiae, nam nostrum officiis quas rem suscipit totam velit! Architecto nihil similique ut!"
+    //   },
+    // ]
   }),
 
   created() {
 
-    const onResize = () => {
-      this.width = window.innerWidth;
-      this.p640 = window.innerWidth <= 640;
-      this.p1024 = window.innerWidth > 640 && window.innerWidth <= 1024;
-      this.m1024 = window.innerWidth > 1024;
-      console.log('this.p640:', this.p640);
-    };
-
-    onResize();
-
-    window.addEventListener('resize', onResize);
+    // const onResize = () => {
+    //   this.width = window.innerWidth;
+    //   this.p640 = window.innerWidth <= 640;
+    //   this.p1024 = window.innerWidth > 640 && window.innerWidth <= 1024;
+    //   this.m1024 = window.innerWidth > 1024;
+    //   console.log('this.p640:', this.p640);
+    // };
+    //
+    // onResize();
+    //
+    // window.addEventListener('resize', onResize);
   },
 
 }

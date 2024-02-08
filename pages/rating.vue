@@ -12,44 +12,44 @@
       </p>
     </div>
 
-    <Hooper
-      group="group1"
-      class="rating-button-slider"
-      autoPlay
-      playSpeed=6000
-      itemsToShow=1
-    >
-      <Slide
-        class="rating-button-slide"
-        v-for="element of getRatingYears()"
-        @click="setActiveYear(element.year)"
-      >
-        <span class="block ml-2 text-gray-100/20" > < </span>
-        <h3 class="block">{{ element.year }}</h3>
-        <span class="block mr-2 text-gray-100/20" > > </span>
-      </Slide>
-    </Hooper>
+<!--    <Hooper-->
+<!--      group="group1"-->
+<!--      class="rating-button-slider"-->
+<!--      autoPlay-->
+<!--      playSpeed=6000-->
+<!--      itemsToShow=1-->
+<!--    >-->
+<!--      <Slide-->
+<!--        class="rating-button-slide"-->
+<!--        v-for="element of getRatingYears()"-->
+<!--        @click="setActiveYear(element.year)"-->
+<!--      >-->
+<!--        <span class="block ml-2 text-gray-100/20" > < </span>-->
+<!--        <h3 class="block">{{ element.year }}</h3>-->
+<!--        <span class="block mr-2 text-gray-100/20" > > </span>-->
+<!--      </Slide>-->
+<!--    </Hooper>-->
 
-    <Hooper group="group1" class="rating-info-slider">
-      <Slide class="rating-button-slide" v-for="element of getRatingYears()" @click="setActiveYear(element.year)">
-        <section class="ratingContainer">
-          <div class="ratingElement animate-show-2" v-for="description of getInfoByYear(element.year)">
-            <div class="flex justify-center bg-gray-200 text-gray-700 items-center text-center w-16 h-16 font-extrabold text-lg md:text-xl lg:text-3xl rounded-t-sm rounded-b-3xl border-4 border-gray-600">
-              <p>{{ description.value }}</p>
-            </div>
-            <p>{{ description.title }}</p>
-          </div>
-        </section>
-      </Slide>
-    </Hooper>
+<!--    <Hooper group="group1" class="rating-info-slider">-->
+<!--      <Slide class="rating-button-slide" v-for="element of getRatingYears()" @click="setActiveYear(element.year)">-->
+<!--        <section class="ratingContainer">-->
+<!--          <div class="ratingElement animate-show-2" v-for="description of getInfoByYear(element.year)">-->
+<!--            <div class="flex justify-center bg-gray-200 text-gray-700 items-center text-center w-16 h-16 font-extrabold text-lg md:text-xl lg:text-3xl rounded-t-sm rounded-b-3xl border-4 border-gray-600">-->
+<!--              <p>{{ description.value }}</p>-->
+<!--            </div>-->
+<!--            <p>{{ description.title }}</p>-->
+<!--          </div>-->
+<!--        </section>-->
+<!--      </Slide>-->
+<!--    </Hooper>-->
 
   </div>
 </template>
 
 <script>
-import {rating} from "~configs/ratingConfig.ts"
-import {Hooper, Slide} from "hooper";
-import 'hooper/dist/hooper.css';
+import {rating} from "@/configs/ratingConfig.ts"
+// import {Hooper, Slide} from "hooper";
+// import 'hooper/dist/hooper.css';
 
 export default {
   name: "rating",
@@ -73,8 +73,8 @@ export default {
   },
 
   components: {
-    Hooper,
-    Slide,
+    // Hooper,
+    // Slide,
   },
 
   data() {

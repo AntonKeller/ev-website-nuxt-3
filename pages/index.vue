@@ -1,30 +1,30 @@
 <template>
   <div class="scroll-hidden w-full bg-gray-100">
     <!--   MAIN BANNER SECTION   -->
-    <bannerSection/>
+    <evBannerSection/>
     <!--   CUSTOMERS SECTION   -->
-    <experienceSection/>
+    <evExperienceSection/>
     <!--   MANAGERS SECTION   -->
-    <managersSection />
+    <evManagerSection/>
     <!--   FOOTER   -->
-    <evFooter/>
+<!--    <evFooter/>-->
   </div>
 </template>
 
 <script>
 
-import bannerSection from "~/components/sections/ev-banner-section/ev-banner";
-import experienceSection from "~/components/sections/ev-customer-section/ev-experience-section";
-import managersSection from "~/components/sections/ev-manager-section/ev-managers";
-import evFooter from "~/components/widgets/ev-footer";
+import evBannerSection from "../components/sections/ev-banner-section.vue";
+import evExperienceSection from "../components/sections/ev-experience-section.vue";
+import evManagerSection from "../components/sections/ev-manager-section.vue";
+// import evFooter from "@/components/widgets/ev-footer";
 
 export default {
   name: 'IndexPage',
   components: {
-    bannerSection,
-    experienceSection,
-    managersSection,
-    evFooter,
+    evBannerSection,
+    evExperienceSection,
+    evManagerSection,
+    // evFooter,
   },
   data() {
     return ({})

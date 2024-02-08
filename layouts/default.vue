@@ -2,14 +2,14 @@
   <div>
     <evHeader/>
     <transition name="bounce">
-      <Nuxt/>
+      <slot/>
     </transition>
   </div>
 </template>
 
 <script>
 
-import evHeader from "~components/widgets/ev-header.vue"
+import evHeader from "@/components/widgets/ev-header.vue"
 
 export default {
   name: "default",

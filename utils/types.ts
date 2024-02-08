@@ -1,4 +1,7 @@
+import {integer} from "vscode-languageserver-types";
+
 interface TContentObject {
+  id: Number,
   title: String,
   textContent: Array<String>,
   enums: Array<String>,

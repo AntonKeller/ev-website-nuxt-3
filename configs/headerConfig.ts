@@ -1,4 +1,4 @@
-import {Tlink} from "~/utils/types";
+import type {Tlink} from "@/utils/types";
 
 export const navLinks: Array<Tlink> = [
   {
@@ -14,7 +14,7 @@ export const navLinks: Array<Tlink> = [
   //   url: "/experience",
   // },
   {
-    id: 3,
+    id: 2,
     title: "Достижения",
     description: "по периодам",
     url: "/rating",

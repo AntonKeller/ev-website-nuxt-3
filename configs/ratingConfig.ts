@@ -1,4 +1,4 @@
-import {ratingDescription} from "~/utils/types";
+import type {ratingDescription} from "@/utils/types";
 
 export interface RatingDescriptionKeysType {
   title: string,

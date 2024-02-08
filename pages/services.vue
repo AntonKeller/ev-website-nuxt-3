@@ -1,52 +1,23 @@
 <template>
-  <div
-    class="pb-2 h-[calc(100vh-57px)] sm:h-[calc(100vh-77px)] md:h-screen flex flex-col md:flex-row justify-start md:justify-center items-center md:items-start md:pl-6 lg:pl-8 xl:pl-10 background overflow-y-scroll">
+  <div class="flex flex-col md:pl-6 lg:pl-8 xl:pl-10 background">
 
-    <div class="hidden w-4/12 md:flex flex-col justify-center items-start border-r border-r-gray-600 md:pt-32">
-      <ul class="w-full flex flex-col justify-center items-start">
-        <li
+    <ul class="w-full flex flex-col justify-center items-start">
+      <li
           class="hover:text-red-700 cursor-pointer show-left font-bold text-lg lg:text-xl mb-4 text-red-50 text-center w-full transition-colors duration-150"
           v-for="tab of serviceTabs"
-          @click="activeTab=tab.id"
+          @click="setActiveID(tab.id)"
           :class="{'uppercase mt-4':tab.sub, 'md:pl-10':!tab.sub}">
-          {{ tab.title }}
-          <div v-if="tab.id === 8" class="w-full gray-line"></div>
-        </li>
-      </ul>
-    </div>
-
-
+        {{ tab.title }}
+        <div v-if="tab.id === 8" class="w-full gray-line"></div>
+      </li>
+    </ul>
 
     <div
-      class="md:hidden w-full flex flex-col justify-start text-red-50 text-lg text-center p-4 sm:px-10">
+        class="px-5 sm:px-10 md:px-16 lg:px-24 xl:px-28 md:pt-32 flex flex-col justify-start items-start text-red-50">
       <div
-        @click="dropMenuIsOpen=!dropMenuIsOpen"
-        class="border border-gray-600 w-full rounded-lg flex flex-row justify-between p-2 px-4">
-        <div>Услуги</div>
-        <div :class="{'-rotate-90': dropMenuIsOpen}" class="duration-150"><</div>
-      </div>
-      <div
-        v-if="dropMenuIsOpen"
-        class="rounded-lg border-t border-t-gray-900 border-x border-b border-l-gray-600 border-b-gray-600 border-r-gray-600 px-4">
-        <ul class="w-full flex flex-col justify-center items-start">
-          <li
-            v-for="tab of serviceTabs"
-            @click="serviceSelect(tab.id)"
-            :class="{'uppercase mt-4':tab.sub, 'pl-10':!tab.sub}"
-            class="cursor-pointer show-left font-bold text-base mb-4 text-red-50 text-center w-full transition-colors">
-            {{ tab.title }}
-            <div v-if="tab.id === 8" class="w-full border-b border-b-gray-600"></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div
-      v-for="currentTab of serviceTabContent"
-      v-if="activeTab===currentTab.id"
-      class="w-full md:w-8/12 px-5 sm:px-10 md:px-16 lg:px-24 xl:px-28 md:pt-32 flex flex-col justify-start items-start text-red-50">
-
-      <div v-for="content of currentTab.content" class="flex flex-col justify-start items-start md:max-w-full">
+          v-for="content of getActiveContent.content"
+          :key="content.id"
+          class="flex flex-col justify-start items-start md:max-w-full">
 
         <h4 v-if="content.title.length" class="show-left font-bold text-2xl mb-4">
           {{ content.title }}
@@ -63,6 +34,7 @@
           </li>
         </ul>
       </div>
+
     </div>
 
   </div>
@@ -70,8 +42,8 @@
 
 <script>
 
-import {serviceTabContent, serviceTabs} from "~configs/servicesConfig"
-import evFooter from "~components/widgets/ev-footer"
+import {serviceTabContent, serviceTabs} from "@/configs/servicesConfig"
+import evFooter from "@/components/widgets/ev-footer"
 
 export default {
   name: "services",
@@ -98,22 +70,34 @@ export default {
     evFooter: evFooter,
   },
 
-  methods: {
-    serviceSelect(id) {
-      this.activeTab = id;
-      this.dropMenuIsOpen = false;
-    }
-  },
-
   data() {
     return {
       dropMenuIsOpen: false,
       hoverTab: 0,
-      activeTab: 2,
+      activeTabId: 2,
       serviceTabContent,
-      serviceTabs
+      serviceTabs,
     }
   },
+
+  computed: {
+
+    getActiveContent() {
+      return serviceTabContent.find(e => e.id === this.activeTabId);
+    }
+
+  },
+
+  methods: {
+
+    setActiveID(id) {
+      this.activeTabId = id;
+      this.dropMenuIsOpen = false;
+      console.log("id:", this.activeTabId);
+    },
+
+  },
+
 }
 
 

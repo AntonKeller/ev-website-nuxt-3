@@ -15,20 +15,22 @@
 
       <nav class="hidden sm:block">
         <ul class="flex items-center justify-center space-x-6">
-          <li
-            @click="activePage=link.id"
-            class="hover:text-red-800 transition-colors duration-300 cursor-pointer"
-            v-for="link of navLinks"
-          >
-            <NuxtLink :to="link.url">
-              <h5
-                :class="{'text-red-600': activePage === link.id}"
-                class="text-sm lg:text-base font-sans font-medium"
-              >
-                {{ link.title }}
-              </h5>
-            </NuxtLink>
-          </li>
+          <NuxtLink id="1" to="/services">Услуги</NuxtLink>
+          <NuxtLink id="2" to="/rating">Достижения</NuxtLink>
+<!--          <li-->
+<!--            @click="activePage=link.id"-->
+<!--            class="hover:text-red-800 transition-colors duration-300 cursor-pointer"-->
+<!--            v-for="link of navLinks"-->
+<!--          >-->
+<!--            <NuxtLink :to="link.url">-->
+<!--              <h5-->
+<!--                :class="{'text-red-600': activePage === link.id}"-->
+<!--                class="text-sm lg:text-base font-sans font-medium"-->
+<!--              >-->
+<!--                {{ link.title }}-->
+<!--              </h5>-->
+<!--            </NuxtLink>-->
+<!--          </li>-->
         </ul>
       </nav>
 
@@ -74,7 +76,7 @@
 </template>
 
 <script>
-import {navLinks} from '~configs/headerConfig';
+import {navLinks} from '../../configs/headerConfig';
 
 export default {
   name: "ev-header",
