@@ -1,20 +1,28 @@
 <template>
-  <div class="banner-container">
-    <div class="flex justify-center flex-col w-full px-1 mt-24 md:mt-0">
-      <h1 class="banner--title"
-          v-motion="{
-      initial: {
-        y: 100,
-        opacity: 0
-      },
-      enter: {
-        y: 0,
-        opacity: 1
-      }
-    }"
+  <div class="banner-container w-full px-1 mt-24 md:mt-0">
+
+    <div class="flex flex-col items-center">
+
+      <div
+          class="border-b-4 pb-4 border-gray-50 overflow-hidden"
       >
-        {{ title }}
-      </h1>
+        <h1 class="banner--title duration-700"
+            v-motion="{
+            initial: {
+              y: 80,
+              opacity: 0.0001
+            },
+            enter: {
+              y: 0,
+              opacity: 1
+            }
+          }"
+        >
+          {{ title }}
+        </h1>
+      </div>
+
+
       <h2 class="banner--subtitle">
         {{ subTitle }}
       </h2>
@@ -42,8 +50,10 @@
         </div>
 
       </div>
-      <evTabloid/>
     </div>
+
+<!--    <evTabloid/>-->
+
   </div>
 </template>
 
@@ -74,8 +84,9 @@ export default {
 <style scoped>
 
 .banner-container {
-  @apply w-full flex flex-row justify-start items-start h-auto lg:min-h-[calc(100vh-65px)];
-  @apply px-[1px] py-[1vw] sm:p-[7vw] md:p-[15vw] lg:px-[12vw] xl:pt-32;
+  @apply w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(100vh-65px)];
+  @apply px-[1px] sm:px-[7vw] md:px-[15vw] lg:px-[12vw];
+  @apply py-[0] sm:py-[6vw] md:py-[8vw] lg:py-[9vw];
   @apply bg-blend-multiply;
   background: rgba(103, 99, 99, 0.75) top / cover no-repeat fixed url("../../assets/background/main_page/bg-everest.jpg");
 }
@@ -90,7 +101,7 @@ export default {
 
 .b--btn {
   @apply select-none cursor-pointer;
-  @apply px-4 py-1.5;
+  @apply px-4 py-1;
   @apply flex items-center;
   @apply text-base md:text-base;
   @apply transition-colors duration-150;

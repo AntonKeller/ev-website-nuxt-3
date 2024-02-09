@@ -14,7 +14,9 @@ export default {
 
   methods: {
     getClassesByTheme() {
-      return this.theme === "dark" ? "chip-dark" : "chip-light";
+      return this.theme === "dark" ?
+          "chip-dark" :
+          "chip-light";
     }
   }
 

@@ -1,6 +1,3 @@
-import {resolve} from "path";
-import {fileURLToPath} from "url";
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 
@@ -80,7 +77,7 @@ export default defineNuxtConfig({
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
-        '@/assets/css/main.css'
+        '~/assets/css/main.css'
     ],
 
     // transition: {
@@ -111,9 +108,14 @@ export default defineNuxtConfig({
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
-        '@vueuse/motion/nuxt',
         '@nuxtjs/tailwindcss',
+        '@vueuse/motion/nuxt',
     ],
+
+    tailwindcss: {
+        exposeConfig: true,
+        viewer: true,
+    },
 
     runtimeConfig: {
         public: {

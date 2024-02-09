@@ -1,18 +1,17 @@
 <template>
-  <div>
-    <ev-header/>
+  <NuxtLayout>
     <NuxtPage/>
-<!--    <NuxtLayout>-->
-<!--      <NuxtPage/>-->
-<!--    </NuxtLayout>-->
-  </div>
+  </NuxtLayout>
 </template>
 <script>
 
 import EvHeader from "./components/widgets/ev-header.vue";
+import '/assets/css/main.css';
 
 export default {
-  components: {EvHeader}
+  components: {
+    EvHeader
+  }
 }
 
 </script>

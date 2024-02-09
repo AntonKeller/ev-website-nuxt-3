@@ -29,7 +29,7 @@
 
         <ul v-if="content.enums.length" class="text-red-50 mt-4">
           <li v-for="enumValue of content.enums" class="text-lg">
-            <span class="inline-block  w-4 h-2 rounded-sm red-line-heavy"></span>
+            <span class="inline-block w-4 h-2 rounded-sm red-line-heavy"></span>
             {{ enumValue }}
           </li>
         </ul>
