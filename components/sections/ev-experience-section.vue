@@ -2,35 +2,28 @@
   <div class="experience-section">
 
     <div class="title">
-      <h2>{{ customerTitle }}</h2>
-      <p class="">{{ customerDescription }}</p>
-      <div class="chips">
-        <evChip text="Международный опыт"/>
-        <evChip text="Множество крупных проектов"/>
-        <evChip text="-----"/>
-        <evChip theme="dark" text="Работа на результат"/>
-        <evChip theme="dark" text="Сотни закрытых проектов"/>
-        <evChip text="......"/>
-      </div>
+      <div><h2>{{ customerTitle }}</h2></div>
+      <div><p class="">{{ customerDescription }}</p></div>
+      <div class="chips"><ev-chip v-for="chip of chips" :text="chip.text" :theme="chip.theme"/></div>
     </div>
 
     <div class="customer-section--content">
       <div class="info-block-wrapper">
-        <div v-motion :initial="{ opacity: 0.001, x: -500 }" :visible="{opacity: 1, x: 0}" :delay="350">
+        <div v-motion :initial="{ opacity: 0.001, x: -500 }" :visible="{opacity: 1, x: 0}" :delay="400">
           <p class="px-2">
             Наши специалисты успешно осуществили и завершили проекты для 45 компаний из рейтинга
             «Крупнейшие компании России» (рейтинг Эксперт-400),
             совокупная выручка которых за 2008 год превысила 9.3 трлн. руб.
           </p>
         </div>
-        <div v-motion :initial="{ opacity: 0.001, x: -500 }" :visible="{opacity: 1, x: 0}" :delay="350">
+        <div v-motion :initial="{ opacity: 0.001, x: 500 }" :visible="{opacity: 1, x: 0}" :delay="750">
           <p class="border-4 border-gray-200 bg-gray-50 p-2.5 rounded-xl">
             Основным деловым преимуществом нашей компании является высокий профессионализм сотрудников, а также опыт
             выполнения проектов в сфере оценки и консалтинга с последующим согласованием результатов с крупнейшими
             международными аудиторскими компаниями.
           </p>
         </div>
-        <div v-motion :initial="{ opacity: 0.001, x: -500 }" :visible="{opacity: 1, x: 0}" :delay="350">
+        <div v-motion :initial="{ opacity: 0.001, x: -500 }" :visible="{opacity: 1, x: 0}" :delay="1000">
           <p class="px-2">
             Специалисты Компании EverestConsulting являются членами
             таких профессиональных организаций, как Саморегулируемая Межрегиональная Ассоциация Оценщиков
@@ -96,7 +89,16 @@ export default {
     return {
       experienceGroup,
       customerTitle: "Our experience",
-      customerDescription: "We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our clients."
+      customerDescription: "We’re a dynamic group of individuals who are passionate about what we...",
+      chips: [
+        {text: "Международный опыт", theme: ""},
+        {text: "Оценка", theme: "dark"},
+        {text: "Оценка бизнеса", theme: ""},
+        {text: "Оценка имущественных активов", theme: "dark"},
+        {text: "Финансово-тухнический надзор", theme: "dark"},
+        {text: "Технологическая экспертиза", theme: ""},
+        {text: "Строительная экспертиза", theme: ""}
+      ]
     }
   }
 }
@@ -126,8 +128,8 @@ export default {
   }
 
   .title {
-    @apply w-full border-b border-b-gray-400/80;
-    @apply pb-4 sm:pb-8 md:pb-10 lg:pb-10 xl:pb-12;
+    @apply w-6/12 border-b border-b-gray-400/80;
+    @apply pb-4 sm:pb-8 md:pb-8;
     @apply space-y-3 lg:space-y-5;
   }
 

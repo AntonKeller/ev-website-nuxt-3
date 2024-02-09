@@ -124,7 +124,7 @@ export default {
 <style lang="scss" scoped>
 
 .main-container {
-  @apply w-full h-fit overflow-y-scroll;
+  @apply w-full h-[65vh] overflow-y-scroll;
   @apply pt-24 pb-12 sm:pt-8 md:pt-14 lg:pt-16 xl:pt-20;
   @apply px-4 sm:pl-[5vw] sm:pr-[10vw] md:pr-[10vw] lg:pr-[15vw] xl:pr-[30vw];
   @apply bg-gray-900 bg-blend-multiply;

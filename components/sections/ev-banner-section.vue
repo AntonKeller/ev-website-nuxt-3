@@ -1,58 +1,75 @@
 <template>
-  <div class="banner-container w-full px-1 mt-24 md:mt-0">
+  <div class="banner-container w-full px-1">
 
-    <div class="flex flex-col items-center">
+    <div class="z-10 flex flex-col lg:gap-y-4 items-center">
 
-      <div
-          class="border-b-4 pb-4 border-gray-50 overflow-hidden"
-      >
-        <h1 class="banner--title duration-700"
-            v-motion="{
-            initial: {
-              y: 80,
-              opacity: 0.0001
-            },
-            enter: {
+      <div class="overflow-hidden">
+        <h1 class="banner--title"
+            v-motion
+            :initial="{y: 15, opacity: 0.001}"
+            :enter="{
               y: 0,
-              opacity: 1
-            }
-          }"
+              opacity: 1,
+              transition: {
+                mass: 0.5,
+              }
+            }"
+            :delay="600"
         >
           {{ title }}
         </h1>
       </div>
 
+      <div class="overflow-hidden">
+        <h2
+            class="banner--subtitle"
+            v-motion
+            :initial="{
+              y: -15,
+              opacity: 0.001
+            }"
+            :enter="{
+              y: 0,
+              opacity: 1,
+              transition: {
+                mass: 0.5,
+              }
+            }"
+            :delay="600"
+        >
+          {{ subTitle }}
+        </h2>
+      </div>
 
-      <h2 class="banner--subtitle">
-        {{ subTitle }}
-      </h2>
       <div class="flex justify-center mt-4 gap-2 flex-wrap">
-
-        <div class="b--btn bg-cyan-500/20 hover:bg-cyan-500/60">
-          Оценка
+        <div
+            v-for="service of serviceList"
+            :key="service.id"
+            class="b--btn"
+            :class="service.classes"
+            v-motion
+            :initial="{
+              x: -20,
+              y: -10,
+              opacity: 0.001
+            }"
+            :enter="{
+              y: 0,
+              x: 0,
+              opacity: 1,
+              transition: {
+                mass: 0.5,
+              }
+            }"
+            :delay="350*service.id"
+        >
+          {{ service.txt }}
           <i class="pi pi-arrow-right ml-3 text-gray-400 font-extrabold"></i>
         </div>
-
-        <div class="b--btn bg-emerald-500/20 hover:bg-emerald-500/60">
-          Финансовый консалтинг
-          <i class="pi pi-arrow-right ml-3 text-gray-400 font-extrabold"></i>
-        </div>
-
-        <div class="b--btn bg-fuchsia-500/20 hover:bg-fuchsia-500/60">
-          Строительный консалтинг
-          <i class="pi pi-arrow-right ml-3 text-gray-400 font-extrabold"></i>
-        </div>
-
-
-        <div class="b--btn bg-amber-500/20 hover:bg-amber-500/60">
-          Достижения
-          <i class="pi pi-arrow-right ml-3 text-gray-400 font-extrabold"></i>
-        </div>
-
       </div>
     </div>
 
-<!--    <evTabloid/>-->
+    <!--    <evTabloid/>-->
 
   </div>
 </template>
@@ -72,6 +89,23 @@ export default {
 
   data() {
     return {
+      serviceList: [
+        {
+          id: 1,
+          txt: "Оценка бизнеса",
+          classes: "bg-red-500/20 hover:bg-red-500/70",
+        },
+        {
+          id: 2,
+          txt: "Финансовый консалтинг",
+          classes: "bg-cyan-500/20 hover:bg-cyan-500/70",
+        },
+        {
+          id: 3,
+          txt: "Строительный консалтинг",
+          classes: "bg-emerald-500/20 hover:bg-emerald-500/70",
+        }
+      ],
       infoBannerContentCards,
       title: "Эверест Консалтинг",
       subTitle: "Работаем с 2010 года",
@@ -84,30 +118,29 @@ export default {
 <style scoped>
 
 .banner-container {
-  @apply w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(100vh-65px)];
-  @apply px-[1px] sm:px-[7vw] md:px-[15vw] lg:px-[12vw];
-  @apply py-[0] sm:py-[6vw] md:py-[8vw] lg:py-[9vw];
+  @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(100vh-65px)];
+  @apply px-[40px] sm:px-[7vw] md:px-[15vw] lg:px-[12vw];
+  @apply pt-28 pb-16 sm:py-[6vw] md:py-[8vw] lg:py-[9vw];
   @apply bg-blend-multiply;
-  background: rgba(103, 99, 99, 0.75) top / cover no-repeat fixed url("../../assets/background/main_page/bg-everest.jpg");
+  background: rgba(103, 99, 99, 0.9999) top / cover no-repeat fixed url("../../assets/background/main_page/bg-everest.jpg");
 }
 
 .banner--title {
-  @apply text-center font-extrabold text-gray-300 text-2xl sm:text-4xl md:text-5xl lg:text-5xl;
+  @apply text-center font-extrabold text-gray-100 text-2xl sm:text-4xl md:text-5xl lg:text-6xl;
 }
 
 .banner--subtitle {
-  @apply mt-4 uppercase text-center font-extrabold mt-4 text-gray-300 text-base md:text-lg lg:text-xl xl:text-3xl;
+  @apply mt-4 text-center font-extrabold mt-4 text-gray-100 text-base md:text-lg lg:text-xl xl:text-4xl;
 }
 
 .b--btn {
   @apply select-none cursor-pointer;
-  @apply px-4 py-1;
-  @apply flex items-center;
-  @apply text-base md:text-base;
+  @apply text-center flex flex-row justify-center;
+  @apply sm:block sm:inline px-4 py-0.5 md:px-4 md:py-2;
+  @apply text-base lg:text-lg;
   @apply transition-colors duration-150;
   @apply active:scale-[99%];
-  @apply text-gray-300 border-2 border-gray-200/20 rounded-2xl backdrop-blur-sm;
-  @apply hover:border-gray-900/70;
+  @apply text-gray-300 border-2 border-gray-200/20 rounded-xl backdrop-blur-xl;
 }
 
 </style>

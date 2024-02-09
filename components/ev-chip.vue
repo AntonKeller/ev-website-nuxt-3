@@ -1,5 +1,5 @@
 <template>
-  <span :class="getClassesByTheme()">{{ text }}</span>
+  <span :class="getClassesByTheme()" class="chip">{{ text }}</span>
 </template>
 
 <script>
@@ -25,15 +25,17 @@ export default {
 
 <style scoped>
 
+.chip {
+  @apply inline-block rounded-xl border-2 py-0.5 px-2.5 mr-1.5 text-base;
+}
+
+
 .chip-light {
-  @apply inline-block bg-gray-50 rounded-xl border-2 border-gray-300 py-0.5 px-2;
-  @apply text-gray-700 text-sm sm:text-sm;
+  @apply text-gray-900 bg-gray-50 border-gray-800;
 }
 
 .chip-dark {
-  @apply text-center inline-block rounded-xl border-2 py-0.5 px-2;
-  @apply text-sm sm:text-sm;
-  @apply bg-gray-900 border-gray-500 text-gray-200;
+  @apply text-gray-50 bg-red-800/90 border-gray-800;
 }
 
 </style>

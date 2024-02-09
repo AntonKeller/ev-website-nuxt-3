@@ -45,6 +45,7 @@
 import {serviceTabContent, serviceTabs} from "@/configs/servicesConfig"
 import evFooter from "@/components/widgets/ev-footer"
 
+
 export default {
   name: "services",
 
@@ -110,7 +111,8 @@ export default {
 /*}*/
 
 .background {
-  background: url("@/assets/background/background-red-circles.png") transparent no-repeat center / cover;
+  @apply bg-red-950;
+  /*background: url("@/assets/background/background-red-circles.png") transparent no-repeat center / cover;*/
 }
 
 .red-line, .gray-line {
