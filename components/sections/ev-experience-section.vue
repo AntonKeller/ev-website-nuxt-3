@@ -2,28 +2,42 @@
   <div class="experience-section">
 
     <div class="title">
-      <div><h2>{{ customerTitle }}</h2></div>
-      <div><p class="">{{ customerDescription }}</p></div>
-      <div class="chips"><ev-chip v-for="chip of chips" :text="chip.text" :theme="chip.theme"/></div>
+      <div>
+        <h2
+            v-motion :initial="{ opacity: 0}" :visible="{opacity: 1}" :delay="250"
+        >{{ customerTitle }}</h2>
+      </div>
+      <div>
+        <p
+            v-motion :initial="{ opacity: 0}" :visible="{opacity: 1}" :delay="500"
+        >{{ customerDescription }}</p></div>
+      <div class="chips">
+        <ev-chip
+            v-for="chip of chips"
+            :text="chip.text"
+            :theme="chip.theme"
+            v-motion :initial="{ opacity: 0}" :visible="{opacity: 1}" :delay="750"
+        />
+      </div>
     </div>
 
     <div class="customer-section--content">
       <div class="info-block-wrapper">
-        <div v-motion :initial="{ opacity: 0.001, scale: 0 }" :visible="{opacity: 1, scale: 1}" :delay="300">
+        <div v-motion :initial="{ opacity: 0}" :visible="{opacity: 1}" :delay="1000">
           <p class="px-2">
             Наши специалисты успешно осуществили и завершили проекты для 45 компаний из рейтинга
             «Крупнейшие компании России» (рейтинг Эксперт-400),
             совокупная выручка которых за 2008 год превысила 9.3 трлн. руб.
           </p>
         </div>
-        <div v-motion :initial="{ opacity: 0.001, scale: 0 }" :visible="{opacity: 1, scale: 1}" :delay="600">
+        <div v-motion :initial="{ opacity: 0}" :visible="{opacity: 1}" :delay="1150">
           <p class="border-4 border-gray-200 bg-gray-50 p-2.5 rounded-xl">
             Основным деловым преимуществом нашей компании является высокий профессионализм сотрудников, а также опыт
             выполнения проектов в сфере оценки и консалтинга с последующим согласованием результатов с крупнейшими
             международными аудиторскими компаниями.
           </p>
         </div>
-        <div v-motion :initial="{ opacity: 0.001, scale: 0 }" :visible="{opacity: 1, scale: 1}" :delay="900">
+        <div v-motion :initial="{ opacity: 0}" :visible="{opacity: 1}" :delay="1250">
           <p class="px-2">
             Специалисты Компании EverestConsulting являются членами
             таких профессиональных организаций, как Саморегулируемая Межрегиональная Ассоциация Оценщиков
@@ -126,11 +140,10 @@ export default {
   }
 
   .customer-section--content {
-    @apply w-full flex-col justify-center items-center;
+    @apply w-full flex justify-center items-center;
     @apply md:space-y-8 lg:space-y-0 lg:space-x-4;
 
     .info-block-wrapper {
-      @apply overflow-y-scroll overflow-x-hidden;
       @apply space-y-[calc(3vw+8px)] sm:space-y-6 md:space-y-8 lg:space-y-10;
       @apply lg:w-[56vw] xl:w-[48vw] lg:max-w-[700px];
       @apply lg:h-full lg:pr-4;

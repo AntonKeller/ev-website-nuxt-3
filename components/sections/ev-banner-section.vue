@@ -16,7 +16,7 @@
             }"
             :delay="600"
         >
-          {{ title }}
+          Эверест <span class="inline-block py-2 px-6 bg-red-950 border-x-4 border-x-gray-50">Консалтинг</span>
         </h1>
       </div>
 
@@ -37,7 +37,7 @@
             }"
             :delay="600"
         >
-          {{ subTitle }}
+          На рынке с 2010 года
         </h2>
       </div>
 
@@ -49,14 +49,10 @@
             :class="service.classes"
             v-motion
             :initial="{
-              // x: -20,
-              // y: -10,
               opacity: 0.001,
               scale: 0.3
             }"
             :enter="{
-              // y: 0,
-              // x: 0,
               scale: 1,
               opacity: 1,
               transition: {
@@ -109,8 +105,6 @@ export default {
         }
       ],
       infoBannerContentCards,
-      title: "Эверест Консалтинг",
-      subTitle: "Работаем с 2010 года",
     }
   }
 
@@ -128,11 +122,11 @@ export default {
 }
 
 .banner--title {
-  @apply text-center font-extrabold text-gray-100 text-2xl sm:text-4xl md:text-5xl lg:text-6xl;
+  @apply text-center font-extrabold text-gray-100 text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-sans;
 }
 
 .banner--subtitle {
-  @apply mt-4 text-center font-extrabold mt-4 text-gray-100 text-base md:text-lg lg:text-xl xl:text-4xl;
+  @apply mt-2 text-center font-extrabold text-gray-300 text-base md:text-lg lg:text-xl xl:text-4xl font-sans;
 }
 
 .b--btn {

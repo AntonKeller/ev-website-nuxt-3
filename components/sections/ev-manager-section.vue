@@ -2,7 +2,7 @@
   <div class="managers-section">
     <div class="manager-section-title">
       <h2 class="text-xl sm:text-2xl md:text-2xl lg:text-4xl font-bold">
-        Руководство компании
+        Состав директоров
       </h2>
       <p class="text-lg font-light">
         We’re a dynamic group of individuals who are passionate about what we do
