@@ -8,15 +8,23 @@ export default {
   name: "ev-chip-dark",
 
   props: {
+    size: String,
     text: String,
     theme: String,
   },
 
   methods: {
     getClassesByTheme() {
-      return this.theme === "dark" ?
-          "chip-dark" :
-          "chip-light";
+      let styles = [
+        this.theme === "dark" ? "chip-dark" : "chip-light",
+
+      ];
+
+
+      return styles.join(" ");
+      return
+
+
     }
   }
 

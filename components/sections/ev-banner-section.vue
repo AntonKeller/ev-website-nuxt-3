@@ -49,19 +49,21 @@
             :class="service.classes"
             v-motion
             :initial="{
-              x: -20,
-              y: -10,
-              opacity: 0.001
+              // x: -20,
+              // y: -10,
+              opacity: 0.001,
+              scale: 0.3
             }"
             :enter="{
-              y: 0,
-              x: 0,
+              // y: 0,
+              // x: 0,
+              scale: 1,
               opacity: 1,
               transition: {
                 mass: 0.5,
               }
             }"
-            :delay="350*service.id"
+            :delay="300*service.id"
         >
           {{ service.txt }}
           <i class="pi pi-arrow-right ml-3 text-gray-400 font-extrabold"></i>

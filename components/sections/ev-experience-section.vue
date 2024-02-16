@@ -9,39 +9,27 @@
 
     <div class="customer-section--content">
       <div class="info-block-wrapper">
-        <div v-motion :initial="{ opacity: 0.001, x: -500 }" :visible="{opacity: 1, x: 0}" :delay="400">
+        <div v-motion :initial="{ opacity: 0.001, scale: 0 }" :visible="{opacity: 1, scale: 1}" :delay="300">
           <p class="px-2">
             Наши специалисты успешно осуществили и завершили проекты для 45 компаний из рейтинга
             «Крупнейшие компании России» (рейтинг Эксперт-400),
             совокупная выручка которых за 2008 год превысила 9.3 трлн. руб.
           </p>
         </div>
-        <div v-motion :initial="{ opacity: 0.001, x: 500 }" :visible="{opacity: 1, x: 0}" :delay="750">
+        <div v-motion :initial="{ opacity: 0.001, scale: 0 }" :visible="{opacity: 1, scale: 1}" :delay="600">
           <p class="border-4 border-gray-200 bg-gray-50 p-2.5 rounded-xl">
             Основным деловым преимуществом нашей компании является высокий профессионализм сотрудников, а также опыт
             выполнения проектов в сфере оценки и консалтинга с последующим согласованием результатов с крупнейшими
             международными аудиторскими компаниями.
           </p>
         </div>
-        <div v-motion :initial="{ opacity: 0.001, x: -500 }" :visible="{opacity: 1, x: 0}" :delay="1000">
+        <div v-motion :initial="{ opacity: 0.001, scale: 0 }" :visible="{opacity: 1, scale: 1}" :delay="900">
           <p class="px-2">
             Специалисты Компании EverestConsulting являются членами
             таких профессиональных организаций, как Саморегулируемая Межрегиональная Ассоциация Оценщиков
             (СМАО), Восточно-Европейский союз экспертов (OSV), а также
             получили квалификации Американского общества оценщиков(ASA).
           </p>
-        </div>
-      </div>
-
-      <div class="experience-box">
-        <div v-for="element of experienceGroup" class="experience-element">
-          <img class="mx-auto w-full max-w-[14rem]"
-               :src="getImageURL(element.img)" alt="err">
-          <div class="experience-element--services">
-              <span v-for="currService of element.services" :key="currService.id" class="service">
-                {{ currService.title }}
-              </span>
-          </div>
         </div>
       </div>
     </div>
@@ -138,9 +126,8 @@ export default {
   }
 
   .customer-section--content {
-    @apply lg:flex lg:items-stretch;
+    @apply w-full flex-col justify-center items-center;
     @apply md:space-y-8 lg:space-y-0 lg:space-x-4;
-    @apply lg:h-[70vh];
 
     .info-block-wrapper {
       @apply overflow-y-scroll overflow-x-hidden;
