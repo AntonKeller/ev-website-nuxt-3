@@ -50,16 +50,15 @@
             v-motion
             :initial="{
               opacity: 0.001,
+              translateX: -200*service.id,
               scale: 0.3
             }"
             :enter="{
               scale: 1,
               opacity: 1,
-              transition: {
-                mass: 0.5,
-              }
+              translateX: 0,
             }"
-            :delay="300*service.id"
+            :delay="200*service.id"
         >
           {{ service.txt }}
           <i class="pi pi-arrow-right ml-3 text-gray-400 font-extrabold"></i>
@@ -91,17 +90,17 @@ export default {
         {
           id: 1,
           txt: "Оценка бизнеса",
-          classes: "bg-red-500/20 hover:bg-red-500/70",
+          classes: "z-30 bg-red-500/20 hover:bg-red-500/70",
         },
         {
           id: 2,
           txt: "Финансовый консалтинг",
-          classes: "bg-cyan-500/20 hover:bg-cyan-500/70",
+          classes: "z-20 bg-cyan-500/20 hover:bg-cyan-500/70",
         },
         {
           id: 3,
           txt: "Строительный консалтинг",
-          classes: "bg-emerald-500/20 hover:bg-emerald-500/70",
+          classes: "z-10 bg-emerald-500/20 hover:bg-emerald-500/70",
         }
       ],
       infoBannerContentCards,
@@ -118,7 +117,7 @@ export default {
   @apply px-[40px] sm:px-[7vw] md:px-[15vw] lg:px-[12vw];
   @apply pt-28 pb-16 sm:py-[6vw] md:py-[8vw] lg:py-[9vw];
   @apply bg-blend-multiply;
-  background: rgba(103, 99, 99, 0.9999) top / cover no-repeat fixed url("../../assets/background/main_page/bg-everest.jpg");
+  background: rgba(103, 99, 99, 1) top / cover no-repeat fixed url("../../assets/background/main_page/bg-everest.jpg");
 }
 
 .banner--title {
@@ -136,7 +135,7 @@ export default {
   @apply text-base lg:text-lg;
   @apply transition-colors duration-150;
   @apply active:scale-[99%];
-  @apply text-gray-300 border-2 border-gray-200/20 rounded-xl backdrop-blur-xl;
+  @apply text-gray-300 border-2 border-gray-200/20 rounded-md backdrop-blur-xl;
 }
 
 </style>
