@@ -135,7 +135,7 @@ export default {
   @apply text-base lg:text-lg;
   @apply transition-colors duration-150;
   @apply active:scale-[99%];
-  @apply text-gray-300 border-2 border-gray-200/20 rounded-md backdrop-blur-xl;
+  @apply text-gray-200 border-2 border-gray-950/40 rounded-md backdrop-blur-xl;
 }
 
 </style>
