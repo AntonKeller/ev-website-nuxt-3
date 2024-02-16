@@ -94,7 +94,7 @@ export default {
     @apply overflow-hidden fixed top-0 left-0 right-0 z-20 sm:static;
     @apply flex flex-col items-stretch;
     @apply mx-0 sm:m-0 py-4 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-20;
-    @apply bg-gray-50;
+    @apply bg-gray-200;
   }
 </style>
 
