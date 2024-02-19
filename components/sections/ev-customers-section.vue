@@ -13,10 +13,12 @@
         </h2>
         <div class="chips">
           <div
-              class="chip"
               v-for="group of getGroups()"
+              :key="group.id"
+              :class="{'chip': !isSelected(group.id), 'chip-active': isSelected(group.id)}"
+              @click="chipCLick(group.id)"
           >
-            {{ group }}
+            {{ group.name }}
           </div>
         </div>
       </div>
@@ -49,6 +51,7 @@
     <!--        </div>-->
     <!--      </Slide>-->
     <!--    </Hooper>-->
+
   </div>
 </template>
 
@@ -62,9 +65,37 @@ export default {
 
   data: () => ({
     experienceGroup,
+    selected: [],
   }),
 
   methods: {
+
+    isSelected(id) {
+      return this.selected.find(_id => _id === id) || false;
+    },
+
+    unselect(id) {
+      this.selected = this.selected.filter(_id => _id !== id);
+    },
+
+    chipCLick(id) {
+
+      let status = this.isSelected(id);
+
+      console.log("status:", status);
+      console.log("arr size:", this.selected.length);
+
+      if (!status) {
+        this.selected.push(id);
+      } else {
+        this.unselect(id);
+      }
+
+    },
+
+    groupFilter() {
+
+    },
 
     getGroups() {
 
@@ -74,7 +105,7 @@ export default {
         e.services.forEach(group => arr[group.title] = group);
       });
 
-      return Object.keys(arr);
+      return Object.keys(arr).map((e, i) => ({id: i + 1, name: e}));
     },
 
     getImageURL(name) {
@@ -113,22 +144,17 @@ export default {
   }
 
   .title {
-    @apply w-full border-b border-b-rose-950 flex-col items-center justify-center ;
+    @apply w-full border-b border-b-rose-950 flex-col items-center justify-center;
   }
 
   .chips {
     @apply flex flex-wrap justify-center;
-
     @apply mb-4 gap-1;
     // lg
     @apply lg:my-8 lg:gap-2;
   }
 
   .chip-active {
-    @apply inline rounded-lg border-2 border-red-900 text-gray-50 bg-red-800;
-  }
-
-  .chip {
     @apply cursor-pointer;
     // common
     @apply inline rounded-lg border-2 border-red-900 text-gray-50 bg-red-800;
@@ -136,7 +162,16 @@ export default {
     @apply py-0.5 px-1 text-sm;
     // lg
     @apply lg:px-2.5 lg:text-sm;
+  }
 
+  .chip {
+    @apply cursor-pointer;
+    // common
+    @apply inline rounded-lg border-2 border-red-900 text-gray-50 bg-transparent;
+    // md
+    @apply py-0.5 px-1 text-sm;
+    // lg
+    @apply lg:px-2.5 lg:text-sm;
   }
 
   .logotypes-container {
@@ -152,7 +187,6 @@ export default {
     @apply md:w-[19.64vw] md:h-[8vw];
     // lg:
     @apply lg:w-[14.73vw] lg:h-[6vw];
-    //@apply w-[14vw] h-[5.7vw] opacity-70 hover:opacity-100;
   }
 
   .slider {

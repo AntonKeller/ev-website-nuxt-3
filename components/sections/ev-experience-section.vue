@@ -7,9 +7,9 @@
           :src="getDocImg()"
           alt="no img"
           v-motion
-          :initial="{opacity: 0, translateX: -50}"
-          :visible="{opacity: 1, translateX: 0}"
-          :delay="650"
+          :initial="{opacity: 0, scale: 0.01}"
+          :visible="{opacity: 1, scale: 1}"
+          :delay="450"
       >
 
       <div class="text-container">
@@ -85,16 +85,11 @@
 
 <script>
 
-import evChip from "../../components/ev-chip";
 import {experienceGroup} from "../../configs/experience";
 
 export default {
 
   name: "ev-experience-section",
-
-  components: {
-    evChip,
-  },
 
   methods: {
 
