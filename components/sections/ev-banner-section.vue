@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-container w-full px-1">
+  <div class="banner-container">
 
     <div class="z-10 flex flex-col lg:gap-y-4 items-center">
 
@@ -14,7 +14,7 @@
                 mass: 0.5,
               }
             }"
-            :delay="600"
+            :delay="1000"
         >
           Эверест <span class="inline-block py-2 px-6 bg-red-950 border-x-4 border-x-gray-50">Консалтинг</span>
         </h1>
@@ -35,13 +35,13 @@
                 mass: 0.5,
               }
             }"
-            :delay="600"
+            :delay="1000"
         >
           На рынке с 2010 года
         </h2>
       </div>
 
-      <div class="flex justify-center mt-4 gap-2 flex-wrap">
+      <div class="flex justify-center mt-8 gap-2 flex-wrap">
         <div
             v-for="service of serviceList"
             :key="service.id"
@@ -58,7 +58,7 @@
               opacity: 1,
               translateX: 0,
             }"
-            :delay="200*service.id"
+            :delay="100*service.id"
         >
           {{ service.txt }}
           <i class="pi pi-arrow-right ml-3 text-gray-400 font-extrabold"></i>
@@ -115,7 +115,7 @@ export default {
 .banner-container {
   @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(100vh-65px)];
   @apply px-[40px] sm:px-[7vw] md:px-[15vw] lg:px-[12vw];
-  @apply pt-28 pb-16 sm:py-[6vw] md:py-[8vw] lg:py-[9vw];
+  @apply pt-28 pb-16 py-[20vw] md:py-[16vw] lg:py-[9vw];
   @apply bg-blend-multiply;
   background: rgba(103, 99, 99, 1) top / cover no-repeat fixed url("../../assets/background/main_page/bg-everest.jpg");
 }
@@ -125,7 +125,7 @@ export default {
 }
 
 .banner--subtitle {
-  @apply mt-2 text-center font-extrabold text-gray-300 text-base md:text-lg lg:text-xl xl:text-4xl font-sans;
+  @apply text-center font-extrabold text-gray-300 text-base md:text-lg lg:text-xl xl:text-4xl font-sans;
 }
 
 .b--btn {
@@ -135,7 +135,7 @@ export default {
   @apply text-base lg:text-lg;
   @apply transition-colors duration-150;
   @apply active:scale-[99%];
-  @apply text-gray-200 border-2 border-gray-950/40 rounded-md backdrop-blur-xl;
+  @apply text-gray-200 border-2 border-gray-300/30 rounded-md backdrop-blur-xl;
 }
 
 </style>
