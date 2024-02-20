@@ -12,7 +12,7 @@
     </div>
     <div class="cards">
       <div v-for="employee of employees" :key="employee.id" class="card">
-        <img class="manager-ava" :src="getImageURL(employee.img)" alt="no img"/>
+        <img class="manager-ava blur-md" :src="getImageURL(employee.img)" alt="no img"/>
         <div class="card-description">
           <span class="text-gray-700 inline-block font-bold">{{ employee.fullName }}</span>
           <span class="text-red-700 inline-block font-medium">{{ employee.post }}</span>

@@ -113,7 +113,7 @@ export default {
 <style scoped>
 
 .banner-container {
-  @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(100vh-65px)];
+  @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(100vh-58px)];
   @apply px-[40px] sm:px-[7vw] md:px-[15vw] lg:px-[12vw];
   @apply pt-28 pb-16 py-[20vw] md:py-[16vw] lg:py-[9vw];
   @apply bg-blend-multiply;

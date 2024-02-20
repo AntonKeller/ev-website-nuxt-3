@@ -1,25 +1,24 @@
 <template>
-  <div class="flex flex-col md:pl-6 lg:pl-8 xl:pl-10 background">
+  <div class="services-container">
 
-    <ul class="w-full flex flex-col justify-center items-start">
+    <ul class="services-list">
       <li
-          class="hover:text-red-700 cursor-pointer show-left font-bold text-lg lg:text-xl mb-4 text-red-50 text-center w-full transition-colors duration-150"
+          class="services-list-e"
           v-for="tab of serviceTabs"
           @click="setActiveID(tab.id)"
-          :class="{'uppercase mt-4':tab.sub, 'md:pl-10':!tab.sub}">
+          :class="{'uppercase':tab.sub, 'md:pl-8':!tab.sub}">
         {{ tab.title }}
         <div v-if="tab.id === 8" class="w-full gray-line"></div>
       </li>
     </ul>
 
-    <div
-        class="px-5 sm:px-10 md:px-16 lg:px-24 xl:px-28 md:pt-32 flex flex-col justify-start items-start text-red-50">
+    <div class="content-list">
       <div
           v-for="content of getActiveContent.content"
           :key="content.id"
           class="flex flex-col justify-start items-start md:max-w-full">
 
-        <h4 v-if="content.title.length" class="show-left font-bold text-2xl mb-4">
+        <h4 v-if="content.title.length" class="show-left font-bold text-2xl mb-4 bg-red-800 px-3 py-1.5 text-gray-50">
           {{ content.title }}
         </h4>
 
@@ -27,16 +26,14 @@
 
         <p v-if="content.textContent.length" v-for="text of content.textContent" class="text-lg mb-6">{{ text }}</p>
 
-        <ul v-if="content.enums.length" class="text-red-50 mt-4">
+        <ul v-if="content.enums.length" class=" mt-4">
           <li v-for="enumValue of content.enums" class="text-lg">
             <span class="inline-block w-4 h-2 rounded-sm red-line-heavy"></span>
             {{ enumValue }}
           </li>
         </ul>
       </div>
-
     </div>
-
   </div>
 </template>
 
@@ -106,41 +103,57 @@ export default {
 
 <style scoped>
 
+.services-container {
+  @apply w-full flex flex-row h-[calc(100vh-58px)] max-h-[calc(100vh-58px)] overflow-y-scroll;
+  @apply md:px-14 md:pt-12 lg:px-28 lg:pt-12 lg:pt-24 xl:px-52 bg-gray-100;
+}
+
+.services-list {
+  @apply w-full flex flex-col justify-start items-stretch min-w-fit max-w-fit gap-y-2.5;
+}
+
+.services-list-e {
+  @apply bg-red-800 px-4 py-1.5 rounded-tr-xl rounded-bl-xl border-2 border-red-900/80;
+  /*Hover*/
+  @apply hover:bg-gray-200/50 hover:text-red-700;
+  @apply cursor-pointer font-black text-gray-50 text-left w-full transition-colors duration-150;
+}
+
+.content-list {
+  @apply ml-4 sm:ml-6 md:ml-8 lg:ml-12 xl:ml-16 flex flex-col justify-start items-start text-gray-900;
+}
+
 /**::-webkit-scrollbar {*/
 /*  width: 0;*/
 /*}*/
 
-.background {
-  @apply bg-red-950;
-  /*background: url("@/assets/background/background-red-circles.png") transparent no-repeat center / cover;*/
-}
 
-.red-line, .gray-line {
-  min-height: 2px;
-}
+/*.red-line, .gray-line {*/
+/*  min-height: 2px;*/
+/*}*/
 
-.red-line-heavy {
-  background: linear-gradient(to right, rgba(99, 75, 91, 0.5), rgb(129, 99, 125), rgba(99, 75, 87, 0.5));
-}
+/*.red-line-heavy {*/
+/*  background: linear-gradient(to right, rgba(99, 75, 91, 0.5), rgb(129, 99, 125), rgba(99, 75, 87, 0.5));*/
+/*}*/
 
-.gray-line {
-  background: linear-gradient(to right, rgba(75, 85, 99, 0.1), rgba(75, 85, 99, 0.35), rgb(99, 112, 129), rgba(75, 85, 99, 0.35), rgba(75, 85, 99, 0.1));
-}
+/*.gray-line {*/
+/*  background: linear-gradient(to right, rgba(75, 85, 99, 0.1), rgba(75, 85, 99, 0.35), rgb(99, 112, 129), rgba(75, 85, 99, 0.35), rgba(75, 85, 99, 0.1));*/
+/*}*/
 
-.red-line {
-  background: linear-gradient(to right, rgba(99, 75, 92, 0.1), rgba(99, 75, 91, 0.35), rgb(129, 99, 125), rgba(99, 75, 87, 0.93), rgba(75, 85, 99, 0.1));
-}
+/*.red-line {*/
+/*  background: linear-gradient(to right, rgba(99, 75, 92, 0.1), rgba(99, 75, 91, 0.35), rgb(129, 99, 125), rgba(99, 75, 87, 0.93), rgba(75, 85, 99, 0.1));*/
+/*}*/
 
-h1, h2, h3, h4, h5, li, p {
-  animation: showFast ease 0.7s;
-  text-align: left;
-}
+/*h1, h2, h3, h4, h5, li, p {*/
+/*  animation: showFast ease 0.7s;*/
+/*  text-align: left;*/
+/*}*/
 
-@keyframes showFast {
-  from {
-    opacity: 0;
-    transform: translateX(25px);
-  }
-}
+/*@keyframes showFast {*/
+/*  from {*/
+/*    opacity: 0;*/
+/*    transform: translateX(25px);*/
+/*  }*/
+/*}*/
 
 </style>

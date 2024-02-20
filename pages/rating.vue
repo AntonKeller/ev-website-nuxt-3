@@ -2,7 +2,7 @@
   <div class="main-container">
 
     <div class="preview-container">
-      <h1 class="rating-preview--title">Рейтинг компании</h1>
+      <h1 class="rating-preview--title">Рейтинги и достижения</h1>
       <p
         class="rating-preview--description"
         v-for="element of title.descriptions"
@@ -12,44 +12,62 @@
       </p>
     </div>
 
-<!--    <Hooper-->
-<!--      group="group1"-->
-<!--      class="rating-button-slider"-->
-<!--      autoPlay-->
-<!--      playSpeed=6000-->
-<!--      itemsToShow=1-->
-<!--    >-->
-<!--      <Slide-->
-<!--        class="rating-button-slide"-->
-<!--        v-for="element of getRatingYears()"-->
-<!--        @click="setActiveYear(element.year)"-->
-<!--      >-->
-<!--        <span class="block ml-2 text-gray-100/20" > < </span>-->
-<!--        <h3 class="block">{{ element.year }}</h3>-->
-<!--        <span class="block mr-2 text-gray-100/20" > > </span>-->
-<!--      </Slide>-->
-<!--    </Hooper>-->
+    <carousel
+        :items-to-show="1"
+        class="rating-button-slider"
+        autoplay="6000"
+        wrapAround="true"
+        pauseAutoplayOnHover="true"
+        dir="rtl"
+    >
+      <slide
+          v-for="e of getRatingYears()"
+          @click="setActiveYear(e.year)"
+          :key="e.id"
+          class="rating-button-slide"
+      >
+        <span class="block font-extralight text-gray-800"> < </span>
+        <h3 class="block">{{ e.year }}</h3>
+        <span class="block font-extralight text-gray-800"> > </span>
+      </slide>
+    </carousel>
 
-<!--    <Hooper group="group1" class="rating-info-slider">-->
-<!--      <Slide class="rating-button-slide" v-for="element of getRatingYears()" @click="setActiveYear(element.year)">-->
-<!--        <section class="ratingContainer">-->
-<!--          <div class="ratingElement animate-show-2" v-for="description of getInfoByYear(element.year)">-->
-<!--            <div class="flex justify-center bg-gray-200 text-gray-700 items-center text-center w-16 h-16 font-extrabold text-lg md:text-xl lg:text-3xl rounded-t-sm rounded-b-3xl border-4 border-gray-600">-->
-<!--              <p>{{ description.value }}</p>-->
-<!--            </div>-->
-<!--            <p>{{ description.title }}</p>-->
-<!--          </div>-->
-<!--        </section>-->
-<!--      </Slide>-->
-<!--    </Hooper>-->
+
+    <carousel
+        :items-to-show="1"
+        class="rating-info-slider"
+        autoplay="6000"
+        wrapAround="true"
+        pauseAutoplayOnHover="true"
+        dir="rtl"
+    >
+      <slide
+          v-for="e of getRatingYears()"
+          @click="setActiveYear(e.year)"
+          :key="e.id"
+          class="rating-button-slide"
+      >
+        <section class="ratingContainer">
+          <div
+              class="ratingElement animate-show-2"
+               v-for="description of getInfoByYear(e.year)"
+          >
+            <div class="flex justify-center bg-gray-200 text-gray-700 items-center text-center w-16 h-16 font-extrabold text-lg md:text-xl lg:text-3xl rounded-t-sm rounded-b-3xl border-4 border-gray-600">
+              <p>{{ description.value }}</p>
+            </div>
+            <p>{{ description.title }}</p>
+          </div>
+        </section>
+      </slide>
+    </carousel>
 
   </div>
 </template>
 
 <script>
 import {rating} from "@/configs/ratingConfig.ts"
-// import {Hooper, Slide} from "hooper";
-// import 'hooper/dist/hooper.css';
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 export default {
   name: "rating",
@@ -73,8 +91,10 @@ export default {
   },
 
   components: {
-    // Hooper,
-    // Slide,
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
   },
 
   data() {
@@ -124,10 +144,9 @@ export default {
 <style lang="scss" scoped>
 
 .main-container {
-  @apply w-full h-[65vh] overflow-y-scroll;
   @apply pt-24 pb-12 sm:pt-8 md:pt-14 lg:pt-16 xl:pt-20;
   @apply px-4 sm:pl-[5vw] sm:pr-[10vw] md:pr-[10vw] lg:pr-[15vw] xl:pr-[30vw];
-  @apply bg-gray-900 bg-blend-multiply;
+  @apply bg-blend-multiply;
   background: top / cover no-repeat fixed url("@/assets/background/bg-rgb-three-lines-2.png");
 
   &::-webkit-scrollbar {
@@ -139,6 +158,8 @@ export default {
 // Контейнер Preview контента
 .preview-container {
 
+  @apply bg-gray-100 border-2 border-gray-400 rounded-lg p-6;
+
   // Общее для Preview заголовка и описания
   .rating-preview--title, .rating-preview--description {
 
@@ -147,7 +168,7 @@ export default {
   // Preview Заголовок
   .rating-preview--title {
     @apply bg-red-900 sm:bg-transparent py-1 sm:py-0 rounded-sm;
-    @apply text-gray-200 sm:text-gray-300 font-extrabold text-center sm:text-left;
+    @apply text-gray-200 sm:text-red-600 font-extrabold text-center sm:text-left;
     @apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
   }
 
@@ -155,7 +176,7 @@ export default {
   .rating-preview--description {
     @apply mt-2 sm:mt-4 p-[8vw] sm:p-0;
     @apply bg-gray-100 sm:bg-transparent rounded-sm;
-    @apply text-gray-700 sm:text-gray-200;
+    @apply text-gray-700 sm:text-gray-800;
     @apply text-center sm:text-left;
     @apply text-base md:text-lg;
   }
@@ -166,9 +187,9 @@ export default {
   @apply w-full sm:max-w-[280px] h-fit mt-2 sm:mt-6;
 
   .rating-button-slide {
-    @apply flex justify-between;
-    @apply font-extrabold text-center text-gray-100 py-2 rounded-sm sm:rounded-md;
-    @apply bg-gradient-to-r from-indigo-800/50 to-red-800/80;
+    @apply flex justify-evenly;
+    @apply font-extrabold text-center text-gray-800 py-2 rounded-sm sm:rounded-md;
+    @apply bg-gray-100 border-4 border-gray-200;
   }
 }
 
@@ -178,7 +199,7 @@ export default {
 
 .ratingContainer {
   @apply w-full mt-6;
-  @apply flex flex-wrap items-stretch justify-between;
+  @apply flex flex-wrap items-stretch justify-end;
   @apply gap-6 sm:gap-y-10 sm:gap-x-6;
 }
 
