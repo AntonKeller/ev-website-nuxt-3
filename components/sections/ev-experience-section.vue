@@ -125,7 +125,7 @@ export default {
 
 .experience-container {
 
-  @apply text-gray-700;
+  @apply text-gray-700 h-[85vh];
   @apply flex justify-center items-center;
   @apply border-x-8 border-gray-950;
   background: top / cover no-repeat fixed url("../../assets/background/bg-lines-color.png");

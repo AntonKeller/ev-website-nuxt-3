@@ -24,10 +24,7 @@
         <h2
             class="banner--subtitle"
             v-motion
-            :initial="{
-              y: -15,
-              opacity: 0.001
-            }"
+            :initial="{y: -15, opacity: 0.001}"
             :enter="{
               y: 0,
               opacity: 1,
@@ -48,17 +45,9 @@
             class="b--btn"
             :class="service.classes"
             v-motion
-            :initial="{
-              opacity: 0.001,
-              translateX: -200*service.id,
-              scale: 0.3
-            }"
-            :enter="{
-              scale: 1,
-              opacity: 1,
-              translateX: 0,
-            }"
-            :delay="100*service.id"
+            :initial="{opacity: 0}"
+            :enter="{opacity: 1, translateX: 0}"
+            :delay="150*service.id"
         >
           {{ service.txt }}
           <i class="pi pi-arrow-right ml-3 text-gray-400 font-extrabold"></i>

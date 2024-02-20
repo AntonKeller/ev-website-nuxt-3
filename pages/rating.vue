@@ -158,17 +158,12 @@ export default {
 // Контейнер Preview контента
 .preview-container {
 
-  @apply bg-gray-100 border-2 border-gray-400 rounded-lg p-6;
-
-  // Общее для Preview заголовка и описания
-  .rating-preview--title, .rating-preview--description {
-
-  }
+  @apply bg-gray-100 backdrop-blur-lg border-2 border-gray-950/35 rounded-lg p-6;
 
   // Preview Заголовок
   .rating-preview--title {
     @apply bg-red-900 sm:bg-transparent py-1 sm:py-0 rounded-sm;
-    @apply text-gray-200 sm:text-red-600 font-extrabold text-center sm:text-left;
+    @apply text-gray-200 sm:text-red-950 font-extrabold text-center sm:text-left;
     @apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
   }
 
@@ -176,7 +171,7 @@ export default {
   .rating-preview--description {
     @apply mt-2 sm:mt-4 p-[8vw] sm:p-0;
     @apply bg-gray-100 sm:bg-transparent rounded-sm;
-    @apply text-gray-700 sm:text-gray-800;
+    @apply text-gray-700 sm:text-gray-900;
     @apply text-center sm:text-left;
     @apply text-base md:text-lg;
   }

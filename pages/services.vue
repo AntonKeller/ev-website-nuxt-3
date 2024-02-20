@@ -3,6 +3,16 @@
 
     <ul class="services-list">
       <li
+          v-motion
+          :initial="{x: -15, opacity: 0}"
+          :enter="{
+              x: 0,
+              opacity: 1,
+              transition: {
+                mass: 0.5,
+              }
+            }"
+          :delay="tab.id * 15"
           class="services-list-e"
           v-for="tab of serviceTabs"
           @click="setActiveID(tab.id)"
@@ -96,7 +106,7 @@ export default {
       console.log("id:", this.activeTabId);
     },
 
-  },
+  }
 
 }
 
@@ -122,40 +132,8 @@ export default {
 }
 
 .content-list {
-  @apply ml-4 sm:ml-6 md:ml-8 lg:ml-12 xl:ml-16 flex flex-col justify-start items-start text-gray-900;
+  @apply ml-4 sm:ml-6 md:ml-8 lg:ml-12 xl:ml-16;
+  @apply flex flex-col justify-start items-start text-gray-900;
 }
-
-/**::-webkit-scrollbar {*/
-/*  width: 0;*/
-/*}*/
-
-
-.red-line, .gray-line {
-  min-height: 2px;
-}
-
-/*.red-line-heavy {*/
-/*  background: linear-gradient(to right, rgba(99, 75, 91, 0.5), rgb(129, 99, 125), rgba(99, 75, 87, 0.5));*/
-/*}*/
-
-/*.gray-line {*/
-/*  background: linear-gradient(to right, rgba(75, 85, 99, 0.1), rgba(75, 85, 99, 0.35), rgb(99, 112, 129), rgba(75, 85, 99, 0.35), rgba(75, 85, 99, 0.1));*/
-/*}*/
-
-/*.red-line {*/
-/*  background: linear-gradient(to right, rgba(99, 75, 92, 0.1), rgba(99, 75, 91, 0.35), rgb(129, 99, 125), rgba(99, 75, 87, 0.93), rgba(75, 85, 99, 0.1));*/
-/*}*/
-
-/*h1, h2, h3, h4, h5, li, p {*/
-/*  animation: showFast ease 0.7s;*/
-/*  text-align: left;*/
-/*}*/
-
-/*@keyframes showFast {*/
-/*  from {*/
-/*    opacity: 0;*/
-/*    transform: translateX(25px);*/
-/*  }*/
-/*}*/
 
 </style>
