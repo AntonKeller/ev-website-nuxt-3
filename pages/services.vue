@@ -6,9 +6,9 @@
           class="services-list-e"
           v-for="tab of serviceTabs"
           @click="setActiveID(tab.id)"
-          :class="{'uppercase':tab.sub, 'md:pl-8':!tab.sub}">
+      >
+        <!--        :class="{'uppercase':tab.sub, 'md:pl-8':!tab.sub}"-->
         {{ tab.title }}
-        <div v-if="tab.id === 8" class="w-full gray-line"></div>
       </li>
     </ul>
 
@@ -16,22 +16,24 @@
       <div
           v-for="content of getActiveContent.content"
           :key="content.id"
-          class="flex flex-col justify-start items-start md:max-w-full">
+          class="flex flex-col justify-start items-start md:max-w-full gap-y-5">
 
-        <h4 v-if="content.title.length" class="show-left font-bold text-2xl mb-4 bg-red-800 px-3 py-1.5 text-gray-50">
+        <h4
+            v-if="content.title.length"
+            class="show-left font-bold text-4xl mb-4 bg-gray-300 px-4 py-2.5 text-gray-800 rounded-tl-lg rounded-br-lg border-b-2 border-b-red-800"
+        >
           {{ content.title }}
         </h4>
 
-        <div v-if="content.underline" class="w-full gray-line"></div>
+        <p v-if="content.textContent.length" v-for="text of content.textContent" class="text-lg">{{ text }}</p>
 
-        <p v-if="content.textContent.length" v-for="text of content.textContent" class="text-lg mb-6">{{ text }}</p>
-
-        <ul v-if="content.enums.length" class=" mt-4">
+        <ul v-if="content.enums.length">
           <li v-for="enumValue of content.enums" class="text-lg">
             <span class="inline-block w-4 h-2 rounded-sm red-line-heavy"></span>
             {{ enumValue }}
           </li>
         </ul>
+
       </div>
     </div>
   </div>
@@ -116,7 +118,7 @@ export default {
   @apply bg-red-800 px-4 py-1.5 rounded-tr-xl rounded-bl-xl border-2 border-red-900/80;
   /*Hover*/
   @apply hover:bg-gray-200/50 hover:text-red-700;
-  @apply cursor-pointer font-black text-gray-50 text-left w-full transition-colors duration-150;
+  @apply cursor-pointer font-black text-gray-100 text-left w-full transition-colors duration-150;
 }
 
 .content-list {
@@ -128,9 +130,9 @@ export default {
 /*}*/
 
 
-/*.red-line, .gray-line {*/
-/*  min-height: 2px;*/
-/*}*/
+.red-line, .gray-line {
+  min-height: 2px;
+}
 
 /*.red-line-heavy {*/
 /*  background: linear-gradient(to right, rgba(99, 75, 91, 0.5), rgb(129, 99, 125), rgba(99, 75, 87, 0.5));*/
