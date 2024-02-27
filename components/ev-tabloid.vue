@@ -27,57 +27,6 @@
       </slide>
     </carousel>
 
-    <!--      <hooper-pagination slot="hooper-addons"></hooper-pagination>-->
-    <!--    </Hooper>-->
-
-    <!--    <Hooper-->
-    <!--      class="tabloid"-->
-    <!--      :class="{hidden: !p1024}"-->
-    <!--      :itemsToShow="2"-->
-    <!--      autoPlay-->
-    <!--    >-->
-    <!--      <Slide-->
-    <!--        class="w-fit"-->
-    <!--        v-for="elem of tabloids"-->
-    <!--        :key="elem.id"-->
-    <!--      >-->
-    <!--        <div class="slide-content w-fit">-->
-    <!--          <div class="slide-content&#45;&#45;wrapper w-fit">-->
-    <!--            <div class="slide-mark">everest</div>-->
-    <!--            <div class="tabloid&#45;&#45;title">{{ elem.title }}</div>-->
-    <!--            <div class="tabloid&#45;&#45;subtitle">{{ elem.subtitle }}</div>-->
-    <!--            <div class="tabloid&#45;&#45;description">{{ elem.text }}</div>-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </Slide>-->
-
-    <!--      <hooper-pagination slot="hooper-addons"></hooper-pagination>-->
-    <!--    </Hooper>-->
-
-    <!--    <Hooper-->
-    <!--      class="tabloid"-->
-    <!--      :class="{hidden: !p640}"-->
-    <!--      autoPlay-->
-    <!--      :itemsToShow="1"-->
-    <!--    >-->
-    <!--      <Slide-->
-    <!--        class="w-fit"-->
-    <!--        v-for="elem of tabloids"-->
-    <!--        :key="elem.id"-->
-    <!--      >-->
-    <!--        <div class="slide-content w-fit">-->
-    <!--          <div class="slide-content&#45;&#45;wrapper w-fit">-->
-    <!--            <div class="slide-mark">everest</div>-->
-    <!--            <div class="tabloid&#45;&#45;title">{{ elem.title }}</div>-->
-    <!--            <div class="tabloid&#45;&#45;subtitle">{{ elem.subtitle }}</div>-->
-    <!--            <div class="tabloid&#45;&#45;description">{{ elem.text }}</div>-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </Slide>-->
-
-    <!--      <hooper-pagination slot="hooper-addons"></hooper-pagination>-->
-    <!--    </Hooper>-->
-
   </div>
 </template>
 

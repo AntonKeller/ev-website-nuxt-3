@@ -10,7 +10,7 @@ interface ExLogotypeType {
   services: Array<TServices>
 }
 
-export const experienceGroup: Array<ExLogotypeType> =
+export const companies: Array<ExLogotypeType> =
   [
     {
       id: 1,

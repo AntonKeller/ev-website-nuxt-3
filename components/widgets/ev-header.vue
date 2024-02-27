@@ -1,5 +1,12 @@
 <template>
-  <header class="ev-header">
+  <header
+      v-motion
+      :initial="{opacity: 0.001}"
+      :enter="{opacity: 1}"
+      :delay="1000"
+      class="ev-header"
+      :class="{'bg-gray-50/10 backdrop-blur-2xl ml-4': menuIsOpen}"
+  >
 
     <div class="w-full flex items-center justify-center sm:justify-between transition-all text-gray-700">
 
@@ -7,19 +14,20 @@
         <img
             @click="activePage=0"
             class="hidden sm:block select-none w-10 h-10 sm:w-12 sm:h-8 md:w-16 md:h-10 opacity-80"
-            src="~assets/logotypes/ev-logotype-4-gray.png"
+            src="~assets/logotypes/ev-logotype-4-gray-light.png"
             alt="no img"
         >
-        <h2 class="hover:text-red-800 transition-colors duration-300 font-sans font-medium text-base lg:text-lg">Everest
-          consulting</h2>
+        <h2 class="text-fuchsia-50/80 hover:text-red-300 transition-colors duration-300 font-sans font-medium text-base lg:text-lg">
+          Everest consulting
+        </h2>
       </NuxtLink>
 
       <nav class="hidden sm:block">
-        <ul class="flex items-center justify-center space-x-6">
-          <NuxtLink id="1" to="/services" class="hover:text-red-800 transition-colors duration-300 cursor-pointer">
+        <ul class="flex items-center justify-center space-x-3.5">
+          <NuxtLink id="1" to="/services" class="text-fuchsia-50/80 rounded-xl hover:text-red-300 transition-colors duration-300 cursor-pointer">
             Услуги
           </NuxtLink>
-          <NuxtLink id="2" to="/rating" class="hover:text-red-800 transition-colors duration-300 cursor-pointer">
+          <NuxtLink id="2" to="/rating" class="text-fuchsia-50/80 rounded-xl hover:text-red-300 transition-colors duration-300 cursor-pointer">
             Достижения
           </NuxtLink>
         </ul>
@@ -30,7 +38,7 @@
           class="ml-auto block sm:hidden flex items-center"
       >
         <svg
-            class=" cursor-pointer w-10 h-10 sm:ml-4 text-gray-600"
+            class=" cursor-pointer w-10 h-10 sm:ml-4 text-gray-200"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -71,6 +79,7 @@
 </template>
 
 <script>
+
 import {navLinks} from '../../configs/headerConfig';
 
 export default {
@@ -98,13 +107,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 .ev-header {
-  @apply overflow-hidden fixed top-0 left-0 right-0 z-20 sm:static;
+  @apply absolute;
+  /*@apply  sm:static;*/
+  @apply overflow-hidden top-0 left-0 right-0 z-20 rounded-3xl mt-2 md:mt-6;
+  @apply mx-2 sm:m-0 py-6 sm:py-10 px-8 sm:px-12 md:px-16 lg:px-20 xl:px-20;
   @apply flex flex-col items-stretch;
-  @apply mx-0 sm:m-0 py-4 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-20;
-  @apply bg-gray-100;
+  @apply sm:bg-transparent;
 }
+
 </style>
 
 

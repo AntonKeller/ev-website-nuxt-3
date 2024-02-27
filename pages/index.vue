@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-hidden bg-gray-100">
+  <div class="scroll-hidden bg-gray-50 px-2 pt-2 md:px-4 md:pt-3.5">
     <!--   MAIN BANNER SECTION   -->
     <evBannerSection/>
     <!--   Experience SECTION   -->

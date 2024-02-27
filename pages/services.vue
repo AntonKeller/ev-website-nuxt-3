@@ -1,6 +1,5 @@
 <template>
   <div class="services-container">
-
     <ul class="services-list">
       <li
           v-motion
@@ -117,7 +116,7 @@ export default {
 
 .services-container {
   @apply w-full flex flex-row h-[calc(100vh-58px)] max-h-[calc(100vh-58px)] overflow-y-scroll;
-  @apply md:px-14 md:pt-12 lg:px-28 lg:pt-12 lg:pt-24 xl:px-52 bg-gray-100;
+  @apply md:px-14 md:pt-12 lg:px-28 lg:pt-12 lg:pt-24 xl:px-52 bg-gray-800;
 }
 
 .services-list {
