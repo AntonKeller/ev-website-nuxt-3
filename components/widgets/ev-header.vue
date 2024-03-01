@@ -62,7 +62,7 @@
         v-if="menuIsOpen"
         class="sm:hidden bg-transparent mt-4 pt-1 border-t border-t-gray-700/15"
     >
-      <ul class="flex flex-col gap-y-4 mt-4 text-gray-700">
+      <ul class="flex flex-col gap-y-4 mt-4 text-gray-200">
         <li
             @click="openPage(link.id)"
             class="cursor-pointer"

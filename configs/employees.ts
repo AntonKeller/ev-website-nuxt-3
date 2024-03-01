@@ -28,18 +28,18 @@ export const employees: Array<TEmployee> = [
     post: "Директор по развитию",
     area: "Moskow",
   },
-  {
-    id: 4,
-    img: "avatar-1",
-    fullName: "Иванов Генадий Викторович",
-    post: "Финансовый директор",
-    area: "Moskow",
-  },
-  {
-    id: 5,
-    img: "avatar-3",
-    fullName: "Иванов Генадий Викторович",
-    post: "Финансовый директор",
-    area: "Moskow",
-  },
+  // {
+  //   id: 4,
+  //   img: "avatar-1",
+  //   fullName: "Иванов Генадий Викторович",
+  //   post: "Финансовый директор",
+  //   area: "Moskow",
+  // },
+  // {
+  //   id: 5,
+  //   img: "avatar-3",
+  //   fullName: "Иванов Генадий Викторович",
+  //   post: "Финансовый директор",
+  //   area: "Moskow",
+  // },
 ]

@@ -157,7 +157,7 @@ export default {
 
 .experience-container {
   @apply bg-gradient-to-t from-gray-50;
-  @apply relative text-gray-700 md:h-[72vh] lg:h-[80vh];
+  @apply relative text-gray-700 md:h-auto lg:min-h-[80vh];
   @apply flex justify-center items-center;
 }
 

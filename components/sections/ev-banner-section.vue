@@ -102,7 +102,7 @@ export default {
 }
 
 .banner-container {
-  @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(100vh)] rounded-3xl;
+  @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(99vh)] rounded-3xl;
   @apply px-[40px] sm:px-[8vw] md:px-[15vw] lg:px-[12vw];
   @apply pt-28 pb-10 py-[20vw] md:py-[16vw] lg:py-[9vw];
   @apply bg-blend-multiply;

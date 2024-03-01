@@ -24,12 +24,21 @@
 </template>
 
 <script>
-import {employees} from "@/configs/employees";
+import {employees} from "../../configs/employees";
+import 'vue3-carousel/dist/carousel.css';
+import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel';
 
 
 export default {
 
   name: "ev-managers",
+
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation
+  },
 
   data() {
     return {
