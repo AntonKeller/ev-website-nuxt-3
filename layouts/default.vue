@@ -1,10 +1,10 @@
 <template>
   <div>
-    <evHeader/>
-    <transition name="bounce">
-      <slot/>
-    </transition>
-    <!--    <evFooter />-->
+<!--    <evHeader/>-->
+<!--    <transition name="bounce">-->
+<!--      <slot/>-->
+<!--    </transition>-->
+    <evFooter/>
   </div>
 </template>
 
