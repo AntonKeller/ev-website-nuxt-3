@@ -1,9 +1,9 @@
 <template>
   <div>
-<!--    <evHeader/>-->
-<!--    <transition name="bounce">-->
-<!--      <slot/>-->
-<!--    </transition>-->
+    <evHeader/>
+    <transition name="bounce">
+      <slot/>
+    </transition>
     <evFooter/>
   </div>
 </template>

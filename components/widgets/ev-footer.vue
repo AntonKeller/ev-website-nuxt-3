@@ -1,54 +1,75 @@
 <template>
   <footer class="footer-container">
-    <div class="elements">
-      <div class="element" v-for="e of data">
-        <img v-if="!!e.img" class="w-[17px] h-[17px]" :src="getImageURL(e.img || '')" alt="no img">
-        <div style="font-family: 'SF Pro Display'">{{ e.content }}</div>
-      </div>
+
+    <!--    <img class="w-[36px] h-[28px]" :src="getImageURL('../../assets/logotypes/ev-logotype-4-gray.png')" alt="no img">-->
+
+    <div class="element">
+      <div>8 (495) 717-01-01</div>
+      <img class="w-[14px] h-[14px]" :src="getImageURL('../../assets/icons/phone-icon.png')" alt="no img">
     </div>
+
+    <div class="element">
+      <div>info@evcons.ru</div>
+      <img class="w-[14px] h-[14px]" :src="getImageURL('../../assets/icons/email-icon.png')" alt="no img">
+    </div>
+
+    <div class="element">
+      <div>Москва, 3-я улица Ямского поля, д 2 к 7, офис 301</div>
+      <img class="w-[14px] h-[14px]" :src="getImageURL('../../assets/icons/address-icon.png')" alt="no img">
+    </div>
+
+    <div class="element">
+      <img class="opacity-75 w-[36px] h-[28px]" :src="getImageURL('../../assets/logotypes/ev-logotype-4-gray.png')" alt="no img">
+      <div>© 2024, ООО Эверест Консалтиг</div>
+    </div>
+
   </footer>
 </template>
 
 <script>
 export default {
+
   name: "ev-footer",
 
   methods: {
-    getImageURL: (name) => new URL(`../../assets/icons/${name}`, import.meta.url).href
+    getImageURL: (name) => new URL(name, import.meta.url).href
   },
 
-  data() {
-    return {
-      data: [
-        {img: "phone-icon.png", content: "8 (495) 717-01-01"},
-        {img: "email-icon.png", content: "info@evcons.ru"},
-        {img: "address-icon.png", content: "Москва, 3-я улица Ямского поля, д 2 к 7, офис 301"},
-        {content: "Copyright © 2023, ООО Эверест Консалтиг"},
-      ],
-    }
-  }
+  data: () => ({
+    base: [
+      {img: "../../assets/icons/phone-icon.png", content: "8 (495) 717-01-01"},
+      {img: "../../assets/icons/email-icon.png", content: "info@evcons.ru"},
+      {img: "../../assets/icons/address-icon.png", content: "Москва, 3-я улица Ямского поля, д 2 к 7, офис 301"},
+      {img: '../../assets/logotypes/ev-logotype-4-gray.png', content: "Copyright © 2023, ООО Эверест Консалтиг"},
+    ],
+  })
+
 }
 </script>
 
 <style scoped>
 
 .footer-container {
-  @apply w-full flex flex-col text-gray-100 text-sm text-center sm:text-left;
+  @apply w-full flex flex-col text-gray-100 text-center sm:text-left space-y-2.5 lg:space-y-3.5;
   @apply px-[calc(16vw-6px)] sm:px-[12vw] md:px-[12vw] lg:px-10 xl:px-12;
-  @apply py-6 sm:py-8 md:py-10 lg:py-12 xl:py-14;
-  background: rgb(17 24 39) center / cover no-repeat fixed url("assets/background/bg-lines-color.png");
+  @apply py-6 sm:py-8 md:py-10 lg:py-12 xl:py-14 bg-gray-100;
+  text-shadow: 1px 1px 4px rgb(0, 0, 0, .15);
+  /*background: rgb(189, 192, 199) center / cover no-repeat fixed url("assets/background/bg-lines-color.png");*/
 }
 
 .elements {
-  @apply w-full flex flex-col items-center md:items-start space-y-5 sm:space-y-4 sm:items-start;
+  @apply flex flex-col items-center md:items-start space-y-5 sm:space-y-4 sm:items-start;
 }
 
 .element {
-  @apply flex items-center text-xs md:text-sm text-left space-x-2.5 sm:space-y-0 sm:space-x-3 text-gray-300;
+  /* xs */
+  @apply flex text-center items-center text-xs space-x-2.5 text-gray-600;
+  @apply sm:space-x-3 text-left;
+  @apply md:text-sm;
 }
 
 .element:last-child {
-  @apply border-t border-t-gray-300/20 pt-2.5 font-semibold;
+  @apply border-t border-t-gray-600/20 pt-2.5 md:pt-4 font-semibold text-red-900/90;
 }
 
 </style>

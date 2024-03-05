@@ -12,7 +12,7 @@
     </div>
     <div class="cards">
       <div v-for="employee of employees" :key="employee.id" class="card">
-        <img class="manager-ava blur-md" :src="getImageURL(employee.img)" alt="no img"/>
+        <img class="manager-ava blur" :src="getImageURL(employee.img)" alt="no img"/>
         <div class="card-description">
           <span class="text-gray-700 inline-block font-bold">{{ employee.fullName }}</span>
           <span class="text-red-700 inline-block font-medium">{{ employee.post }}</span>
@@ -47,11 +47,7 @@ export default {
   },
 
   methods: {
-
-    getImageURL(name) {
-      return new URL(`../../assets/avatars/${name}.png`, import.meta.url).href
-    }
-
+    getImageURL: (name) => new URL(`../../assets/avatars/${name}.png`, import.meta.url).href
   }
 
 }
@@ -61,11 +57,10 @@ export default {
 
 .managers-section {
   @apply w-full text-gray-700 relative overflow-hidden;
-  @apply border-8 border-b-red-800 border-x-gray-100 border-t-gray-100;
+  @apply rounded-lg;
   @apply px-[calc(8vw-6px)] sm:px-[12vw] md:px-[12vw] lg:px-10 xl:px-12;
   @apply py-6 sm:py-8 md:py-10 lg:py-16 xl:py-14;
-  @apply mt-4 sm:mt-6;
-  background: rgba(235, 239, 248, 0.99) top / cover no-repeat fixed url("@/assets/background/bg-lines-color-no-color.png");
+  @apply mt-4 sm:mt-6 bg-gray-100 border border-gray-200;
 }
 
 .manager-section-title {

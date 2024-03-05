@@ -204,7 +204,7 @@ export default {
 <style lang="scss" scoped>
 
 .customers-container {
-  @apply flex flex-col justify-center items-center rounded-3xl sm:p-4 md:p-0;
+  @apply flex flex-col justify-center items-center rounded-xl sm:p-4 md:p-0;
   background: rgb(17 24 39) center / contain no-repeat fixed url("../../assets/background/bg-lines-color.png");
 }
 

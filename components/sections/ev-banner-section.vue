@@ -109,6 +109,16 @@ export default {
   background: rgba(103, 99, 99, 0.4) top / cover no-repeat fixed url("../../assets/background/everest-1920.jpg");
 }
 
+/*.banner-container::before {*/
+/*  content: "";*/
+/*  position: absolute;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  bottom: 0;*/
+/*  top: 0;*/
+/*  background: top / cover no-repeat  url("../../assets/background/clouds.png");*/
+/*}*/
+
 .banner-title {
   @apply text-center font-extrabold text-gray-100 text-3xl sm:text-4xl md:text-5xl lg:text-7xl;
 }

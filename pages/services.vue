@@ -1,5 +1,6 @@
 <template>
   <div class="services-container">
+
     <ul class="services-list">
       <li
           v-motion
@@ -16,29 +17,63 @@
           v-for="tab of serviceTabs"
           @click="setActiveID(tab.id)"
       >
-        <!--        :class="{'uppercase':tab.sub, 'md:pl-8':!tab.sub}"-->
         {{ tab.title }}
       </li>
     </ul>
+
+    <div class="relative md:hidden w-full text-gray-950 text-right">
+      <div
+          @click="showMenu=!showMenu"
+          class="bg-gray-100 py-1 px-12 rounded-md w-fit text-sm font-semibold"
+          :class="{'bg-red-600 text-gray-200':showMenu}"
+      >
+        Услуги
+      </div>
+      <ul
+          v-motion
+          :initial="{opacity: 0}"
+          :enter="{opacity: 1}"
+          v-if="showMenu"
+          class="mt-1 bg-gray-100 space-y-1 z-10 absolute left-0 right-0 flex-col text-left rounded-md pl-2.5 py-3 border-l-2 border-l-red-600"
+      >
+        <li
+            v-motion
+            :initial="{x: -15, opacity: 0}"
+            :enter="{
+              x: 0,
+              opacity: 1,
+              transition: {
+                mass: 0.5,
+              }
+            }"
+            class="px-2 pr-4 py-0.5 bg-gray-200 rounded-md w-fit text-sm text-gray-900"
+            :delay="tab.id * 20"
+            v-for="tab of serviceTabs"
+            @click="setActiveID(tab.id); showMenu=!showMenu"
+        >
+          {{ tab.title }}
+        </li>
+      </ul>
+    </div>
 
     <div class="content-list">
       <div
           v-for="content of getActiveContent.content"
           :key="content.id"
-          class="flex flex-col justify-start items-start md:max-w-full gap-y-5">
+          class="flex flex-col justify-start items-start md:max-w-full">
 
         <h4
             v-if="content.title.length"
-            class="show-left font-bold text-4xl mb-4 bg-gray-300 px-4 py-2.5 text-gray-800 rounded-tl-lg rounded-br-lg border-b-2 border-b-red-800"
-        >
-          {{ content.title }}
-        </h4>
+            class="font-bold text-lg text-red-500 rounded-md mt-4 mb-1"
+        >{{ content.title }}</h4>
 
-        <p v-if="content.textContent.length" v-for="text of content.textContent" class="text-lg">{{ text }}</p>
+        <p
+            v-if="content.textContent.length"
+            v-for="text of content.textContent"
+            class="text-base text-gray-300">{{ text }}</p>
 
-        <ul v-if="content.enums.length">
-          <li v-for="enumValue of content.enums" class="text-lg">
-            <span class="inline-block w-4 h-2 rounded-sm red-line-heavy"></span>
+        <ul v-if="content.enums.length" class=" mt-4">
+          <li v-for="enumValue of content.enums" class="text-base text-gray-400">
             {{ enumValue }}
           </li>
         </ul>
@@ -81,6 +116,7 @@ export default {
 
   data() {
     return {
+      showMenu: false,
       dropMenuIsOpen: false,
       hoverTab: 0,
       activeTabId: 2,
@@ -115,24 +151,27 @@ export default {
 <style scoped>
 
 .services-container {
-  @apply w-full flex flex-row h-[calc(100vh-58px)] max-h-[calc(100vh-58px)] overflow-y-scroll;
-  @apply md:px-14 md:pt-12 lg:px-28 lg:pt-12 lg:pt-24 xl:px-52 bg-gray-800;
+  @apply w-full flex flex-col items-center md:flex-row overflow-y-scroll pb-6;
+  @apply px-6 pt-32 sm:px-8 md:px-14 lg:px-28 lg:pt-12 lg:pt-32 xl:px-52;
+  @apply bg-gray-900;
 }
 
 .services-list {
-  @apply w-full flex flex-col justify-start items-stretch min-w-fit max-w-fit gap-y-2.5;
+  @apply hidden md:block w-full flex flex-col justify-start items-stretch min-w-fit max-w-fit gap-y-2.5 self-start;
 }
 
 .services-list-e {
-  @apply bg-red-800 px-4 py-1.5 rounded-tr-xl rounded-bl-xl border-2 border-red-900/80;
+  @apply px-4 py-1.5 border-2 border-red-900/80 rounded-md;
   /*Hover*/
-  @apply hover:bg-gray-200/50 hover:text-red-700;
-  @apply cursor-pointer font-black text-gray-100 text-left w-full transition-colors duration-150;
+  @apply hover:bg-red-600/50 hover:text-gray-100 md:mt-1.5 lg:mt-2.5;
+  @apply cursor-pointer text-sm lg:text-base text-gray-100 text-left w-full transition-colors duration-150;
 }
 
 .content-list {
-  @apply ml-4 sm:ml-6 md:ml-8 lg:ml-12 xl:ml-16;
-  @apply flex flex-col justify-start items-start text-gray-900;
+  @apply h-[70vh] w-full;
+  @apply border-y border-gray-700;
+  @apply ml-0 mt-3 md:mt-0 md:ml-8 lg:ml-12 xl:ml-16 overflow-y-scroll pr-3;
+  @apply relative flex flex-col justify-start items-start text-gray-300;
 }
 
 </style>
