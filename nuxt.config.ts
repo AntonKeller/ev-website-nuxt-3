@@ -3,10 +3,10 @@ export default defineNuxtConfig({
 
     devtools: {enabled: true},
 
-    // target: 'static',
+    ssr: true,
 
     app: {
-        baseURL: './ev.nuxt.website.page/',
+        baseURL: '/ev.nuxt.website.page/',
 
         // Global page headers: https://go.nuxtjs.dev/config-head
         head: {
@@ -72,7 +72,6 @@ export default defineNuxtConfig({
     },
 
     // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-    ssr: false,
 
     // alias: {
     //     // '@': fileURLToPath(new URL('/', import.meta.url)),
