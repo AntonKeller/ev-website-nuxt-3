@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     ssr: true,
 
     app: {
-        baseURL: '/ev.nuxt.website.page/',
+        // baseURL: '/ev.nuxt.website.page/',
+        // baseURL: '/',
 
         // Global page headers: https://go.nuxtjs.dev/config-head
         head: {
@@ -71,6 +72,10 @@ export default defineNuxtConfig({
         typeCheck: true
     },
 
+    // axios: {
+    //   baseURL: 'http://91.224.218.13/'
+    // },
+
     // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
 
     // alias: {
@@ -80,7 +85,7 @@ export default defineNuxtConfig({
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
-        '~/assets/css/main.css'
+        '/assets/css/main.css'
     ],
 
     // transition: {

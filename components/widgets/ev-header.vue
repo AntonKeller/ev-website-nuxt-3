@@ -14,7 +14,7 @@
         <img
             @click="activePage=0"
             class="hidden sm:block select-none w-10 h-10 sm:w-12 sm:h-8 md:w-16 md:h-10 opacity-80"
-            src="~assets/logotypes/ev-logotype-4-gray-light.png"
+            src="/assets/logotypes/ev-logotype-4-gray-light.png"
             alt="no img"
         >
         <h2 class="text-fuchsia-50/80 hover:text-red-300 transition-colors duration-300 font-sans font-medium text-base lg:text-lg">

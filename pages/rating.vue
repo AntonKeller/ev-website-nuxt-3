@@ -147,7 +147,7 @@ export default {
   @apply pt-24 pb-12 sm:pt-8 md:pt-14 lg:pt-32 xl:pt-36;
   @apply px-4 sm:pl-[5vw] sm:pr-[10vw] md:pr-[10vw] lg:pr-[15vw] xl:pr-[30vw];
   @apply bg-blend-multiply;
-  background: top / cover no-repeat fixed url("@/assets/background/bg-rgb-three-lines-2.png");
+  background: top / cover no-repeat fixed url("/assets/background/bg-rgb-three-lines-2.png");
 
   &::-webkit-scrollbar {
     width: 0;

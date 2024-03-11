@@ -32,7 +32,7 @@
         <img
             v-for="companyLogo of getCompaniesLogo()"
             :key="companyLogo.id"
-            :src="getImageURL(`../../assets/experience_logotypes/${companyLogo.img}.png`)"
+            :src="`/assets/experience_logotypes/${companyLogo.img}.png`"
             class="logotype-img"
             alt="err"
             v-motion
@@ -64,7 +64,7 @@
       >
         <img
             class="slide-img"
-            :src="getImageURL(`../../assets/experience_logotypes/${companyLogo.img}.png`)"
+            :src="`/assets/experience_logotypes/${companyLogo.img}.png`"
             alt="err"
         >
       </slide>
@@ -91,7 +91,7 @@
       >
         <img
             class="slide-img"
-            :src="getImageURL(`../../assets/experience_logotypes/${companyLogo.img}.png`)"
+            :src="`/assets/experience_logotypes/${companyLogo.img}.png`"
             alt="err"
         >
       </slide>
@@ -193,9 +193,7 @@ export default {
       return logotypeImageNames.map((e, i) => ({id: i + 1, img: e}));
     },
 
-    getImageURL(path) {
-      return new URL(path, import.meta.url).href
-    }
+    // getImageURL: (name) => new URL(`../../assets/experience_logotypes/${name}.png`, import.meta.url).href
   },
 }
 

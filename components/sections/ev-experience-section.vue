@@ -111,13 +111,13 @@ export default {
 
   methods: {
 
-    getDocImg() {
-      return new URL(`../../assets/images/documents.png`, import.meta.url).href
-    },
-
-    getImageURL(name) {
-      return new URL(`../../assets/experience_logotypes/${name}.png`, import.meta.url).href
-    }
+    // getDocImg() {
+    //   return new URL(`/assets/images/documents.png`, import.meta.url).href
+    // },
+    //
+    // getImageURL(name) {
+    //   return new URL(`/assets/experience_logotypes/${name}.png`, import.meta.url).href
+    // }
 
   },
 
@@ -176,7 +176,7 @@ export default {
     bottom: 0;
     filter: blur(8px);
     opacity: 0.15;
-    background: rgba(103, 99, 99, 0.4) top / cover no-repeat fixed url("../../assets/background/everest-420.jpg");
+    background: rgba(103, 99, 99, 0.4) top / cover no-repeat fixed url("/assets/background/everest-420.jpg");
   }
 }
 
