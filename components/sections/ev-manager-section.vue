@@ -1,7 +1,7 @@
 <template>
   <div class="managers-section">
     <div class="manager-section-title">
-      <h2 class="text-xl sm:text-2xl md:text-2xl lg:text-4xl font-bold">
+      <h2 class="text-lg lg:text-2xl font-bold">
         Состав директоров
       </h2>
       <p class="text-lg font-light">

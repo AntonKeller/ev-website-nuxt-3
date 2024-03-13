@@ -7,9 +7,7 @@
         class="rating-preview--description"
         v-for="element of title.descriptions"
         :key="element.id"
-      >
-        {{element.value}}
-      </p>
+      >{{element.value}}</p>
     </div>
 
     <carousel
@@ -65,7 +63,7 @@
 </template>
 
 <script>
-import {rating} from "@/configs/ratingConfig.ts"
+import {rating} from "~/configs/ratingConfig.ts"
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
@@ -84,17 +82,14 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: "https://antonkeller.github.io/ev_nuxtjs_website_page-1/rating",
+          content: "https://evcons.ru/rating",
         },
       ],
     }
   },
 
   components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
+    Carousel, Slide, Pagination, Navigation
   },
 
   data() {
@@ -107,7 +102,7 @@ export default {
           {id: 2, value: "Основным деловым преимуществом нашей компании является высокий профессионализм сотрудников, а также опыт выполнения проектов в сфере оценки и консалтинга с последующим согласованием результатов с крупнейшими международными аудиторскими компаниями."},
           {id: 3, value: "Специалисты Компании Everest Consulting являются членами таких профессиональных организаций, как Саморегулируемая Межрегиональная Ассоциация Оценщиков (СМАО), Восточно-Европейский союз экспертов (OSV), а также получили квалификации Американского общества оценщиков (ASA)."},
         ]
-      }
+      },
     }
   },
 
@@ -146,7 +141,7 @@ export default {
 .main-container {
   @apply pt-24 pb-12 sm:pt-8 md:pt-14 lg:pt-32 xl:pt-36;
   @apply px-4 sm:pl-[5vw] sm:pr-[10vw] md:pr-[10vw] lg:pr-[15vw] xl:pr-[30vw];
-  @apply bg-blend-multiply;
+  @apply bg-blend-multiply bg-gray-50;
   background: top / cover no-repeat fixed url("/assets/background/bg-rgb-three-lines-2.png");
 
   &::-webkit-scrollbar {

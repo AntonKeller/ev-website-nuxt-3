@@ -1,5 +1,6 @@
 <template>
   <div class="customers-container">
+    <a name="out"></a>
     <div class="customers-sub-container">
 
       <div
@@ -8,8 +9,7 @@
           :initial="{opacity: 0}"
           :enter="{opacity: 1}"
           :delay="250"
-      >Работаем с лидерами рынка
-      </div>
+      >Опыт нашей команды</div>
 
       <div
           v-motion
@@ -25,6 +25,7 @@
             :class="{'chip': !isSelected(group.name), 'chip-active': isSelected(group.name)}"
         >
           {{ group.name }}
+          <i class="ml-1.5 text-xs pi pi-filter"></i>
         </div>
       </div>
 
@@ -100,7 +101,6 @@
       </template>
     </carousel>
 
-
   </div>
 </template>
 
@@ -117,8 +117,8 @@ export default {
   data: () => ({
     companies,
     selectedGroups: {
-      "Строительный аудит": null,
-      "Строительная экспертиза": null,
+      // "Строительный аудит": null,
+      // "Строительная экспертиза": null,
     },
   }),
 
@@ -231,21 +231,21 @@ export default {
   // md
   @apply py-0.5 px-1 text-sm;
   // lg
-  @apply lg:px-2.5 lg:text-sm;
+  @apply lg:px-2.5 lg:text-base;
 }
 
 .chip-active {
   @apply cursor-pointer;
   // common
-  @apply inline rounded-lg border-2 border-red-900 text-gray-50 bg-red-700/90;
+  @apply inline rounded-lg border-2 border-red-900 text-gray-50 bg-red-800;
   // md
   @apply py-0.5 px-1 text-sm;
   // lg
-  @apply lg:px-2.5 lg:text-sm;
+  @apply lg:px-2.5 lg:text-base;
 }
 
 .logotype-images-wrapper {
-  @apply md:mt-8;
+  @apply md:mt-12 lg:mt-16;
   @apply hidden md:flex flex-wrap justify-center;
   @apply md:gap-4 lg:gap-6;
 }

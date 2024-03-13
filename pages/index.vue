@@ -5,11 +5,11 @@
     <!--   Experience SECTION   -->
     <evExperienceSection/>
     <!--  CUSTOMERS SECTION  -->
-    <evCustomersSection />
+    <evCustomersSection/>
     <!--   MANAGERS SECTION   -->
     <evManagerSection/>
     <!--   FOOTER   -->
-<!--    <evFooter/>-->
+    <evFooter/>
   </div>
 </template>
 
