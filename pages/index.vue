@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-hidden bg-gray-50 px-2 pt-2 md:px-4 md:pt-3.5 pb-4 md:pb-6">
+  <div class="scroll-hidden bg-gray-50 px-2 pt-2 md:px-4 md:pt-3.5 pb-2">
     <!--   MAIN BANNER SECTION   -->
     <evBannerSection/>
     <!--   Experience SECTION   -->
@@ -15,11 +15,11 @@
 
 <script>
 
-import evBannerSection from "../components/sections/ev-banner-section.vue";
-import evExperienceSection from "../components/sections/ev-experience-section.vue";
-import evCustomersSection from "../components/sections/ev-customers-section.vue";
-import evManagerSection from "../components/sections/ev-manager-section.vue";
-// import evFooter from "@/components/widgets/ev-footer";
+import evBannerSection from "~/components/sections/ev-banner-section.vue";
+import evExperienceSection from "~/components/sections/ev-experience-section.vue";
+import evCustomersSection from "~/components/sections/ev-customers-section.vue";
+import evManagerSection from "~/components/sections/ev-manager-section.vue";
+import evFooter from "~/components/widgets/ev-footer";
 
 export default {
   name: 'IndexPage',
@@ -28,11 +28,8 @@ export default {
     evExperienceSection,
     evCustomersSection,
     evManagerSection,
-    // evFooter,
+    evFooter,
   },
-  data() {
-    return ({})
-  }
 }
 
 </script>

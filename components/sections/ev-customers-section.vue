@@ -12,10 +12,10 @@
       >Опыт нашей команды</div>
 
       <div
+          class="chips"
           v-motion
           :initial="{opacity: 0}"
           :enter="{opacity: 1}"
-          class="chips"
           :delay="450"
       >
         <div
