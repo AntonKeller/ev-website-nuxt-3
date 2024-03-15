@@ -22,7 +22,7 @@
         </li>
       </ul>
 
-      <div class="relative md:hidden w-full text-gray-950 text-right">
+      <div class="relative md:hidden w-full  text-right">
         <div
             @click="showMenu=!showMenu"
             class="bg-gray-100 py-1.5 px-20 rounded-md w-fit text-sm font-semibold"
@@ -82,15 +82,15 @@
 
         </div>
       </div>
-
     </div>
+    <evFooter/>
   </div>
 </template>
 
 <script>
 
-import {serviceTabContent, serviceTabs} from "@/configs/servicesConfig"
-import evFooter from "@/components/widgets/ev-footer"
+import {serviceTabContent, serviceTabs} from "../configs/servicesConfig"
+import evFooter from "../components/widgets/ev-footer"
 
 
 export default {
@@ -118,16 +118,14 @@ export default {
     evFooter: evFooter,
   },
 
-  data() {
-    return {
-      showMenu: false,
-      dropMenuIsOpen: false,
-      hoverTab: 0,
-      activeTabId: 2,
-      serviceTabContent,
-      serviceTabs,
-    }
-  },
+  data: () => ({
+    showMenu: false,
+    dropMenuIsOpen: false,
+    hoverTab: 0,
+    activeTabId: 2,
+    serviceTabContent,
+    serviceTabs
+  }),
 
   computed: {
 
@@ -159,27 +157,35 @@ export default {
 }
 
 .services-content-wrapper {
-  @apply w-full flex flex-col items-center md:flex-row overflow-y-scroll pb-6;
+  @apply w-full flex flex-col items-start md:flex-row overflow-y-scroll pb-6;
   @apply px-6 pt-32 sm:px-8 md:px-14 lg:px-28 lg:pt-12 lg:pt-32 xl:px-52;
   @apply bg-gray-900;
 }
 
 .services-list {
-  @apply hidden md:block w-full flex flex-col justify-start items-stretch min-w-fit max-w-fit gap-y-2.5 self-start;
+  @apply hidden md:flex w-full flex-col gap-y-1.5 justify-start items-stretch min-w-fit max-w-fit self-start;
 }
 
 .services-list-e {
-  @apply px-4 py-1.5 border-2 border-red-900/80 rounded-md;
+  @apply relative px-4 py-1.5;
   /*Hover*/
-  @apply hover:bg-red-600/50 hover:text-gray-100 md:mt-1.5 lg:mt-2.5;
+  @apply hover:bg-red-600/50 hover:text-gray-100;
   @apply cursor-pointer text-sm lg:text-base text-gray-100 text-left w-full transition-colors duration-150;
 }
 
+.services-list-e::before {
+  content: "";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  @apply absolute border-2 border-red-900/80 rounded-md
+}
+
 .content-list {
-  @apply w-full;
-  @apply border-y border-gray-700;
+  @apply w-full bg-cyan-950 p-4;
   @apply ml-0 mt-3 md:mt-0 md:ml-8 lg:ml-12 xl:ml-16 overflow-y-scroll pr-3;
-  @apply relative flex flex-col justify-start items-start text-gray-300;
+  @apply relative flex flex-col justify-start items-start text-gray-900;
 }
 
 </style>

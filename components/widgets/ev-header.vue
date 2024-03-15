@@ -3,7 +3,7 @@
       v-motion
       :initial="{opacity: 0.001}"
       :enter="{opacity: 1}"
-      :delay="1000"
+      :delay="800"
       class="ev-header"
   >
     <NuxtLink class="logoLink ml-auto md:mr-auto md:ml-0 flex items-center gap-x-3" to="/">
@@ -12,9 +12,6 @@
           src="/assets/logotypes/ev-logotype-4-gray-light.png"
           alt="no img"
       >
-      <!--          :src="getLogotype()"-->
-      <!--          @mouseover="hover=true"-->
-      <!--          @mouseout="hover=false"-->
       <div class="logoTitle text-base text-gray-200 font-semibold">Everest home</div>
     </NuxtLink>
   </header>

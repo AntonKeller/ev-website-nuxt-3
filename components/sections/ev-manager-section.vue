@@ -5,7 +5,7 @@
       <h2 class="text-lg lg:text-2xl font-bold">
         Состав директоров
       </h2>
-      <p class="text-lg font-light">
+      <p class="text-lg font-light text-gray-700">
         Безупречная репутация на рынке консультационных услуг в течение более 12 лет
 <!--        Эверест Консалтинг, лидер российского рынка оценки для целей МСФО.-->
 <!--        Лидер по оценке для целей МСФО на протяжении 7 лет согласно данным рейтингового агентства Экперт РА.-->
@@ -60,7 +60,7 @@
             <span class="text-red-800 inline-block font-bold">{{ employee.fullName }}</span>
             <div class="flex gap-x-1">
               <span
-                  class="cyan-mark text-gray-600 inline-block font-medium text-sm"
+                  class="blue-mark text-gray-600 inline-block font-medium text-sm"
                   v-for="post of employee.posts"
               >{{post}}</span>
             </div>
