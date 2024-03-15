@@ -6,9 +6,10 @@
         Состав директоров
       </h2>
       <p class="text-lg font-light">
-        We’re a dynamic group of individuals who are passionate about what we do
-        and dedicated to delivering the best
-        results for our clients.
+        Безупречная репутация на рынке консультационных услуг в течение более 12 лет
+<!--        Эверест Консалтинг, лидер российского рынка оценки для целей МСФО.-->
+<!--        Лидер по оценке для целей МСФО на протяжении 7 лет согласно данным рейтингового агентства Экперт РА.-->
+<!--        Успешный многолетний опыт согласования результатов с ведущими аудиторскими компаниями, в том числе аудиторами большой четверки-->
       </p>
     </div>
 
@@ -39,15 +40,7 @@
               <span class="text-gray-400 inline-block font-light">{{ employee.area }}</span>
             </div>
           </div>
-
-          <div class="card-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolorem eaque, eius illo in incidunt
-            ipsam officiis perferendis quos reprehenderit! A accusantium aliquam amet aperiam beatae commodi consequatur
-            dolores explicabo illo inventore, ipsum itaque laborum maiores minima nisi non officia pariatur placeat,
-            porro
-            qui rerum tenetur totam ut veritatis voluptates! Dignissimos dolorem ipsam laboriosam laborum magni natus
-            nesciunt nisi, officia, pariatur quaerat quam quas soluta voluptatibus.
-          </div>
+          <div class="card-description">{{employee.text}}</div>
         </slide>
         <template #addons>
           <Pagination/>
@@ -61,18 +54,20 @@
           :key="employee.id"
           class="card-director"
       >
-
         <div class="card-img-desc-wrapper">
-          <img class="card-image" :src="`/assets/avatars/${employee.img}.png`" alt="no img"/>
+          <img class="card-image" :src="`/assets/avatars/${employee.img}`" alt="no img"/>
           <div class="card-img-desc">
             <span class="text-red-800 inline-block font-bold">{{ employee.fullName }}</span>
-            <span class="text-gray-600 inline-block font-medium">{{ employee.post }}</span>
+            <div class="flex gap-x-1">
+              <span
+                  class="cyan-mark text-gray-600 inline-block font-medium text-sm"
+                  v-for="post of employee.posts"
+              >{{post}}</span>
+            </div>
             <span class="text-gray-400 inline-block font-light">{{ employee.area }}</span>
           </div>
         </div>
-
         <div class="card-description">{{employee.text}}</div>
-
       </div>
     </div>
 
@@ -109,7 +104,7 @@ export default {
 .emerald-mark,
 .cyan-mark,
 .red-mark {
-  @apply py-0.5 px-2 text-gray-50 rounded-xl ;
+  @apply py-0.5 px-2 text-gray-50 rounded-md;
 }
 
 .blue-mark {
@@ -156,12 +151,12 @@ export default {
 }
 
 .card-list {
-  @apply hidden md:flex flex-wrap justify-center gap-y-2 gap-x-4 px-8;
+  @apply hidden md:flex flex-wrap justify-center gap-y-2 gap-x-4;
 }
 
 .card-director {
-  @apply bg-gray-200 border border-gray-300 rounded-lg py-6 px-12 lg:p-10;
-  @apply max-w-[640px] mt-2;
+  @apply bg-gray-200/50 border border-gray-300/75 rounded-lg py-4 px-10 lg:px-8;
+  @apply min-w-[100px] max-w-[640px] mt-2;
   @apply flex flex-col items-center justify-start;
 }
 
@@ -171,21 +166,21 @@ export default {
 }
 
 .card-image {
-  @apply blur-sm;
+  /*@apply blur-sm;*/
   @apply mb-2 xl:mb-0 sm:mr-2;
-  @apply object-contain min-w-[90px] w-[70vw] max-w-[130px] min-h-[100px] h-[40vw] max-h-[130px];
+  @apply object-contain min-w-[90px] w-[70vw] max-w-[120px] min-h-[100px] h-[40vw] max-h-[120px];
 }
 
 .card-img-desc {
   @apply min-w-fit;
-  @apply flex flex-col ml-2;
+  @apply flex flex-col ml-2 md:ml-6;
   @apply text-center sm:text-left text-base;
   @apply space-y-0.5;
 }
 
 .card-description {
-  @apply mt-2 pt-2 text-sm text-center border-t border-t-gray-300;
-  @apply sm:mt-4 sm:pt-4;
+  @apply mt-2 pt-2 text-sm text-center border-t border-t-gray-300/75;
+  @apply sm:mt-4 sm:pt-4 text-red-950;
   @apply md:text-base;
 }
 

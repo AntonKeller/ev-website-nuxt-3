@@ -3,14 +3,15 @@
 
     <div class="flex flex-col items-center lg:items-start">
 
-      <div class="w-full flex flex-col items-center lg:items-start">
+      <div class="w-full flex flex-col items-center lg:items-center">
 
         <div class="ev-b-title txt-shadow"
              v-motion
              :initial="{y: -30, opacity: 0}"
              :enter="{y: 0, opacity: 1}"
              :delay="300"
-        >Эверест Консалтинг
+        >
+          Эверест Консалтинг
         </div>
 
         <div
@@ -19,7 +20,8 @@
             :initial="{opacity: 0.001}"
             :enter="{opacity: 1}"
             :delay="700"
-        >На рынке с 2010 года
+        >
+          На рынке с 2010 года
         </div>
 
       </div>
@@ -83,7 +85,7 @@ export default {
 }
 
 .banner-container {
-  @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(97.2vh)] rounded-2xl shadow-inner shadow-gray-600 shadow-lg;
+  @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(97.2vh)] rounded-2xl shadow-gray-500 shadow-md;
   @apply px-[40px] sm:px-[8vw] md:px-[15vw] lg:px-[12vw];
   @apply pt-28 pb-10 py-[20vw] md:py-[16vw] lg:py-[9vw];
   @apply bg-blend-multiply;
@@ -99,7 +101,8 @@ export default {
 }
 
 .ev-bs-title {
-  @apply z-0 text-base md:text-lg lg:text-xl xl:text-2xl mt-4 rounded-md px-6 py-2 font-sans bg-red-950;
+  @apply z-0 text-base md:text-lg lg:text-xl xl:text-2xl mt-6 rounded-lg px-6 py-2 font-sans bg-red-950;
+  @apply translate-y-3;
 }
 
 .b-btn {

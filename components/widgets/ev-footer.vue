@@ -31,9 +31,9 @@ export default {
 <style scoped>
 
 .footer-container {
-  @apply w-full flex flex-col text-gray-100 text-center sm:text-left space-y-2.5 lg:space-y-3.5;
+  @apply w-full flex flex-col text-gray-50 text-center sm:text-left space-y-2.5 lg:space-y-3.5;
   @apply px-[calc(16vw-6px)] sm:px-[12vw] md:px-[12vw] lg:px-10 xl:px-12;
-  @apply py-6 sm:py-8 md:py-10 lg:py-12 xl:py-14 bg-gray-200/50 border border-gray-300/50 mt-4 rounded-md;
+  @apply py-6 sm:py-8 md:py-10 lg:py-12 xl:py-14 bg-gray-200 border border-gray-300 mt-4 rounded-md;
   text-shadow: 1px 1px 4px rgb(0, 0, 0, .15);
 }
 
