@@ -12,7 +12,7 @@
           src="/assets/logotypes/ev-logotype-4-gray-light.png"
           alt="no img"
       >
-      <div class="logoTitle text-base text-gray-200 font-semibold">Everest home</div>
+      <div class="logoTitle text-base text-gray-300 font-semibold">Everest home</div>
     </NuxtLink>
   </header>
 </template>
@@ -23,7 +23,7 @@ export default {
   name: "ev-header",
 
   data: () => ({
-    hover: false,
+    hover: false
   })
 
 }
@@ -34,6 +34,7 @@ export default {
 .logoLink:hover .logoTitle {
   @apply duration-150 text-gray-400;
 }
+
 
 .ev-header {
   @apply absolute;

@@ -24,7 +24,7 @@
 
       </div>
 
-      <div class="flex flex-col items-center lg:flex-row lg:justify-start mt-6 sm:mt-8 gap-y-1.5 sm:gap-y-2 sm:gap-2 flex-wrap">
+      <div class="w-full flex flex-col items-center lg:flex-row lg:justify-center mt-6 sm:mt-8 gap-y-1.5 sm:gap-y-2 sm:gap-2 flex-wrap">
         <NuxtLink
             v-for="btn of buttons"
             :key="btn.id"
@@ -99,7 +99,7 @@ export default {
 }
 
 .ev-bs-title {
-  @apply z-0 text-base md:text-lg lg:text-xl xl:text-2xl mt-6 rounded-lg px-6 py-2 font-sans bg-red-950;
+  @apply z-0 text-base md:text-base lg:text-lg xl:text-xl mt-6 rounded-sm px-6 py-1.5 font-sans bg-gray-900;
   @apply translate-y-3;
 }
 

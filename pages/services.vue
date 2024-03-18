@@ -121,25 +121,20 @@ export default {
   }),
 
   computed: {
-
     getActiveContent() {
       return serviceTabContent.find(e => e.id === this.activeTabId);
     }
-
   },
 
   methods: {
-
     setActiveID(id) {
       this.activeTabId = id;
       this.dropMenuIsOpen = false;
       console.log("id:", this.activeTabId);
     },
-
   }
 
 }
-
 
 </script>
 
