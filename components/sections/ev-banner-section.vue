@@ -9,7 +9,7 @@
              v-motion
              :initial="{y: -30, opacity: 0}"
              :enter="{y: 0, opacity: 1}"
-             :delay="300"
+             :delay="250"
         >
           Эверест Консалтинг
         </div>
@@ -19,10 +19,8 @@
             v-motion
             :initial="{opacity: 0.001}"
             :enter="{opacity: 1}"
-            :delay="700"
-        >
-          На рынке с 2010 года
-        </div>
+            :delay="450"
+        >На рынке с 2010 года</div>
 
       </div>
 
@@ -33,9 +31,9 @@
             :to="btn.location"
             class="b-btn"
             v-motion
-            :initial="{y: -10, opacity: 0.001}"
-            :enter="{y: 0, opacity: 1}"
-            :delay="900 + btn.id * 150"
+            :initial="{x: -80, opacity: 0.001}"
+            :enter="{x: 0, opacity: 1}"
+            :delay="600 + btn.id * 150"
         >
           <i :class="btn.iconClass"></i>
           <i class="iMark ml-4 pi pi-arrow-right"></i>
