@@ -1,5 +1,30 @@
 import type {TTabContent, TTab} from "@/utils/types";
 
+//
+// export const serviceTabContent2 = [
+//     {
+//         id: 1,
+//         content: [
+//             {
+//                 id: 1,
+//                 classes: "font-bold text-lg text-red-500 rounded-md mt-4 mb-1",
+//                 txt: "Оценка для целей подготовки финансовой отчетности в соответствии с требованиями МСФО (IFRS), US GAAP",
+//             },
+//             {
+//                 id: 2,
+//                 classes: "text-base text-gray-300",
+//                 txt: "оценка активов в рамках применения МСФО впервые (МСФО1 / IFRS 1)",
+//             },
+//             {
+//                 id: 3,
+//                 classes: "text-base text-gray-300",
+//                 txt: "",
+//             },
+//         ]
+//     }
+// ]
+
+
 export const serviceTabContent: Array<TTabContent> = [
     {
         id: 1,

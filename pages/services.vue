@@ -9,9 +9,6 @@
             :enter="{
               x: 0,
               opacity: 1,
-              transition: {
-                mass: 0.5,
-              }
             }"
             :delay="tab.id * 15"
             class="services-list-e"
@@ -22,11 +19,11 @@
         </li>
       </ul>
 
-      <div class="relative md:hidden w-full  text-right">
+      <div class="relative md:hidden w-full text-right">
         <div
             @click="showMenu=!showMenu"
-            class="bg-gray-100 py-1.5 px-20 rounded-md w-fit text-sm font-semibold"
-            :class="{'bg-red-600 text-gray-200':showMenu}"
+            class="bg-gray-200 py-1.5 px-20 rounded-md w-fit text-sm font-semibold"
+            :class="{'bg-red-700 text-gray-200':showMenu}"
         >
           Услуги
         </div>
@@ -35,7 +32,7 @@
             :initial="{opacity: 0}"
             :enter="{opacity: 1}"
             v-if="showMenu"
-            class="mt-1 bg-gray-100 space-y-1.5 z-10 absolute left-0 right-0 flex-col text-left rounded-md pl-3 py-3"
+            class="mt-1 bg-gray-100 z-10 absolute max-w-[450px] flex flex-wrap gap-1.5 left-0 right-0 text-left rounded-md pl-3 py-3"
         >
           <li
               v-motion
@@ -43,12 +40,9 @@
               :enter="{
               x: 0,
               opacity: 1,
-              transition: {
-                mass: 0.5,
-              }
             }"
-              class="px-3 pr-4 py-0.5 bg-gray-300/90 rounded-md w-fit text-sm text-gray-900"
-              :delay="tab.id * 20"
+              class="px-2.5 py-0.5 bg-gray-300/90 rounded-md text-sm text-gray-900 h-fit w-fit"
+              :delay="tab.id * 35"
               v-for="tab of serviceTabs"
               @click="setActiveID(tab.id); showMenu=!showMenu"
           >
@@ -65,17 +59,17 @@
 
           <h4
               v-if="content.title.length"
-              class="font-bold text-lg text-red-500 rounded-md mt-4 mb-1"
+              class="font-bold text-base text-gray-200 mt-4"
           >{{ content.title }}</h4>
 
           <p
               v-if="content.textContent.length"
               v-for="text of content.textContent"
-              class="text-base text-gray-300"
+              class="text-sm text-gray-300 font-sans"
           >{{ text }}</p>
 
-          <ul v-if="content.enums.length" class="mt-4">
-            <li v-for="enumValue of content.enums" class="text-base text-gray-400">
+          <ul v-if="content.enums.length" class="flex gap-x-6 gap-y-1 justify-start items-stretch text-left flex-wrap py-1.5">
+            <li v-for="enumValue of content.enums" class="text-sm text-gray-300 rounded-sm border-l-2 border-l-red-800 bg-red-700/15 px-2 py-1">
               {{ enumValue }}
             </li>
           </ul>
@@ -91,7 +85,6 @@
 
 import {serviceTabContent, serviceTabs} from "../configs/servicesConfig"
 import evFooter from "../components/widgets/ev-footer"
-
 
 export default {
   name: "services",
@@ -153,13 +146,26 @@ export default {
 <style scoped>
 
 .services-container {
-
+  @apply p-4 bg-gray-50;
 }
 
 .services-content-wrapper {
-  @apply w-full flex flex-col items-start md:flex-row overflow-y-scroll pb-6;
-  @apply px-6 pt-32 sm:px-8 md:px-14 lg:px-28 lg:pt-12 lg:pt-32 xl:px-52;
-  @apply bg-gray-900;
+  @apply h-[100vh] max-h-[100vh] rounded-tl-lg rounded-tr-lg rounded-b-sm;
+  @apply w-full flex flex-col items-start md:flex-row pb-6;
+  @apply px-6 pt-32 sm:px-8 md:px-14 lg:px-20 lg:pt-36 xl:px-48;
+  @apply bg-gray-950;
+}
+
+.services-content-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  filter: blur(8px);
+  opacity: 0.15;
+  background: top / cover no-repeat fixed url("/assets/background/everest-420.jpg");
 }
 
 .services-list {
@@ -167,23 +173,16 @@ export default {
 }
 
 .services-list-e {
-  @apply relative px-4 py-1.5;
+  @apply px-4 py-1.5;
   /*Hover*/
-  @apply hover:bg-red-600/50 hover:text-gray-100;
-  @apply cursor-pointer text-sm lg:text-base text-gray-100 text-left w-full transition-colors duration-150;
-}
-
-.services-list-e::before {
-  content: "";
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  @apply absolute border-2 border-red-900/80 rounded-md
+  /*@apply hover:bg-gray-400;*/
+  @apply hover:border-x-red-800;
+  @apply cursor-pointer bg-gray-200 border-x-4 border-x-gray-100 text-gray-700 rounded-md text-sm lg:text-base text-left w-full transition-colors duration-150;
 }
 
 .content-list {
-  @apply w-full bg-cyan-950 p-4;
+  /*@apply  border-l-2 border-l-blue-800 border-b-2 border-b-blue-800;*/
+  @apply w-full h-[82vh] overflow-y-scroll rounded-md;
   @apply ml-0 mt-3 md:mt-0 md:ml-8 lg:ml-12 xl:ml-16 overflow-y-scroll pr-3;
   @apply relative flex flex-col justify-start items-start text-gray-900;
 }

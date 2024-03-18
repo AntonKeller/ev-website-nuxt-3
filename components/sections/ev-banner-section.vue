@@ -67,12 +67,12 @@ export default {
         location: "/rating",
         iconClass: "pi pi-briefcase"
       },
-      {
-        id: 3,
-        title: "Связаться с нами",
-        location: "/rating",
-        iconClass: "pi pi-chart-line"
-      }
+      // {
+      //   id: 3,
+      //   title: "Связаться с нами",
+      //   location: "/rating",
+      //   iconClass: "pi pi-chart-line"
+      // }
     ],
   })
 }

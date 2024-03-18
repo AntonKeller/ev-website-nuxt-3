@@ -5,7 +5,7 @@
       <h2 class="text-lg lg:text-2xl font-bold">
         Состав директоров
       </h2>
-      <p class="text-lg font-light text-gray-700">
+      <p class="text-base lg:text-lg font-light text-gray-700">
         Безупречная репутация на рынке консультационных услуг в течение более 12 лет
 <!--        Эверест Консалтинг, лидер российского рынка оценки для целей МСФО.-->
 <!--        Лидер по оценке для целей МСФО на протяжении 7 лет согласно данным рейтингового агентства Экперт РА.-->
@@ -33,9 +33,15 @@
             class="slide-card-director"
         >
           <div class="card-img-desc-wrapper">
-            <img class="card-image" :src="`/assets/avatars/${employee.img}.png`" alt="no img"/>
+            <img class="card-image" :src="`/assets/avatars/${employee.img}`" alt="no img"/>
             <div class="card-img-desc">
               <span class="text-red-800 inline-block font-bold">{{ employee.fullName }}</span>
+              <div class="flex gap-x-1">
+              <span
+                  class="blue-mark text-gray-600 inline-block font-medium text-xs"
+                  v-for="post of employee.posts"
+              >{{post}}</span>
+              </div>
               <span class="text-gray-600 inline-block font-medium">{{ employee.post }}</span>
               <span class="text-gray-400 inline-block font-light">{{ employee.area }}</span>
             </div>
@@ -60,7 +66,7 @@
             <span class="text-red-800 inline-block font-bold">{{ employee.fullName }}</span>
             <div class="flex gap-x-1">
               <span
-                  class="blue-mark text-gray-600 inline-block font-medium text-sm"
+                  class="blue-mark text-gray-600 inline-block font-medium text-xs"
                   v-for="post of employee.posts"
               >{{post}}</span>
             </div>
@@ -121,7 +127,7 @@ export default {
 }
 
 .directors-section {
-  @apply overflow-hidden rounded-lg;
+  @apply overflow-hidden rounded-tl-lg rounded-tr-lg;
   @apply px-2 sm:px-12 md:px-16 lg:px-10 xl:px-12;
   @apply py-6 sm:py-8 md:py-10 lg:py-16 xl:py-14;
   @apply mt-4 sm:mt-6 bg-gray-100 border border-gray-200;
@@ -138,7 +144,7 @@ export default {
 .card-slider-wrapper {
   @apply md:hidden;
   @apply px-4 py-5 sm:p-8 lg:p-10;
-  @apply bg-gray-200/50 border border-gray-200 rounded-lg;
+  @apply bg-gray-50 rounded-lg;
 }
 
 .card-slider {
@@ -155,7 +161,7 @@ export default {
 }
 
 .card-director {
-  @apply bg-gray-200/50 border border-gray-300/75 rounded-lg py-4 px-10 lg:px-8;
+  @apply bg-gray-50 border border-gray-200 rounded-lg py-4 px-10 lg:px-8;
   @apply min-w-[100px] max-w-[640px] mt-2;
   @apply flex flex-col items-center justify-start;
 }
@@ -180,7 +186,7 @@ export default {
 
 .card-description {
   @apply mt-2 pt-2 text-sm text-center border-t border-t-gray-300/75;
-  @apply sm:mt-4 sm:pt-4 text-red-950;
+  @apply sm:mt-4 sm:pt-4 text-gray-700;
   @apply md:text-base;
 }
 

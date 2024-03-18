@@ -7,7 +7,7 @@
     <!--  CUSTOMERS SECTION  -->
     <evCustomersSection/>
     <!--   MANAGERS SECTION   -->
-    <evManagerSection/>
+<!--    <evManagerSection/>-->
     <!--   FOOTER   -->
     <evFooter/>
   </div>

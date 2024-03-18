@@ -36,7 +36,7 @@
                 :delay="400 + 200 * card.id"
             >
               <i :class="card.iconClass" class="text-5xl text-gray-600"></i>
-              <p class="mt-4 lg:mt-8 text-gray-800 font-sans">{{ card.text }}}</p>
+              <p class="mt-4 lg:mt-8 text-gray-800 font-sans text-sm lg:text-base">{{ card.text }}}</p>
             </div>
           </div>
         </div>
