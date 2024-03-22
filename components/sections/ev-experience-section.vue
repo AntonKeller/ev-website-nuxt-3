@@ -8,16 +8,16 @@
           <div
               class="text-gray-100 px-2.5 text-lg lg:text-2xl font-bold py-1.5 px-8 bg-gray-800 rounded-lg max-w-fit"
               v-motion
-              :initial="{ opacity: 0}"
-              :visible="{opacity: 1}"
+              :initial="{x: -30, opacity: 0}"
+              :visibleOnce="{x: 0, opacity: 1}"
               :delay="250"
           >О компании</div>
 
           <div
               class="text-center sm:text-left ml-1 text-base lg:text-lg border-b-2 border-b-gray-800/10 pb-3.5 mt-3.5 font-bold font-sans"
               v-motion
-              :initial="{ opacity: 0}"
-              :visible="{opacity: 1}"
+              :initial="{opacity: 0}"
+              :visibleOnce="{opacity: 1}"
               :delay="450"
           >Компания, объединяющая специалистов c большим опытом многолетней деловой репутацией</div>
 
@@ -31,9 +31,9 @@
           >
             <div
                 v-motion
-                :initial="{y: -20, opacity: 0.01}"
-                :visible="{y: 0, opacity: 1}"
-                :delay="400 + 200 * card.id"
+                :initial="{y: 30, opacity: 0.01}"
+                :visibleOnce="{y: 0, opacity: 1}"
+                :delay="450 + 250 * card.id"
             >
               <i :class="card.iconClass" class="text-5xl text-gray-600"></i>
               <p class="mt-4 lg:mt-8 text-gray-800 font-sans text-sm lg:text-base">{{ card.text }}}</p>
@@ -89,7 +89,6 @@ export default {
   @apply relative text-gray-700 md:h-auto lg:min-h-[80vh];
   @apply flex justify-center items-center;
 }
-
 
 .content-wrapper {
   @apply flex flex-col md:flex-row justify-center items-center py-16;

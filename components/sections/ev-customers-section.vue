@@ -9,37 +9,39 @@
           :initial="{opacity: 0}"
           :enter="{opacity: 1}"
           :delay="250"
-      >Опыт нашей команды</div>
+      >Опыт нашей команды
+      </div>
 
-      <div
-          class="chips"
-          v-motion
-          :initial="{opacity: 0}"
-          :enter="{opacity: 1}"
-          :delay="450"
-      >
+      <div class="chips">
         <div
             v-for="group of getGroups()"
             :key="group.id"
             @click="chipCLick(group.name)"
             :class="{'chip': !isSelected(group.name), 'chip-active': isSelected(group.name)}"
+            class="duration-100"
+            v-motion
+            :initial="{x: -10, opacity: 0}"
+            :visibleOnce="{x: 0, opacity: 1}"
+            :delay="450 + 100 * group.id"
         >
           {{ group.name }}
           <i class="ml-1.5 text-xs pi pi-filter"></i>
         </div>
       </div>
 
-      <div class="logotype-images-wrapper">
+      <div
+          class="logotype-images-wrapper duration-100"
+          v-motion
+          :initial="{opacity: 0}"
+          :enter="{opacity: 1}"
+          :delay="1500"
+      >
         <img
             v-for="companyLogo of getCompaniesLogo()"
             :key="companyLogo.id"
             :src="`/assets/experience_logotypes/${companyLogo.img}.png`"
-            class="logotype-img"
+            class="logo"
             alt="err"
-            v-motion
-            :initial="{opacity: 0}"
-            :enter="{opacity: 1}"
-            :delay="30*companyLogo.id"
         />
       </div>
 
@@ -70,7 +72,7 @@
         >
       </slide>
       <template #addons>
-        <Navigation />
+        <Navigation/>
       </template>
     </carousel>
 
@@ -97,7 +99,7 @@
         >
       </slide>
       <template #addons>
-        <Navigation />
+        <Navigation/>
       </template>
     </carousel>
 
@@ -203,7 +205,7 @@ export default {
 
 .customers-container {
   @apply flex flex-col justify-center items-center rounded-xl sm:p-4 md:p-0;
-  background: rgb(17 24 39) center / contain no-repeat fixed url("../../assets/background/bg-lines-color.png");
+  background: rgb(17 24 39) center / cover no-repeat fixed url("/assets/background/bg-lines-color.png");
 }
 
 .customers-sub-container {
@@ -250,7 +252,7 @@ export default {
   @apply md:gap-4 lg:gap-6;
 }
 
-.logotype-img {
+.logo {
   // all
   @apply opacity-100 max-h-[83px] max-w-[205px];
   // sm:

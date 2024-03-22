@@ -5,7 +5,7 @@
 
       <div class="w-full flex flex-col items-center lg:items-center">
 
-        <div class="ev-b-title txt-shadow"
+        <div class="ev-b-title txt-shadow duration-300"
              v-motion
              :initial="{y: -30, opacity: 0}"
              :enter="{y: 0, opacity: 1}"
@@ -15,7 +15,7 @@
         </div>
 
         <div
-            class="ev-bs-title txt-shadow"
+            class="ev-bs-title txt-shadow duration-300"
             v-motion
             :initial="{opacity: 0.001}"
             :enter="{opacity: 1}"
@@ -29,11 +29,11 @@
             v-for="btn of buttons"
             :key="btn.id"
             :to="btn.location"
-            class="b-btn"
+            class="b-btn duration-150"
             v-motion
-            :initial="{x: -80, opacity: 0.001}"
-            :enter="{x: 0, opacity: 1}"
-            :delay="600 + btn.id * 150"
+            :initial="{y: 30, opacity: 0}"
+            :enter="{y: 0, opacity: 1}"
+            :delay="400 + btn.id * 350"
         >
           <i :class="btn.iconClass"></i>
           <i class="iMark ml-4 pi pi-arrow-right"></i>

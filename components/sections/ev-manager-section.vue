@@ -58,7 +58,11 @@
       <div
           v-for="employee of employees"
           :key="employee.id"
-          class="card-director"
+          class="card-director duration-300"
+          v-motion
+          :initial="{y: 40, opacity: 0}"
+          :visibleOnce="{y: 0, opacity: 1}"
+          :delay="550"
       >
         <div class="card-img-desc-wrapper">
           <img class="card-image" :src="`/assets/avatars/${employee.img}`" alt="no img"/>
@@ -81,7 +85,7 @@
 </template>
 
 <script>
-import {employees} from "~/configs/employees";
+import {employees} from "../../configs/employees";
 import 'vue3-carousel/dist/carousel.css';
 import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel';
 
@@ -161,7 +165,7 @@ export default {
 }
 
 .card-director {
-  @apply bg-gray-50 border border-gray-200 rounded-lg py-4 px-10 lg:px-8;
+  @apply bg-sky-100/65 border border-gray-200 rounded-lg py-4 px-10 lg:px-8;
   @apply min-w-[100px] max-w-[640px] mt-2;
   @apply flex flex-col items-center justify-start;
 }
