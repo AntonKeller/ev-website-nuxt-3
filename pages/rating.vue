@@ -42,7 +42,7 @@
           :enter="{opacity: 1}"
           :delay="1200"
       >
-        <div class="flex items-center px-2.5 py-2 bg-sky-500/15 rounded-sm text-gray-100 w-fit">
+        <div class="flex items-center px-2.5 py-2 bg-blue-500/20 rounded-sm text-gray-100 w-fit">
           <i class="text-md select-none text-sky-500 mr-2 pi pi-user h-fit"></i>
           <span class="text-sm lg:text-base font-medium">Наши специалисты</span>
         </div>
@@ -66,17 +66,14 @@
             <i @click="nextYear" :class="{'text-sm text-sky-500/40': inProcess || activeYear >= 2021}"
                class="select-none cursor-pointer text-sky-500 ml-4 pi pi-caret-right h-fit"></i>
           </div>
-          <div class="flex flex-col gap-y-2 rounded-sm">
+          <div class="flex flex-col gap-y-1.5 rounded-sm">
             <div
                 v-for="rating of currentRating"
-                class=" py-1.5 px-4 lg:py-1.5 lg:px-2.5 gap-y-1 rounded-xl lg:rounded-full flex flex-col lg:flex-row lg:items-center lg:justify-end"
+                class="py-1.5 px-4 lg:py-1.5 lg:px-2.5 gap-y-1 rounded-xl lg:rounded-full flex flex-col lg:flex-row lg:items-center lg:justify-end"
             >
               <div class="text-sm text-gray-300 text-center lg:text-right">{{ rating.title }}</div>
-              <div
-                  class="relative ml-2 md:min-w-[240px] lg:max-w-[360px] bg-sky-900 rounded-md lg:rounded-full overflow-hidden py-0.5">
-                <div
-                    class="w-full h-fit bg-gradient-to-r from-blue-800 to-sky-700 rounded-md lg:rounded-full duration-1000"
-                    :style="{width: '100%'}">
+              <div class="relative ml-2 md:min-w-[240px] lg:max-w-[360px] bg-sky-900 rounded-md lg:rounded-full overflow-hidden py-0.5">
+                <div class="w-full h-fit bg-gradient-to-r from-blue-700/50 to-violet-700/50 rounded-md lg:rounded-full duration-1000">
                   <div class="opacity-0 text-xs">-1</div>
                 </div>
                 <div class="absolute right-0 top-0 mt-[1.5px] mr-3 text-xs text-sky-300 font-medium">

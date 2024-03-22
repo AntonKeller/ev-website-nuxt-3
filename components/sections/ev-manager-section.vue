@@ -2,23 +2,58 @@
   <div class="directors-section">
 
     <div class="manager-section-title">
-      <h2 class="text-lg lg:text-2xl font-bold">
+      <h2
+          class="text-gray-100 text-lg lg:text-2xl font-bold duration-100"
+          v-motion
+          :initial="{x: 30, opacity: 0}"
+          :visibleOnce="{x: 0, opacity: 1}"
+          :delay="200"
+      >
         Состав директоров
       </h2>
-      <p class="text-base lg:text-lg font-light text-gray-700">
-        Безупречная репутация на рынке консультационных услуг в течение более 12 лет
-<!--        Эверест Консалтинг, лидер российского рынка оценки для целей МСФО.-->
-<!--        Лидер по оценке для целей МСФО на протяжении 7 лет согласно данным рейтингового агентства Экперт РА.-->
-<!--        Успешный многолетний опыт согласования результатов с ведущими аудиторскими компаниями, в том числе аудиторами большой четверки-->
-      </p>
+      <div
+          class="text-base lg:text-lg font-light text-gray-700 duration-100 space-y-0.5 px-6 md:px-0"
+          v-motion
+          :initial="{x: 30, opacity: 0}"
+          :visibleOnce="{x: 0, opacity: 1}"
+          :delay="600"
+      >
+        <div class="text-gray-200">Безупречная репутация на рынке консультационных услуг в течение более 12 лет</div>
+        <div class="text-gray-200">Эверест Консалтинг, лидер российского рынка оценки для целей МСФО.</div>
+        <div class="text-gray-200">Лидер по оценке для целей МСФО на протяжении 7 лет согласно данным рейтингового агентства Экперт РА.</div>
+        <div class="text-gray-200">Успешный многолетний опыт согласования результатов с ведущими аудиторскими компаниями, в том числе аудиторами большой четверки</div>
+      </div>
+    </div>
+
+    <div class="card-list">
+      <div
+          v-for="employee of employees"
+          :key="employee.id"
+          class="card-director duration-150"
+          v-motion
+          :initial="{x: 30, opacity: 0}"
+          :visibleOnce="{x: 0, opacity: 1}"
+          :delay="600 + 200 * employee.id"
+      >
+        <div class="card-img-desc-wrapper">
+          <img class="card-image" :src="`/assets/avatars/${employee.img}`" alt="no img"/>
+          <div class="card-img-desc">
+            <span class="text-red-800 inline-block font-bold">{{ employee.fullName }}</span>
+            <div class="flex gap-x-1">
+              <span
+                  class="blue-mark text-gray-600 inline-block font-medium text-xs"
+                  v-for="post of employee.posts"
+              >{{post}}</span>
+            </div>
+            <span class="text-gray-400 inline-block font-light">{{ employee.area }}</span>
+          </div>
+        </div>
+        <div class="card-description">{{employee.text}}</div>
+      </div>
     </div>
 
     <div class="card-slider-wrapper">
       <carousel
-          v-motion
-          :initial="{opacity: 0}"
-          :enter="{opacity: 1}"
-          :delay="250"
           :items-to-show="1"
           class="card-slider"
           transition="100"
@@ -52,33 +87,6 @@
           <Pagination/>
         </template>
       </carousel>
-    </div>
-
-    <div class="card-list">
-      <div
-          v-for="employee of employees"
-          :key="employee.id"
-          class="card-director duration-300"
-          v-motion
-          :initial="{y: 40, opacity: 0}"
-          :visibleOnce="{y: 0, opacity: 1}"
-          :delay="550"
-      >
-        <div class="card-img-desc-wrapper">
-          <img class="card-image" :src="`/assets/avatars/${employee.img}`" alt="no img"/>
-          <div class="card-img-desc">
-            <span class="text-red-800 inline-block font-bold">{{ employee.fullName }}</span>
-            <div class="flex gap-x-1">
-              <span
-                  class="blue-mark text-gray-600 inline-block font-medium text-xs"
-                  v-for="post of employee.posts"
-              >{{post}}</span>
-            </div>
-            <span class="text-gray-400 inline-block font-light">{{ employee.area }}</span>
-          </div>
-        </div>
-        <div class="card-description">{{employee.text}}</div>
-      </div>
     </div>
 
   </div>
@@ -134,14 +142,14 @@ export default {
   @apply overflow-hidden rounded-tl-lg rounded-tr-lg;
   @apply px-2 sm:px-12 md:px-16 lg:px-10 xl:px-12;
   @apply py-6 sm:py-8 md:py-10 lg:py-16 xl:py-14;
-  @apply mt-4 sm:mt-6 bg-gray-100 border border-gray-200;
+  @apply mt-4 sm:mt-6 bg-gradient-to-r from-red-900 to-red-800 border border-gray-200;
 }
 
 .manager-section-title {
-  @apply w-full border-b border-b-gray-200;
+  @apply w-full;
   @apply pb-4 sm:pb-8 md:pb-10 lg:pb-10 xl:pb-12;
   @apply text-center md:text-left;
-  @apply space-y-3;
+  @apply space-y-4;
 }
 
 
@@ -165,7 +173,7 @@ export default {
 }
 
 .card-director {
-  @apply bg-sky-100/65 border border-gray-200 rounded-lg py-4 px-10 lg:px-8;
+  @apply bg-gray-200 border border-gray-400 rounded-lg py-4 px-10 lg:px-8;
   @apply min-w-[100px] max-w-[640px] mt-2;
   @apply flex flex-col items-center justify-start;
 }

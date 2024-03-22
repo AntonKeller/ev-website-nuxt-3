@@ -33,7 +33,7 @@
           class="logotype-images-wrapper duration-100"
           v-motion
           :initial="{opacity: 0}"
-          :enter="{opacity: 1}"
+          :visibleOnce="{opacity: 1}"
           :delay="1500"
       >
         <img
@@ -50,7 +50,7 @@
     <carousel
         v-motion
         :initial="{opacity: 0}"
-        :enter="{opacity: 1}"
+        :visibleOnce="{opacity: 1}"
         :delay="250"
         :items-to-show="1"
         class="slider sm:hidden min-h-[128px]"
@@ -79,7 +79,7 @@
     <carousel
         v-motion
         :initial="{opacity: 0}"
-        :enter="{opacity: 1}"
+        :visibleOnce="{opacity: 1}"
         :delay="250"
         :items-to-show="3"
         class="slider hidden sm:block md:hidden min-h-[128px]"
@@ -227,9 +227,10 @@ export default {
 }
 
 .chip {
-  @apply cursor-pointer;
+  // mouse
+  @apply cursor-pointer hover:bg-gray-600/30;
   // common
-  @apply inline rounded-md border-2 border-gray-700 text-gray-50 bg-transparent;
+  @apply inline rounded-md border-2 border-gray-700/85 text-gray-50 bg-transparent;
   // md
   @apply py-0.5 px-1 text-sm;
   // lg

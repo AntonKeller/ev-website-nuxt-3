@@ -6,19 +6,19 @@
         <div class="text-container-title">
 
           <div
-              class="text-gray-100 px-2.5 text-lg lg:text-2xl font-bold py-1.5 px-8 bg-gray-800 rounded-lg max-w-fit"
+              class="text-gray-100 px-2.5 text-lg lg:text-2xl font-bold py-1.5 px-8 bg-gray-800 rounded-lg max-w-fit duration-100"
               v-motion
-              :initial="{x: -30, opacity: 0}"
+              :initial="{x: 30, opacity: 0}"
               :visibleOnce="{x: 0, opacity: 1}"
               :delay="250"
           >О компании</div>
 
           <div
-              class="text-center sm:text-left ml-1 text-base lg:text-lg border-b-2 border-b-gray-800/10 pb-3.5 mt-3.5 font-bold font-sans"
+              class="text-center sm:text-left ml-1 text-base lg:text-lg border-b-2 border-b-gray-800/10 pb-3.5 mt-3.5 font-bold font-sans duration-100"
               v-motion
-              :initial="{opacity: 0}"
-              :visibleOnce="{opacity: 1}"
-              :delay="450"
+              :initial="{x: 30, opacity: 0}"
+              :visibleOnce="{x: 0, opacity: 1}"
+              :delay="500"
           >Компания, объединяющая специалистов c большим опытом многолетней деловой репутацией</div>
 
         </div>
@@ -27,13 +27,13 @@
           <div
               v-for="card of cards"
               :key="card.id"
-              class="flex flex-col items-center"
+              class="flex flex-col items-center duration-100"
           >
             <div
                 v-motion
-                :initial="{y: 30, opacity: 0.01}"
-                :visibleOnce="{y: 0, opacity: 1}"
-                :delay="450 + 250 * card.id"
+                :initial="{x: 30, opacity: 0}"
+                :visibleOnce="{x: 0, opacity: 1}"
+                :delay="600 + 150 * card.id"
             >
               <i :class="card.iconClass" class="text-5xl text-gray-600"></i>
               <p class="mt-4 lg:mt-8 text-gray-800 font-sans text-sm lg:text-base">{{ card.text }}}</p>
