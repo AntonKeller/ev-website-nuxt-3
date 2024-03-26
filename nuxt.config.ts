@@ -98,7 +98,13 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
         '@vueuse/motion/nuxt',
+        '@nuxtjs/robots'
     ],
+
+    robots: {
+        UserAgent: '*',
+        Disallow: ''
+    },
 
     tailwindcss: {
         exposeConfig: true,

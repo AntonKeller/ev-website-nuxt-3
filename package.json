@@ -9,9 +9,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^3.0.0",
     "@vueuse/motion": "^2.0.0",
     "gsap": "^3.12.5",
     "nuxt": "^3.10.1",
+    "nuxt-robots-module": "^1.5.1",
     "primeicons": "^6.0.1",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",

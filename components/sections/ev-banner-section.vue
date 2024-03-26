@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-container">
+  <div class="banner-container bg-container">
 
     <div class="flex flex-col items-center lg:items-start">
 
@@ -83,12 +83,16 @@ export default {
 }
 
 .banner-container {
-  @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(97.2vh)] rounded-lg shadow-gray-500 shadow-lg;
+  @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(97.2vh)] rounded-lg shadow-gray-500;
   @apply px-[40px] sm:px-[8vw] md:px-[15vw] lg:px-[12vw];
   @apply pt-28 pb-10 py-[20vw] md:py-[16vw] lg:py-[9vw];
-  @apply bg-blend-multiply;
-  background: rgba(103, 99, 99, 0.45) top / cover no-repeat fixed url("/assets/background/everest-1920.jpg");
+  @apply bg-blend-multiply bg-[url("/assets/background/everest-1920.jpg")];
 }
+
+/*.bg-container {*/
+/*  background-blend-mode: multiply;*/
+/*  background: rgba(103, 99, 99, 0.45) top / cover no-repeat fixed url("/assets/background/everest-1920.jpg");*/
+/*}*/
 
 .ev-b-title, .ev-bs-title {
   @apply text-center lg:text-left font-extrabold text-gray-100;
@@ -110,8 +114,8 @@ export default {
   @apply text-base lg:text-lg;
   @apply transition-colors duration-150;
   @apply active:scale-[99%];
-  @apply hover:bg-transparent;
-  @apply bg-red-900/90 border md:border border-gray-950/75;
+  @apply hover:bg-red-950/70;
+  @apply bg-gray-900/25 border border border-gray-900/65;
   @apply text-gray-100 rounded-md backdrop-blur-sm;
 }
 
