@@ -10,7 +10,7 @@ interface TEmployee {
 export const employees: Array<TEmployee> = [
     {
         id: 1,
-        img: "alexey-zhuravlev-2.png",
+        img: "alexey.png",
         fullName: "Алексей Журавлев",
         posts: ["Генеральный директор"],
         area: "Москва",
@@ -24,7 +24,7 @@ export const employees: Array<TEmployee> = [
     },
     {
         id: 2,
-        img: "stepan-potapov-2.png",
+        img: "stepan.png",
         fullName: "Степан Потапов",
         posts: ["Директор"],
         area: "Москва",
@@ -36,7 +36,7 @@ export const employees: Array<TEmployee> = [
     },
     {
         id: 3,
-        img: "roman-karpov-2.png",
+        img: "roman.png",
         fullName: "Роман Карпов",
         posts: ["Директор"],
         area: "Москва",

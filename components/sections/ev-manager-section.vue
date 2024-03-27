@@ -20,8 +20,12 @@
       >
         <div class="text-gray-200">Безупречная репутация на рынке консультационных услуг в течение более 12 лет</div>
         <div class="text-gray-200">Эверест Консалтинг, лидер российского рынка оценки для целей МСФО.</div>
-        <div class="text-gray-200">Лидер по оценке для целей МСФО на протяжении 7 лет согласно данным рейтингового агентства Экперт РА.</div>
-        <div class="text-gray-200">Успешный многолетний опыт согласования результатов с ведущими аудиторскими компаниями, в том числе аудиторами большой четверки</div>
+        <div class="text-gray-200">Лидер по оценке для целей МСФО на протяжении 7 лет согласно данным рейтингового
+          агентства Экперт РА.
+        </div>
+        <div class="text-gray-200">Успешный многолетний опыт согласования результатов с ведущими аудиторскими
+          компаниями, в том числе аудиторами большой четверки
+        </div>
       </div>
     </div>
 
@@ -43,12 +47,12 @@
               <span
                   class="blue-mark text-gray-600 inline-block font-medium text-xs"
                   v-for="post of employee.posts"
-              >{{post}}</span>
+              >{{ post }}</span>
             </div>
             <span class="text-gray-400 inline-block font-light">{{ employee.area }}</span>
           </div>
         </div>
-        <div class="card-description">{{employee.text}}</div>
+        <div class="card-description">{{ employee.text }}</div>
       </div>
     </div>
 
@@ -75,13 +79,13 @@
               <span
                   class="blue-mark text-gray-600 inline-block font-medium text-xs"
                   v-for="post of employee.posts"
-              >{{post}}</span>
+              >{{ post }}</span>
               </div>
               <span class="text-gray-600 inline-block font-medium">{{ employee.post }}</span>
               <span class="text-gray-400 inline-block font-light">{{ employee.area }}</span>
             </div>
           </div>
-          <div class="card-description">{{employee.text}}</div>
+          <div class="card-description">{{ employee.text }}</div>
         </slide>
         <template #addons>
           <Pagination/>
@@ -118,24 +122,12 @@ export default {
 
 <style scoped>
 
-.blue-mark,
-.emerald-mark,
-.cyan-mark,
-.red-mark {
+.blue-mark {
   @apply py-0.5 px-2 text-gray-50 rounded-md;
 }
 
 .blue-mark {
   @apply bg-blue-700;
-}
-.emerald-mark {
-  @apply bg-emerald-700;
-}
-.cyan-mark {
-  @apply bg-cyan-700;
-}
-.red-mark {
-  @apply bg-violet-700;
 }
 
 .directors-section {

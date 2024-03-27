@@ -86,7 +86,7 @@ export default {
   @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(97.2vh)] rounded-lg shadow-gray-500;
   @apply px-[40px] sm:px-[8vw] md:px-[15vw] lg:px-[12vw];
   @apply pt-28 pb-10 py-[20vw] md:py-[16vw] lg:py-[9vw];
-  @apply bg-blend-multiply bg-[url("/assets/background/everest-1920.jpg")];
+  @apply bg-blend-multiply bg-top bg-fixed bg-[url("/assets/background/everest-1920.jpg")];
 }
 
 /*.bg-container {*/
@@ -99,12 +99,13 @@ export default {
 }
 
 .ev-b-title {
-  @apply z-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans;
+  @apply z-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl ;
 }
 
 .ev-bs-title {
-  @apply z-0 text-base md:text-base lg:text-lg xl:text-xl mt-6 rounded-sm px-6 py-1.5 font-sans bg-gray-900;
+  @apply z-0 text-base md:text-base lg:text-lg xl:text-xl mt-6 rounded-sm px-6 py-1.5 bg-gray-900;
   @apply translate-y-3;
+
 }
 
 .b-btn {

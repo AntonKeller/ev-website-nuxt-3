@@ -6,10 +6,6 @@ export default defineNuxtConfig({
     ssr: true,
 
     app: {
-        // baseURL: '/ev.nuxt.website.page/',
-        // baseURL: '/',
-
-        // Global page headers: https://go.nuxtjs.dev/config-head
         head: {
 
             title: 'Оценочная компания ООО "Эверест Консалтинг", работаем с 2010 года.',
@@ -19,15 +15,26 @@ export default defineNuxtConfig({
             },
 
             meta: [
-                {charset: 'utf-8'},
-                {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+                {
+                    name: 'viewport',
+                    content: 'width=device-width, initial-scale=1'
+                },
+                {
+                    charset: 'utf-8'
+                },
                 {
                     hid: 'description',
                     name: 'description',
-                    content: "Занимаемся оценкой нематериальных активов, оценка бизнеса, Оценка материальных активов (недвижимое имущество, машины и оборудование, транспортные средства и пр.). Для целей страхования,кредитования под залог, Переоценка основных средств для целей бухгалтерского учета и подготовки финансовой   отчетности в соответствии с требованиями РСБУ / ПБУ"
+                    content: "Оценка нематериальных активов, оценка бизнеса, Оценка материальных активов (недвижимое имущество, машины и оборудование, транспортные средства и пр.). Для целей страхования,кредитования под залог, Переоценка основных средств для целей бухгалтерского учета и подготовки финансовой отчетности в соответствии с требованиями РСБУ / ПБУ"
                 },
-                {name: 'format-detection', content: 'telephone=+79516962121'},
-                {name: 'author', content: 'ООО "Эверест консалтинг" '}
+                {
+                    name: 'format-detection',
+                    content: 'telephone=+79516962121'
+                },
+                {
+                    name: 'author',
+                    content: 'ООО "Эверест консалтинг"'
+                }
             ],
 
             link: [
@@ -42,7 +49,7 @@ export default defineNuxtConfig({
                 },
                 {
                     rel: "stylesheet",
-                    href: "https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap",
+                    href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
                 },
             ]
         },
@@ -52,47 +59,15 @@ export default defineNuxtConfig({
         typeCheck: true
     },
 
-    // axios: {
-    //   baseURL: 'http://91.224.218.13/'
-    // },
-
-    // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-
-    // alias: {
-    //     // '@': fileURLToPath(new URL('/', import.meta.url)),
-    //     // '@': fileURLToPath(new URL('/', import.meta.url)),
-    // },
-
-    // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
         '/assets/css/main.css'
     ],
-
-    // transition: {
-    //     name: "test",         //	Строка	"page"	Название перехода, применяется для всех маршрутов приложения.
-    //     mode: "out-in",       //	Строка	"out-in"	Режим перехода, применяется для всех маршрутов приложения документация Vue.js.
-    //     // css: "",              //	Булевское	true	Указывает, добавлять или нет CSS-класс для анимации перехода. По-умолчанию — true. Если установлен в false, то будет вызываеться только JavaScript-хуки, которые зарегистрированы через события компонентов.
-    //     // type: "",             //	Строка	n/a	Тип события, которое вызывается при завершении анимации перехода. Доступные значения: "transition" и "animation". Если не указан, то автоматически будет выбран с дольшей продолжительностью.
-    //     enterClass: "transition-start",       //	Строка	n/a	Название CSS-класса для начального состояния анимации перехода. См. документацию Vue.js
-    //     enterToClass: "transition-end",     //	Строка	n/a	Название CSS-класса для конечного состояния анимации перехода. См. документацию Vue.js
-    //     // enterActiveClass: "", //	Строка	n/a	Название CSS-класса, применяемого в течение анимации перехода. См. документацию Vue.js
-    //     // leaveClass: "",       //	Строка	n/a	Название CSS-класса для начального состояния анимации перехода. См. документацию Vue.js
-    //     // leaveToClass: "",     //	Строка	n/a	Название CSS-класса для конечного состояния анимации перехода. См. документацию Vue.js
-    //     // leaveActiveClass: "", //	Строка	n/a	Название CSS-класса, применяемого в течение анимации перехода. См. документацию Vue.js
-    // },
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
-
-    // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-    // buildModules: [
-    //     // https://go.nuxtjs.dev/typescript
-    //     // '@nuxt/typescript-build',
-    //     // '@nuxt/postcss8',
-    // ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
@@ -131,15 +106,5 @@ export default defineNuxtConfig({
             }
         }
     }
-
-    // Build Configuration: https://go.nuxtjs.dev/config-build
-    // build: {
-    //     postcss: {
-    //         plugins: {
-    //             tailwindcss: {},
-    //             autoprefixer: {},
-    //         },
-    //     },
-    // }
 
 })

@@ -14,7 +14,7 @@
           >О компании</div>
 
           <div
-              class="text-center sm:text-left ml-1 text-base lg:text-lg border-b-2 border-b-gray-800/10 pb-3.5 mt-3.5 font-bold font-sans duration-100"
+              class="text-center sm:text-left ml-1 text-base lg:text-lg border-b-2 border-b-gray-800/10 pb-3.5 mt-3.5 font-bold  duration-100"
               v-motion
               :initial="{x: 30, opacity: 0}"
               :visibleOnce="{x: 0, opacity: 1}"
@@ -36,7 +36,7 @@
                 :delay="600 + 150 * card.id"
             >
               <i :class="card.iconClass" class="text-5xl text-gray-600"></i>
-              <p class="mt-4 lg:mt-8 text-gray-800 font-sans text-sm lg:text-base">{{ card.text }}}</p>
+              <p class="mt-4 lg:mt-8 text-gray-800 text-sm lg:text-base">{{ card.text }}}</p>
             </div>
           </div>
         </div>

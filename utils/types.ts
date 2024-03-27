@@ -1,5 +1,3 @@
-import {integer} from "vscode-languageserver-types";
-
 interface TContentObject {
   id: Number,
   title: String,
