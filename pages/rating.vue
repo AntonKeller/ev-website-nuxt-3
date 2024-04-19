@@ -19,22 +19,6 @@
           значительным опытом выполнения подобных проектов как в России, так и за рубежом.
         </div>
       </div>
-
-      <div class="flex flex-wrap justify-stretch gap-2 md:gap-6 max-w-[920px]">
-        <div
-            v-for="e of titles"
-            :key="e.id"
-            class="text-sm lg:text-base w-full sm:w-[30%] text-gray-300 w-full bg-sky-950/75 px-6 py-4 rounded-lg text-left shadow-lg duration-100"
-            v-motion
-            :initial="{opacity: 0}"
-            :enter="{opacity: 1}"
-            :delay="250 + 150 * e.id"
-        >
-          <i class="text-xl select-none cursor-pointer text-blue-500 ml-8 mr-2 pi h-fit" :class="e.icon"></i>
-          {{e.title}}
-        </div>
-      </div>
-
       <div
           class="text-gray-300 w-full bg-sky-950/75 rounded-lg py-4 px-6 max-w-[920px] shadow-lg duration-100"
           v-motion
@@ -72,8 +56,10 @@
                 class="py-1.5 px-4 lg:py-1.5 lg:px-2.5 gap-y-1 rounded-xl lg:rounded-full flex flex-col lg:flex-row lg:items-center lg:justify-end"
             >
               <div class="text-sm text-gray-300 text-center lg:text-right">{{ rating.title }}</div>
-              <div class="relative ml-2 md:min-w-[240px] lg:max-w-[360px] bg-sky-900 rounded-md lg:rounded-full overflow-hidden py-0.5">
-                <div class="w-full h-fit bg-gradient-to-r from-blue-700/50 to-violet-700/50 rounded-md lg:rounded-full duration-1000">
+              <div
+                  class="relative ml-2 md:min-w-[240px] lg:max-w-[360px] bg-sky-900 rounded-md lg:rounded-full overflow-hidden py-0.5">
+                <div
+                    class="w-full h-fit bg-gradient-to-r from-blue-700/50 to-violet-700/50 rounded-md lg:rounded-full duration-1000">
                   <div class="opacity-0 text-xs">-1</div>
                 </div>
                 <div class="absolute right-0 top-0 mt-[1.5px] mr-3 text-xs text-sky-300 font-medium">
@@ -84,6 +70,21 @@
           </div>
         </div>
       </div>
+      <div class="flex flex-wrap justify-stretch gap-2 md:gap-6 max-w-[920px]">
+        <div
+            v-for="e of titles"
+            :key="e.id"
+            class="text-sm lg:text-base w-full sm:w-[30%] text-gray-300 w-full bg-sky-950/75 px-6 py-4 rounded-lg text-left shadow-lg duration-100"
+            v-motion
+            :initial="{opacity: 0}"
+            :enter="{opacity: 1}"
+            :delay="250 + 150 * e.id"
+        >
+          <i class="text-xl select-none cursor-pointer text-blue-500 ml-8 mr-2 pi h-fit" :class="e.icon"></i>
+          {{ e.title }}
+        </div>
+      </div>
+
 
     </div>
     <evFooter/>

@@ -7,11 +7,8 @@
 }
 
 * {
-  font-family: "Montserrat", "SF Pro Display", "Golos", "system-ui", sans-serif;
+  font-family: "SF Pro Display", "Golos", "system-ui", sans-serif;
 }
-
-/*'SF Pro Display',*/
-/*'ui-sans-serif',*/
 
 body::-webkit-scrollbar {
   width: 0;

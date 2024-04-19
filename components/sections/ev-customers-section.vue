@@ -1,6 +1,5 @@
 <template>
   <div class="customers-container">
-    <a name="out"></a>
     <div class="customers-sub-container">
 
       <div
@@ -204,7 +203,7 @@ export default {
 <style lang="scss" scoped>
 
 .customers-container {
-  @apply flex flex-col justify-center items-center rounded-xl sm:p-4 md:p-0;
+  @apply flex flex-col justify-center items-center rounded-lg sm:p-4 md:p-0;
   background: rgb(17 24 39) center / cover no-repeat fixed url("/assets/background/bg-lines-color.png");
 }
 
@@ -216,11 +215,11 @@ export default {
 
 .customer-title {
   @apply text-lg lg:text-2xl;
-  @apply font-extrabold text-center sm:text-right md:text-center text-gray-50;
+  @apply font-extrabold text-center text-gray-50;
 }
 
 .chips {
-  @apply flex flex-wrap justify-center sm:justify-end md:justify-center;
+  @apply flex flex-wrap justify-center justify-center;
   @apply gap-1.5 mt-6 sm:mt-6 md:mb-4;
   // lg
   @apply lg:my-8 lg:gap-2;

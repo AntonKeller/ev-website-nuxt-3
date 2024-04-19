@@ -85,14 +85,9 @@ export default {
 .banner-container {
   @apply relative w-full flex flex-col justify-center items-center h-auto lg:min-h-[calc(97.2vh)] rounded-lg shadow-gray-500;
   @apply px-[40px] sm:px-[8vw] md:px-[15vw] lg:px-[12vw];
-  @apply pt-28 pb-10 py-[20vw] md:py-[16vw] lg:py-[9vw];
+  @apply pt-32 pb-10 py-[20vw] md:py-[16vw] lg:py-[9vw];
   @apply bg-blend-multiply bg-top bg-fixed bg-[url("/assets/background/everest-1920.jpg")];
 }
-
-/*.bg-container {*/
-/*  background-blend-mode: multiply;*/
-/*  background: rgba(103, 99, 99, 0.45) top / cover no-repeat fixed url("/assets/background/everest-1920.jpg");*/
-/*}*/
 
 .ev-b-title, .ev-bs-title {
   @apply text-center lg:text-left font-extrabold text-gray-100;
