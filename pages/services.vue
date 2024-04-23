@@ -91,7 +91,7 @@ export default {
 
   head() {
     return {
-      title: "Наши услуги",
+      title: "Услуги",
       meta: [
         {
           hid: 'description',
@@ -101,7 +101,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: "https://antonkeller.github.io/ev_nuxtjs_website_page-1/services",
+          content: "https://evcons.ru/services",
         },
       ],
     }
@@ -140,12 +140,8 @@ export default {
 
 <style scoped>
 
-.services-container {
-  @apply p-4 bg-gray-50;
-}
-
 .services-content-wrapper {
-  @apply h-[100vh] max-h-[100vh] rounded-tl-lg rounded-tr-lg rounded-b-sm;
+  @apply h-[100vh] max-h-[100vh];
   @apply w-full flex flex-col items-start md:flex-row pb-6;
   @apply px-6 pt-32 sm:px-8 md:px-14 lg:px-20 lg:pt-36 xl:px-48;
   @apply bg-gray-950;
