@@ -3,27 +3,34 @@
     <div class="customers-container">
 
       <div class="customers-sub-container">
-
-        <div class="customer-title" v-motion-fade :delay="400">
-          Опыт нашей команды
-        </div>
-
-        <div class="chips" v-motion-fade :delay="400">
-          <div
-              v-for="group of getGroups()"
-              :key="group.id"
-              @click="chipCLick(group.name)"
-              :class="{'chip': !isSelected(group.name), 'chip-active': isSelected(group.name)}"
-              class="duration-100"
-          >
-            {{ group.name }}
-            <i class="ml-1.5 text-xs pi pi-filter"></i>
-          </div>
-        </div>
+       <div
+           v-motion
+           :initial="{ opacity: 0, scale: 0.85}"
+           :enter="{ opacity: 1, scale: 1}"
+           :delay="400"
+       >
+         <div class="customer-title">
+           Опыт нашей команды
+         </div>
+         <div class="chips">
+           <div
+               v-for="group of getGroups()"
+               :key="group.id"
+               @click="chipCLick(group.name)"
+               :class="{'chip': !isSelected(group.name), 'chip-active': isSelected(group.name)}"
+               class="duration-100"
+           >
+             {{ group.name }}
+             <i class="ml-1.5 text-xs pi pi-filter"></i>
+           </div>
+         </div>
+       </div>
 
         <div class="logotype-images-wrapper duration-100"
-             v-motion-slide-bottom
-             :delay="800"
+             v-motion
+             :initial="{ opacity: 0, scale: 0.85}"
+             :enter="{ opacity: 1, scale: 1}"
+             :delay="600"
         >
           <img
               v-for="companyLogo of getCompaniesLogo()"
@@ -31,11 +38,6 @@
               :src="`/assets/experience_logotypes/${companyLogo.img}.png`"
               class="logo"
               alt="err"
-              v-motion
-              :initial="{ opacity: 0, y: 100 }"
-              :enter="{ opacity: 1, y: 0, scale: 1 }"
-              :variants="{ custom: { scale: 2 } }"
-              :hovered="{ scale: 1.2 }"
           />
         </div>
 
@@ -217,7 +219,7 @@ export default {
 <style scoped lang="scss">
 
 .customers-container {
-  @apply flex flex-col h-[100vh] justify-start items-center rounded-lg pt-24 md:pt-28;
+  @apply flex flex-col h-[100vh] justify-center gap-y-8 items-center rounded-lg pt-24 md:pt-28;
   background: rgb(17 24 39) center / cover no-repeat fixed url("/assets/background/bg-lines-color.png");
 }
 

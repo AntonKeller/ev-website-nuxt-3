@@ -92,7 +92,7 @@ export default {
       },
       {
         id: 4,
-        title: "Руководство",
+        title: "О нас",
         location: "/directors",
         iconClass: "pi pi-briefcase"
       },
