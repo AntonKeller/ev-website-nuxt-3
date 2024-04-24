@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col w-full lg:w-fit">
+      <div class="z-10 flex flex-col w-full lg:w-fit">
         <div class="manager-section-title">
           <h1 class="text-gray-100 text-lg lg:text-2xl font-bold duration-300">Наш офис</h1>
           <h2 class="text-base lg:text-lg font-light text-gray-200 duration-300 space-y-0.5">
