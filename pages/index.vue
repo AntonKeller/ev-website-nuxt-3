@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div class="scroll-hidden bg-gray-50 px-2 pt-2 pb-2 md:px-4 md:pt-3.5">
-      <div class="banner-container bg-container">
-
+    <div class="scroll-hidden bg-gray-50">
+      <div class="banner-container">
         <div class="flex flex-col items-center lg:items-start">
           <div class="w-full flex flex-col items-center lg:items-center" v-motion-fade :delay="300">
             <div class="ev-b-title txt-shadow">Эверест Консалтинг</div>
@@ -61,7 +60,7 @@ export default {
 }
 
 .banner-container {
-  @apply h-[98vh] relative w-full flex flex-col justify-center items-center rounded-lg shadow-gray-500;
+  @apply h-[100vh] relative w-full flex flex-col justify-center items-center rounded-lg shadow-gray-500;
   @apply px-[40px] sm:px-[8vw] md:px-[15vw] lg:px-[12vw];
   @apply pt-32 pb-10 py-[20vw] md:py-[16vw] lg:py-[9vw];
 }
