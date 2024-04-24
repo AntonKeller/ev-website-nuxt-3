@@ -1,7 +1,7 @@
 <template>
   <header class="ev-header">
 
-    <div class="mr-auto md:ml-0 min-w-fit" v-motion-fade :delay="500">
+    <div class="mr-auto md:ml-0 min-w-fit" >
       <NuxtLink
           class="logoLink flex items-center gap-x-3"
           to="/"
@@ -17,7 +17,7 @@
     </div>
 
     <!--   Menu -->
-    <div class="hidden lg:flex flex-row gap-x-6" v-motion-fade>
+    <div class="hidden lg:flex flex-row gap-x-6" >
       <NuxtLink
           v-for="link of links"
           :key="link.id"
@@ -32,14 +32,19 @@
 
     <!--   Drop Menu -->
     <div
-        class="lg:hidden relative ml-auto w-[50px] sm:w-[150px] text-right pl-4"
+        class="  lg:hidden relative ml-auto w-[50px] sm:w-[150px] text-right pl-4"
         @mouseleave="menuVisible=false"
     >
-      <i
-          :class="{'text-gray-400': menuVisible}"
-          class="text-3xl select-none cursor-pointer text-gray-100 duration-200 hover:text-gray-400 pi pi-list"
-          @click="this.menuVisible = !this.menuVisible"
-      />
+        <div
+            @click="this.menuVisible = !this.menuVisible"
+            :class="{'activeMenu': menuVisible}"
+            class="min-w-[35px] max-w-[35px] z-50 ml-auto py-2 flex flex-col gap-y-2 select-none cursor-pointer"
+        >
+          <div class="w-full h-[2px] bg-gray-200"> </div>
+          <div class="w-full h-[2px] bg-gray-200"> </div>
+          <div class="w-full h-[2px] bg-gray-200"> </div>
+        </div>
+
       <div
           :class="{'opacity-100': menuVisible, 'hidden opacity-0': !menuVisible}"
           class="overflow-hidden absolute right-0 p-6 w-[200px] sm:w-[200px] bg-gray-950/75 rounded flex flex-col gap-y-1.5 duration-300 text-left"
@@ -102,6 +107,14 @@ export default {
 </script>
 
 <style scoped>
+
+.hoverMenu > div {
+  @apply bg-gray-400;
+}
+
+.activeMenu > div {
+  @apply bg-gray-400;
+}
 
 .hovered {
   @apply hover:text-gray-200 hover:bg-gray-200/10;

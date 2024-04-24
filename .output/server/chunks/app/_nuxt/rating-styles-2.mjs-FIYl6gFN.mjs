@@ -1,6 +1,0 @@
-import { p as publicAssetsURL } from '../../handlers/renderer.mjs';
-
-const rating_vue_vue_type_style_index_0_scoped_2afc538b_lang = ".bg-container[data-v-2afc538b]{background:top/cover no-repeat fixed url(" + publicAssetsURL("assets/background/everest-420-blur.png") + ");z-index:10}.ddd:hover a[data-v-2afc538b]{transform:translateX(150px)}.rating-container[data-v-2afc538b]{align-items:center;display:flex;flex-direction:column;row-gap:.5rem;z-index:10}@media (min-width:768px){.rating-container[data-v-2afc538b]{row-gap:1.5rem}}.rating-container[data-v-2afc538b]{background-color:rgba(8,51,68,.8);-moz-column-gap:1rem;column-gap:1rem;min-height:100vh;padding-left:.75rem;padding-right:.75rem}@media (min-width:1024px){.rating-container[data-v-2afc538b]{padding-left:4rem;padding-right:4rem}}.rating-container[data-v-2afc538b]{padding-bottom:1rem;padding-top:6rem}@media (min-width:640px){.rating-container[data-v-2afc538b]{padding-top:7rem}}@media (min-width:768px){.rating-container[data-v-2afc538b]{padding-bottom:2rem}}@media (min-width:1024px){.rating-container[data-v-2afc538b]{padding-top:8rem}}.rating-container[data-v-2afc538b]::-webkit-scrollbar{visibility:hidden;width:0}";
-
-export { rating_vue_vue_type_style_index_0_scoped_2afc538b_lang as r };
-//# sourceMappingURL=rating-styles-2.mjs-FIYl6gFN.mjs.map

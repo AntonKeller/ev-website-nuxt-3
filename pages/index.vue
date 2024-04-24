@@ -15,7 +15,7 @@
 
               <div class="text-lg text-gray-300 px-2 py-0.5">
                 <i class="select-none mr-4 pi pi-phone h-fit">
-                  8 495 717-01-01
+                  8 495 717 01 01
                 </i>
                 <i class="select-none mr-4 pi pi-phone h-fit">
                   8 499 557 07 97
@@ -45,13 +45,8 @@
 
 <script>
 
-// import evFooter from "../components/widgets/ev-footer";
-
 export default {
   name: 'IndexPage',
-  components: {
-    // evFooter,
-  },
 }
 
 </script>
@@ -80,8 +75,6 @@ export default {
   top: 0;
   @apply scale-100 duration-300 bg-gray-950/50 bg-blend-multiply bg-top bg-fixed bg-[url("/assets/background/everest-1920.jpg")];
 }
-
-
 
 .ev-b-title {
   @apply text-center lg:text-left font-extrabold text-gray-100 duration-300;

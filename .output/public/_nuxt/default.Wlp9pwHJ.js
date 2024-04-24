@@ -1,1 +1,0 @@
-import{_ as t,M as n,c as s,b as e,w as r,T as c,s as d,o as l,N as _}from"./entry._dJB0hmR.js";const p={name:"default",components:{evHeader:n}};function f(a,u,m,i,v,$){const o=d("evHeader");return l(),s("div",null,[e(o),e(c,{name:"bounce"},{default:r(()=>[_(a.$slots,"default")]),_:3})])}const H=t(p,[["render",f]]);export{H as default};
