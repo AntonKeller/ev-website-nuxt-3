@@ -633,7 +633,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_nuxt/directors-1FI38Ogd.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/directors--8d_IqMz.mjs').then((m) => m.default || m)
   },
   {
     name: "experience",
@@ -641,7 +641,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_nuxt/experience-T7gN8R_r.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/experience-DO7z7MQS.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -649,7 +649,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_nuxt/index-a72I8KJa.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-2ckCZw6r.mjs').then((m) => m.default || m)
   },
   {
     name: "rating",
@@ -657,7 +657,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_nuxt/rating-URkIoCGZ.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/rating-_bPgm0GL.mjs').then((m) => m.default || m)
   },
   {
     name: "services",
@@ -665,7 +665,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_nuxt/services-l9AtBgda.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/services-PcFCrcyY.mjs').then((m) => m.default || m)
   }
 ];
 const _wrapIf = (component2, props, slots) => {
@@ -3249,7 +3249,7 @@ const _sfc_main$3 = {
       },
       {
         id: 4,
-        title: "Руководство",
+        title: "О нас",
         location: "/directors",
         iconClass: "pi pi-briefcase"
       }
@@ -3260,10 +3260,10 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   const _component_NuxtLink = __nuxt_component_0$1;
   const _directive_motion_fade = resolveDirective("motion-fade");
   const _directive_motion_slide_visible_right = resolveDirective("motion-slide-visible-right");
-  _push(`<header${ssrRenderAttrs(mergeProps({ class: "ev-header" }, _attrs))} data-v-1ea2deb9><div${ssrRenderAttrs(mergeProps({
+  _push(`<header${ssrRenderAttrs(mergeProps({ class: "ev-header" }, _attrs))} data-v-2abad05e><div${ssrRenderAttrs(mergeProps({
     class: "mr-auto md:ml-0 min-w-fit",
     delay: 500
-  }, ssrGetDirectiveProps(_ctx, _directive_motion_fade)))} data-v-1ea2deb9>`);
+  }, ssrGetDirectiveProps(_ctx, _directive_motion_fade)))} data-v-2abad05e>`);
   _push(ssrRenderComponent(_component_NuxtLink, {
     class: "logoLink flex items-center gap-x-3",
     to: "/",
@@ -3271,7 +3271,7 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`<img class="select-none w-[44.4444px] h-[32px] md:w-[50px] md:h-[36px] opacity-90"${ssrRenderAttr("src", _imports_0)} alt="no img" data-v-1ea2deb9${_scopeId}><div class="logoTitle text-base text-gray-100 font-semibold" data-v-1ea2deb9${_scopeId}>Everest home</div>`);
+        _push2(`<img class="select-none w-[44.4444px] h-[32px] md:w-[50px] md:h-[36px] opacity-90"${ssrRenderAttr("src", _imports_0)} alt="no img" data-v-2abad05e${_scopeId}><div class="logoTitle text-base text-gray-100 font-semibold" data-v-2abad05e${_scopeId}>Everest home</div>`);
       } else {
         return [
           createVNode("img", {
@@ -3285,7 +3285,7 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     }),
     _: 1
   }, _parent));
-  _push(`</div><div${ssrRenderAttrs(mergeProps({ class: "hidden lg:flex flex-row gap-x-6" }, ssrGetDirectiveProps(_ctx, _directive_motion_fade)))} data-v-1ea2deb9><!--[-->`);
+  _push(`</div><div${ssrRenderAttrs(mergeProps({ class: "hidden lg:flex flex-row gap-x-6" }, ssrGetDirectiveProps(_ctx, _directive_motion_fade)))} data-v-2abad05e><!--[-->`);
   ssrRenderList(_ctx.links, (link) => {
     _push(ssrRenderComponent(_component_NuxtLink, {
       key: link.id,
@@ -3308,7 +3308,7 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
       _: 2
     }, _parent));
   });
-  _push(`<!--]--></div><div class="lg:hidden relative ml-auto w-[50px] sm:w-[150px] text-right pl-4" data-v-1ea2deb9><i class="${ssrRenderClass([{ "text-gray-400": _ctx.menuVisible }, "text-3xl select-none cursor-pointer text-gray-100 duration-200 hover:text-gray-400 pi pi-list"])}" data-v-1ea2deb9></i><div class="${ssrRenderClass([{ "opacity-100": _ctx.menuVisible, "hidden opacity-0": !_ctx.menuVisible }, "overflow-hidden absolute right-0 p-6 w-[200px] sm:w-[200px] bg-gray-950/75 rounded flex flex-col gap-y-1.5 duration-300 text-left"])}" data-v-1ea2deb9><!--[-->`);
+  _push(`<!--]--></div><div class="lg:hidden relative ml-auto w-[50px] sm:w-[150px] text-right pl-4" data-v-2abad05e><i class="${ssrRenderClass([{ "text-gray-400": _ctx.menuVisible }, "text-3xl select-none cursor-pointer text-gray-100 duration-200 hover:text-gray-400 pi pi-list"])}" data-v-2abad05e></i><div class="${ssrRenderClass([{ "opacity-100": _ctx.menuVisible, "hidden opacity-0": !_ctx.menuVisible }, "overflow-hidden absolute right-0 p-6 w-[200px] sm:w-[200px] bg-gray-950/75 rounded flex flex-col gap-y-1.5 duration-300 text-left"])}" data-v-2abad05e><!--[-->`);
   ssrRenderList(_ctx.links, (link) => {
     _push(ssrRenderComponent(_component_NuxtLink, mergeProps({
       key: link.id,
@@ -3339,7 +3339,7 @@ _sfc_main$3.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/widgets/ev-header.vue");
   return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
 };
-const evHeader = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["ssrRender", _sfc_ssrRender$1], ["__scopeId", "data-v-1ea2deb9"]]);
+const evHeader = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["ssrRender", _sfc_ssrRender$1], ["__scopeId", "data-v-2abad05e"]]);
 const _sfc_main$2 = {
   components: {
     EvHeader: evHeader
