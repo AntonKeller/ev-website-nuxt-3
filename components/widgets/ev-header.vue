@@ -3,7 +3,7 @@
 
     <div class="mr-auto md:ml-0 min-w-fit" >
       <NuxtLink
-          class="logoLink flex items-center gap-x-3"
+          class="logoLink flex items-center gap-x-6"
           to="/"
           @click="activeID = null"
       >
@@ -14,10 +14,11 @@
         >
         <div class="logoTitle text-base text-gray-100 font-semibold">Everest home</div>
       </NuxtLink>
+
     </div>
 
     <!--   Menu -->
-    <div class="hidden lg:flex flex-row gap-x-6" >
+    <div class="hidden lg:flex flex-row gap-x-3.5" >
       <NuxtLink
           v-for="link of links"
           :key="link.id"
@@ -89,18 +90,12 @@ export default {
         location: "/rating",
         iconClass: "pi pi-briefcase"
       },
-      {
-        id: 3,
-        title: "Опыт",
-        location: "/experience",
-        iconClass: "pi pi-briefcase"
-      },
-      {
-        id: 4,
-        title: "О нас",
-        location: "/directors",
-        iconClass: "pi pi-briefcase"
-      },
+      // {
+      //   id: 3,
+      //   title: "Опыт",
+      //   location: "/experience",
+      //   iconClass: "pi pi-briefcase"
+      // },
     ],
   }),
 }
@@ -129,7 +124,7 @@ export default {
 }
 
 .ev-header {
-  @apply absolute;
+  @apply fixed;
   @apply top-0 left-0 right-0 z-20 mt-2 md:mt-6;
   @apply mx-2 sm:m-0 py-6 sm:py-10 px-8 sm:px-12 md:px-14 lg:px-16 xl:px-16;
   @apply flex items-center gap-x-12;

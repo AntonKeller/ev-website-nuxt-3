@@ -68,7 +68,6 @@
       </carousel>
 
       <carousel
-
           :items-to-show="1"
           class="slider sm:hidden min-h-[128px]"
           transition="400"
@@ -133,10 +132,7 @@ export default {
 
   data: () => ({
     companies,
-    selectedGroups: {
-      // "Строительный аудит": null,
-      // "Строительная экспертиза": null,
-    },
+    selectedGroups: {},
   }),
 
   components: {

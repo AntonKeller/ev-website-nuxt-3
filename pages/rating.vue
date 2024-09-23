@@ -20,7 +20,7 @@
         </div>
       </div>
       <div
-          class="text-gray-300 w-full bg-sky-950/75 rounded-lg py-4 px-6 max-w-[920px] shadow-lg duration-100"
+          class="text-gray-300 w-full bg-sky-950/75 rounded-lg py-4 pb-4 px-6 max-w-[920px] shadow-lg duration-100"
           v-motion
           :initial="{ opacity: 0, scale: 0.85}"
           :enter="{ opacity: 1, scale: 1}"
@@ -42,33 +42,27 @@
           </div>
         </div>
 
-        <div class="z-10 flex flex-col gap-y-4 rounded-xl mt-4 ">
-          <div class="px-6 flex justify-center sm:justify-end items-center gap-x-8">
-            <i @click="prevYear" :class="{'text-sm text-sky-500/40': inProcess || activeYear <= 2011}"
-               class="select-none cursor-pointer text-sky-500 ml-4 pi pi-caret-left h-fit"></i>
-            <div class="text-sky-500 font-bold">{{ activeYear }} г</div>
-            <i @click="nextYear" :class="{'text-sm text-sky-500/40': inProcess || activeYear >= 2021}"
-               class="select-none cursor-pointer text-sky-500 ml-4 pi pi-caret-right h-fit"></i>
-          </div>
-          <div class="flex flex-col gap-y-1.5 rounded-sm">
-            <div
-                v-for="rating of currentRating"
-                class="py-1.5 px-4 lg:py-1.5 lg:px-2.5 gap-y-1 rounded-xl lg:rounded-full flex flex-col lg:flex-row lg:items-center lg:justify-end"
-            >
-              <div class="text-sm text-gray-300 text-center lg:text-right">{{ rating.title }}</div>
-              <div
-                  class="relative ml-2 md:min-w-[240px] lg:max-w-[360px] bg-sky-900 rounded-md lg:rounded-full overflow-hidden py-0.5">
-                <div
-                    class="w-full h-fit bg-gradient-to-r from-blue-700/50 to-violet-700/50 rounded-md lg:rounded-full duration-1000">
-                  <div class="opacity-0 text-xs">-1</div>
+        <div class="border-t border-b border-gray-300/15 mt-8 py-6">
+          <carousel :items-to-show="1"
+                    class="min-h-[300px] w-full text-gray-100 rounded-sm">
+            <slide v-for="item of ratingConfig" :key="item.id" class=" py-4">
+              <div class="text-left">
+                <div class="font-extrabold text-xl mb-4">
+                  Год определение рейтинга <span class="font-extrabold text-2xl mr-2 text-blue-500 underline">{{ item.year }}</span>
                 </div>
-                <div class="absolute right-0 top-0 mt-[1.5px] mr-3 text-xs text-sky-300 font-medium">
-                  {{ rating.value }}
+                <div v-for="e of item.infoByYear" class="text-sm mt-1.5">
+                  <span class="font-extrabold text-2xl mr-6 text-blue-500 text-right">{{ e.value }}</span>
+                  <span>{{ e.title }}</span>
                 </div>
               </div>
-            </div>
-          </div>
+            </slide>
+            <template #addons>
+              <Pagination/>
+            </template>
+          </carousel>
         </div>
+
+
       </div>
       <div class="flex flex-wrap justify-stretch gap-2 md:gap-6 max-w-[920px]">
         <div
@@ -84,17 +78,15 @@
           {{ e.title }}
         </div>
       </div>
-
-
     </div>
     <evFooter/>
   </div>
 </template>
 
 <script>
-import {ratingConfig} from "~/configs/ratingConfig.ts";
+import {ratingConfig} from "~/configs/ratingConfig";
 import 'vue3-carousel/dist/carousel.css';
-import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel';
+import {Carousel, Navigation, Pagination, Slide} from 'vue3-carousel';
 import evFooter from "~/components/widgets/ev-footer";
 
 export default {
@@ -133,9 +125,9 @@ export default {
 
   data: () => ({
     number: 0,
-    ratingConfig: ratingConfig,
+    ratingConfig,
     currentRating: [],
-    activeYear: 2021,
+    activeYear: 2024,
     yearMax: null,
     yearMin: null,
     inProcess: false,
@@ -217,7 +209,7 @@ export default {
       let timeout = setTimeout(() => {
         this.inProcess = false;
         clearInterval(timeout);
-      }, 1200)
+      }, 500)
     },
 
     prevYear() {
@@ -228,7 +220,7 @@ export default {
     },
 
     nextYear() {
-      if (!this.inProcess && this.activeYear < 2021) {
+      if (!this.inProcess && this.activeYear < 2024) {
         this.activeYear += 1;
         this.setRatingByYear();
       }

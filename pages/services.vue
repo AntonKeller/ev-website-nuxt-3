@@ -88,7 +88,6 @@
         </div>
       </div>
     </div>
-    <evFooter/>
   </div>
 </template>
 
