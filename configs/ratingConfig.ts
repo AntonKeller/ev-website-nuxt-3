@@ -23,7 +23,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 1,
+        id: 2,
         year: 2023,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 1},
@@ -35,7 +35,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 1,
+        id: 3,
         year: 2022,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 1},
@@ -47,7 +47,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 1,
+        id: 4,
         year: 2021,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 1},
@@ -58,7 +58,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 2,
+        id: 5,
         year: 2020,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 1},
@@ -69,7 +69,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 3,
+        id: 6,
         year: 2019,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 1},
@@ -79,7 +79,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 4,
+        id: 7,
         year: 2018,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 2},
@@ -89,7 +89,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 5,
+        id: 8,
         year: 2017,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 1},
@@ -99,7 +99,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 6,
+        id: 9,
         year: 2016,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 2},
@@ -109,7 +109,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 7,
+        id: 10,
         year: 2015,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 2},
@@ -119,7 +119,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 8,
+        id: 11,
         year: 2014,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 7},
@@ -128,7 +128,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 9,
+        id: 12,
         year: 2013,
         infoByYear: [
             {title: "Переоценки основных средств в т.ч. в целях МСФО", value: 10},
@@ -137,7 +137,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 10,
+        id: 13,
         year: 2012,
         infoByYear: [
             {title: "Место среди Крупнейших оценочных организаций", value: 44},
@@ -145,7 +145,7 @@ export const ratingConfig: Array<RatingType> = [
         ]
     },
     {
-        id: 11,
+        id: 14,
         year: 2011,
         infoByYear: [
             {title: "Место среди Крупнейших оценочных организаций", value: 59},

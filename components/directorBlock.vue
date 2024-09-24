@@ -26,11 +26,11 @@
       </div>
 
       <h1 class="text-gray-100 text-lg md:text-2xl lg:text-4xl font-bold duration-300 mt-2 md:mt-20 lg:mt-24">
-        Наш офис
+        Где мы находимся
       </h1>
 
       <h2 class="mt-2 text-base lg:text-lg font-light text-gray-200 duration-300 space-y-0.5">
-        Москва, 3-я улица Ямского Поля, 2к7, подъезд 4
+        г. Москва, 3-я улица Ямского Поля, дом 2, корпус 7, подъезд 4
       </h2>
 
     </div>

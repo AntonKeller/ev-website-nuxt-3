@@ -84,12 +84,12 @@ export default {
         location: "/services",
         iconClass: "pi pi-briefcase"
       },
-      {
-        id: 2,
-        title: "Достижения",
-        location: "/rating",
-        iconClass: "pi pi-briefcase"
-      },
+      // {
+      //   id: 2,
+      //   title: "Достижения",
+      //   location: "/rating",
+      //   iconClass: "pi pi-briefcase"
+      // },
       // {
       //   id: 3,
       //   title: "Опыт",

@@ -71,7 +71,7 @@
         </carousel>
       </div>
 
-      <div class="flex justify-between items-start w-full bg-gray-100/50 mt-2 md:mt-4 lg:mt-6">
+      <div class="flex justify-between items-start w-full bg-gray-100/50 mt-2 sm:mt-4 md:mt-8 lg:mt-12">
         <div
             v-for="e of titles"
             :key="e.id"
@@ -82,8 +82,6 @@
         </div>
       </div>
     </div>
-
-
   </div>
 </template>
 
