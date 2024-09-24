@@ -19,6 +19,7 @@
           значительным опытом выполнения подобных проектов как в России, так и за рубежом.
         </div>
       </div>
+
       <div
           class="text-gray-300 w-full bg-sky-950/75 rounded-lg py-4 pb-4 px-6 max-w-[920px] shadow-lg duration-100"
           v-motion
@@ -42,17 +43,46 @@
           </div>
         </div>
 
+
         <div class="border-t border-b border-gray-300/15 mt-8 py-6">
-          <carousel :items-to-show="1"
-                    class="min-h-[300px] w-full text-gray-100 rounded-sm">
-            <slide v-for="item of ratingConfig" :key="item.id" class=" py-4">
-              <div class="text-left">
-                <div class="font-extrabold text-xl mb-4">
-                  Год определение рейтинга <span class="font-extrabold text-2xl mr-2 text-blue-500 underline">{{ item.year }}</span>
+
+          <div class="flex items-center">
+            <div class="text-xl">Рейтинг за</div>
+            <carousel
+                v-model="slide"
+                class="w-[100px] mx-1 mr-2 text-gray-100 rounded-sm"
+                :transition="750"
+                :items-to-show="1"
+            >
+              <slide v-for="item of ratingConfig" :key="item.id" class=" py-4">
+                <div>
+                  <span class="ml-4 font-extrabold text-4xl mr-2 text-blue-500">{{ item.year }}</span>
                 </div>
-                <div v-for="e of item.infoByYear" class="text-sm mt-1.5">
-                  <span class="font-extrabold text-2xl mr-6 text-blue-500 text-right">{{ e.value }}</span>
-                  <span>{{ e.title }}</span>
+              </slide>
+            </carousel>
+            <div class="text-xl">Год</div>
+          </div>
+
+
+          <carousel
+              v-model="slide"
+              class="min-h-[300px] h-[250px] w-[600px] text-gray-100 rounded-sm"
+              snapAlign="start"
+              :autoplay="5000"
+              :transition="950"
+              :items-to-show="1"
+          >
+            <slide v-for="item of ratingConfig" :key="item.id" class="text-left py-4">
+              <div>
+                <div
+                    v-for="e of item.infoByYear"
+                    class="flex items-center text-sm mt-1.5"
+                >
+                  <div class="font-extrabold text-2xl mr-6 text-blue-500 text-right w-[40px]">{{
+                      e.value
+                    }}
+                  </div>
+                  <div>{{ e.title }}</div>
                 </div>
               </div>
             </slide>
@@ -124,12 +154,11 @@ export default {
   },
 
   data: () => ({
+    slide: 1,
     number: 0,
     ratingConfig,
     currentRating: [],
     activeYear: 2024,
-    yearMax: null,
-    yearMin: null,
     inProcess: false,
     titles: [
       {
@@ -161,72 +190,6 @@ export default {
       },
     ],
   }),
-
-  mounted() {
-    this.setYearMax();
-    this.setRatingByYear();
-  },
-
-  methods: {
-
-    setYearMax() {
-      this.yearMax = this.ratingConfig.map(e => e.year).sort((a, b) => a < b ? 1 : -1)?.shift();
-      this.yearMin = this.ratingConfig.map(e => e.year).sort((a, b) => a > b ? 1 : -1)?.shift();
-    },
-
-    setRatingByYear() {
-      this.currentRating = this.ratingConfig
-          ?.find(rElement => rElement.year === this.activeYear)?.infoByYear
-          ?.map(e => ({title: e.title, value: e.value}));
-      this.update();
-    },
-
-    update() {
-      this.inProcess = true;
-      this.currentRating.forEach((e, eI) => {
-        this.outNum(
-            e.value,
-            eI,
-            Math.floor(400 + Math.random() * 200)
-        );
-      });
-    },
-
-    outNum(num, index, time) {
-      if (num > 0) {
-        const step = 1;
-        this.currentRating[index].value = 0;
-        let t = Math.round(time / (num / step));
-        let interval = setInterval(() => {
-          this.currentRating[index].value = this.currentRating[index].value + step;
-          if (this.currentRating[index].value == num) clearInterval(interval);
-        }, t);
-      }
-      this.updateStatus();
-    },
-
-    updateStatus() {
-      let timeout = setTimeout(() => {
-        this.inProcess = false;
-        clearInterval(timeout);
-      }, 500)
-    },
-
-    prevYear() {
-      if (!this.inProcess && this.activeYear > 2011) {
-        this.activeYear -= 1;
-        this.setRatingByYear();
-      }
-    },
-
-    nextYear() {
-      if (!this.inProcess && this.activeYear < 2024) {
-        this.activeYear += 1;
-        this.setRatingByYear();
-      }
-    },
-
-  },
 }
 </script>
 

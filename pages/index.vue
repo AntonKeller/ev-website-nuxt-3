@@ -3,30 +3,38 @@
     <div class="scroll-hidden bg-gray-50">
       <div class="banner-container">
         <div class="z-20 flex flex-col items-center lg:items-start">
-          <div class="w-full flex flex-col items-center lg:items-center" v-motion-fade :delay="300">
-            <div class="ev-b-title txt-shadow">Эверест Консалтинг</div>
-            <div class="w-full flex flex-col gap-y-2 text-center md:text-left mt-8">
-              <div class="font-bold text-lg text-gray-100 px-2 py-0.5 text-center txt-shadow">На рынке с 2010 года</div>
-              <div class="flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-4 flex justify-center mt-6">
+          <div class="w-full flex flex-col items-center lg:items-center">
 
-                <div
-                     class="font-semibold duration-300 hover:cursor-pointer hover:bg-transparent hover:backdrop-blur-md hover:text-gray-100 border border-gray-50/30 text-gray-900 bg-gray-50 pl-4 pr-0.5 py-1 rounded-2xl w-fit"
-                >
-                  <div class="flex items-center gap-x-3">
-                    <NuxtLink to="/services">
-                      К услугам
-                    </NuxtLink>
-                    <i class="select-none mr-3 pi pi-arrow-right h-fit"></i>
-                  </div>
+            <div class="ev-b-title txt-shadow" v-motion-fade :delay="400">Эверест Консалтинг</div>
+
+            <div v-motion-fade :delay="650"
+                 class="text-md bg-gradient-to-r from-transparent via-gray-950/45 to-transparent text-gray-50 px-2 py-0.5 text-center txt-shadow w-[540px] mt-2 md:mt-4">
+              Наша цель - Оказание полного комплекса консультационных услуг в области оценки и консалтинга (финансового,
+              управленческого, налогового и строительного) специалистами, обладающими международными квалификациями и
+              значительным опытом выполнения подобных проектов как в России, так и за рубежом.
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-4 flex justify-center mt-6">
+
+              <di
+                  v-motion-fade :delay="650"
+                  class="font-semibold duration-300 hover:cursor-pointer hover:bg-transparent hover:backdrop-blur-md hover:text-gray-100 border border-gray-50/30 text-gray-900 bg-gray-50 pl-4 pr-0.5 py-1 rounded-2xl w-fit"
+              >
+                <div class="flex items-center gap-x-3">
+                  <NuxtLink to="/services">
+                    К услугам
+                  </NuxtLink>
+                  <i class="select-none mr-3 pi pi-arrow-right h-fit"></i>
                 </div>
+              </di>
 
-                <div @click="gotoFooter('#target-footer')"
-                     class="font-semibold duration-300 hover:cursor-pointer hover:text-gray-900 hover:bg-gray-100 bg-transparent backdrop-blur-sm text-gray-100 border border-gray-50/30 pl-4 pr-0.5 py-1 rounded-2xl w-fit"
-                >
-                  <div class="flex items-center gap-x-3">
-                    Контакты
-                    <i class="select-none mr-3 pi pi-book h-fit"></i>
-                  </div>
+              <div
+                  v-motion-fade :delay="750"
+                  @click="gotoFooter('#target-footer')"
+                  class="font-semibold duration-300 hover:cursor-pointer hover:text-gray-900 hover:bg-gray-100 bg-transparent backdrop-blur-sm text-gray-100 border border-gray-50/30 pl-4 pr-0.5 py-1 rounded-2xl w-fit"
+              >
+                <div class="flex items-center gap-x-3">
+                  Контакты
+                  <i class="select-none mr-3 pi pi-book h-fit"></i>
                 </div>
               </div>
             </div>
@@ -34,6 +42,8 @@
         </div>
       </div>
     </div>
+
+    <ratingBlock id="target-rating"/>
 
     <directorBlock id="target-directors"/>
 
@@ -45,12 +55,14 @@
 <script>
 import evFooter from "../components/widgets/ev-footer";
 import directorBlock from "/components/directorBlock.vue";
+import ratingBlock from "/components/ratingBlock.vue";
 
 export default {
   name: 'IndexPage',
 
   components: {
     evFooter,
+    ratingBlock,
     directorBlock,
   },
 
@@ -92,7 +104,7 @@ export default {
   right: 0;
   bottom: 0;
   top: 0;
-  animation-duration: 1.35s;
+  animation-duration: 1.15s;
   animation-name: showBanner;
   @apply z-10 duration-1000 bg-gray-950/50 bg-blend-multiply bg-top bg-fixed bg-[url("/assets/background/everest-1920.jpg")];
 }
@@ -106,7 +118,6 @@ export default {
     transform: scale(100%);
   }
 }
-
 
 .ev-b-title {
   @apply text-center lg:text-left font-extrabold text-gray-100 duration-300;

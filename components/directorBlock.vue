@@ -1,34 +1,37 @@
 <template>
   <div class="directors-section">
-    <div class="flex flex-col w-full sm:w-[80vw] sm:max-w-[700px] lg:sm:max-w-[750px] xl:sm:max-w-[800px]">
-      <h1 class="text-gray-100 text-lg lg:text-2xl font-bold duration-300">
+    <div class="flex flex-col w-full sm:max-w-[920px]">
+
+      <h1 class="text-gray-100 text-lg md:text-2xl lg:text-4xl font-bold duration-300 mt-2 md:mt-20 lg:mt-24">
         Руководство
       </h1>
-      <h2 class="text-base lg:text-lg font-light text-gray-200 duration-300 space-y-0.5">
+
+      <h2 class="mt-2 text-base lg:text-lg font-light text-gray-200 duration-300 space-y-0.5">
         Безупречная репутация на рынке консультационных услуг в течение более 12 лет
       </h2>
+
       <div
           v-for="e of employees"
           :key="e.id"
-          class="card-director duration-300 mt-1 sm:mt-2 lg:mt-4"
+          class="card-director duration-300 mt-1 sm:mt-4 lg:mt-6"
           v-motion
           :initial="{ opacity: 0, scale: 0.85}"
           :enter="{ opacity: 1, scale: 1}"
           :delay="e.id * 150"
       >
         <img class="card-image" :src="`/assets/avatars/${e.img}`" alt="no img"/>
-        <p class="text-gray-900 font-extrabold text-base lg:text-lg">{{ e.fullName }}</p>
-        <p class="text-red-900/85 font-medium text-sm lg:text-base">{{ e.post }}</p>
-        <p class="text-base text-gray-700">{{ e.text }}</p>
+        <p class="mt-0 text-gray-900 font-extrabold text-base lg:text-lg">{{ e.fullName }}</p>
+        <p class="mt-0 text-gray-900/85 font-sans text-sm lg:text-base">{{ e.post }}</p>
+        <p class="mt-0 md:mt-3 text-base text-gray-700">{{ e.text }}</p>
       </div>
 
-      <div class="mt-2 md:mt-32 lg:mt-36">
-        <h1 class="text-gray-100 text-lg lg:text-2xl font-bold duration-300">Наш офис</h1>
-        <h2 class="text-base lg:text-lg font-light text-gray-200 duration-300 space-y-0.5">
-          Наш офис находится по адресу:
-          <span class="rounded-lg px-1.5 py-0.5 bg-gray-200/15">Москва, 3-я улица Ямского Поля, 2к7, подъезд 4</span>
-        </h2>
-      </div>
+      <h1 class="text-gray-100 text-lg md:text-2xl lg:text-4xl font-bold duration-300 mt-2 md:mt-20 lg:mt-24">
+        Наш офис
+      </h1>
+
+      <h2 class="mt-2 text-base lg:text-lg font-light text-gray-200 duration-300 space-y-0.5">
+        Москва, 3-я улица Ямского Поля, 2к7, подъезд 4
+      </h2>
 
     </div>
 
@@ -85,12 +88,12 @@ export default {
 .directors-section {
   @apply bg-gray-900 min-h-[100vh] overflow-hidden;
   @apply flex flex-col justify-center items-center w-full;
-  @apply px-2 sm:px-0 pt-2 md:pt-12 lg:pt-16;
+  @apply px-2 sm:px-0 pt-2;
 }
 
 .directors-section::before {
   content: "";
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -100,8 +103,7 @@ export default {
 }
 
 .card-director {
-  @apply bg-gray-50 border border-gray-600 rounded-sm py-2.5 px-3 lg:px-4;
-  @apply min-w-full max-w-[780px];
+  @apply bg-gray-50 border border-gray-600 rounded-sm py-2.5 px-3 lg:px-4 min-w-full max-w-[780px];
 }
 
 .card-image {
