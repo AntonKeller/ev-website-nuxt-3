@@ -1,27 +1,34 @@
 <template>
   <footer class="footer-container">
 
-    <div class="element">
-      <div>Москва, 3-я улица Ямского поля, д 2 к 7, офис 301</div>
+    <div class="element md:mt-2">
+      <img class="opacity-75 w-[38px] h-[29px]" :src="'/assets/logotypes/ev-logotype-4-gray.png'" alt="no img">
+      <div class="ml-2 md:ml-4 lg:ml-5">© 2024, ООО Эверест Консалтиг</div>
     </div>
 
-    <div class="element">
-      <div>
-        info@evcons.ru
+    <div class="w-[50%] mt-3 md:mt-6 h-[1px] bg-gray-300"></div>
+
+    <div class="flex flex-col sm:flex-row items-center">
+      <span class="element mt-3 md:mt-5 bg-gray-200/50 border border200/80 py-1 px-1.5 sm:px-2 rounded-md">
+        <i class=" text-xs sm:text-sm select-none cursor-pointer text-gray-800 sm:mr-1 pi pi-inbox h-fit"></i>
+        <span class="ml-2">info@evcons.ru</span>
+      </span>
+
+      <div class="element mt-3 md:mt-5">
+      <span class="ml-1 sm:ml-2 md:ml-4 bg-gray-200/50 border border200/80 py-1 px-1.5 sm:px-2 rounded-md">
+        <i class=" text-xs sm:text-sm select-none cursor-pointer text-gray-800 sm:mr-1 pi pi-phone h-fit"></i>
+       <span class="ml-2">8 495 717-01-01</span>
+      </span>
+        <span class="ml-1 sm:ml-2 md:ml-4 bg-gray-200/50 border border200/80 py-1 px-1.5 sm:px-2 rounded-md">
+        <i class=" text-xs sm:text-sm select-none cursor-pointer text-gray-800 sm:mr-1 pi pi-phone h-fit"></i>
+        <span class="ml-2">8 499 557 07 97</span>
+      </span>
       </div>
     </div>
 
-    <div class="element gap-x-2">
-      <i class="text-sm select-none cursor-pointer text-gray-800 mr-1 pi pi-phone h-fit"></i>
-      <span class="bg-gray-300/20 py-1 px-2 rounded-md">8 495 717-01-01</span>
-      <span class="bg-gray-300/20 py-1 px-2 rounded-md">8 499 557 07 97</span>
+    <div class="element font-normal mt-3 md:mt-4">
+      Москва, 3-я улица Ямского поля, д 2 к 7, офис 301
     </div>
-
-    <div class="element gap-x-2">
-      <img class="opacity-75 w-[38px] h-[29px]" :src="'/assets/logotypes/ev-logotype-4-gray.png'" alt="no img">
-      <div>© 2024, ООО Эверест Консалтиг</div>
-    </div>
-
   </footer>
 </template>
 
@@ -36,20 +43,12 @@ export default {
 <style scoped>
 
 .footer-container {
-  @apply w-full flex flex-col text-gray-50 text-center sm:text-left space-y-2.5 lg:gap-y-1.5;
-  @apply px-[calc(16vw-6px)] sm:px-[12vw] md:px-[12vw] lg:px-10 xl:px-12;
-  @apply py-6 sm:py-8 md:py-10 lg:py-12 xl:py-14 bg-gray-50;
-  text-shadow: 1px 1px 4px rgb(0, 0, 0, .15);
+  @apply w-full flex flex-col items-center text-gray-50 text-center;
+  @apply py-6 sm:py-8 md:py-8 bg-gray-100 border-t border-t-gray-300/90 border-b border-b-gray-300/90;
 }
 
 .element {
-  @apply flex text-center items-center text-xs text-gray-900;
-  @apply text-left;
-  @apply md:text-sm;
-}
-
-.element:last-child {
-  @apply border-t border-t-gray-600/20 pt-2.5 md:pt-4 font-semibold;
+  @apply flex text-center items-center text-xs md:text-sm text-gray-900;
 }
 
 </style>

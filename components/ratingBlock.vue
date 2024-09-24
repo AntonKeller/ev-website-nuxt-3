@@ -1,21 +1,22 @@
 <template>
   <div class="w-full bg-gray-50 flex flex-col items-center py-2 md:py-6 lg:py-8">
 
-    <div class="text-gray-950 w-full rounded-sm py-4 pb-4 px-6 max-w-[920px]"
+    <div class="text-gray-950 w-full rounded-sm py-4 pb-4 px-4 max-w-[920px]"
          v-motion
          :initial="{ opacity: 0, scale: 0.85}"
          :enter="{ opacity: 1, scale: 1}"
          :delay="500"
     >
-      <div class="flex items-center font-bold py-2 text-sm md:text-2xl lg:text-4xl rounded-sm text-gray-800/95 w-fit">
-        Наши специалисты
+      <div class="flex items-center text-lg md:text-2xl lg:text-4xl font-bold rounded-sm text-gray-800/95 w-fit">
+        Рейтинг нашей компании
       </div>
 
-      <div class="mt-2 lg:mt-4 text-sm lg:text-base w-full">
+      <div class="mt-1 lg:mt-4 text-sm lg:text-base w-full">
 
-        Успешно осуществили и завершили проекты для многих (более 50) компаний из рейтинга «Крупнейшие
+        Наши специалисты успешно осуществили и завершили проекты для многих (более 50) компаний из рейтинга «Крупнейшие
         компании России» (рейтинг Эксперт-400).
         Наша компания включена в рейтинг организаций
+
         <a target="_blank" href="https://raex-rr.com/" class="ml-1 text-blue-600 font-bold">группы RAEX</a>
         <div class="bg-gray-900/15 mt-4 h-[1px]"></div>
         <carousel
@@ -53,15 +54,17 @@
               :key="item.id"
               class="cursor-pointer w-full text-left py-4 bg-gray-100 rounded-sm"
           >
-            <div class="flex items-start justify-start flex-col text-left">
+            <div class="flex items-center sm:items-start justify-start flex-col text-left">
               <div
                   v-for="e of item.infoByYear"
-                  class="flex items-center justify-start text-gray-900 text-sm mt-1.5"
+                  class="flex flex-col text-center sm:flex-row items-center sm:justify-start text-gray-900 text-sm mt-1.5"
               >
-                <div class="font-extrabold text-2xl mr-6 text-blue-600 text-right w-[40px]">
+                <div class="font-extrabold text-2xl mr-2 sm:mr-6 text-blue-600 text-right sm:w-[40px]">
                   {{ e.value }}
                 </div>
-                <div>{{ e.title }}</div>
+                <div>
+                  {{ e.title }}
+                </div>
               </div>
             </div>
           </slide>
@@ -71,14 +74,14 @@
         </carousel>
       </div>
 
-      <div class="flex justify-between items-start w-full bg-gray-100/50 mt-2 sm:mt-4 md:mt-8 lg:mt-12">
+      <div class="flex flex-wrap justify-between items-start w-full bg-gray-100/50 mt-4 md:mt-8 lg:mt-12">
         <div
             v-for="e of titles"
             :key="e.id"
-            class="text-center text-sm lg:text-base w-full sm:w-[30%] text-gray-950 px-2 py-2 rounded-lg"
+            class="text-center text-sm lg:text-base w-full sm:w-[30%] text-gray-950 px-2 py-1 rounded-lg"
         >
-          <i class="text-4xl mt-1 font-sans select-none cursor-pointer text-blue-600 mr-2 pi h-fit" :class="e.icon"></i>
-          <div class="md:mt-4">{{ e.title }}</div>
+          <i class="text-4xl mt-3 font-sans select-none cursor-pointer text-blue-600 mr-2 pi h-fit" :class="e.icon"></i>
+          <div class="mt-3 sm:mt-4">{{ e.title }}</div>
         </div>
       </div>
     </div>

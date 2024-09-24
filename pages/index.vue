@@ -2,13 +2,12 @@
   <div>
     <div class="scroll-hidden bg-gray-50">
       <div class="banner-container">
-        <div class="z-20 flex flex-col items-center lg:items-start">
+        <div class="z-10 flex flex-col items-center lg:items-start">
           <div class="w-full flex flex-col items-center lg:items-center">
 
-            <div class="ev-b-title txt-shadow" v-motion-fade :delay="400">Эверест Консалтинг</div>
+            <div class="title txt-shadow" v-motion-fade :delay="400">Эверест Консалтинг</div>
 
-            <div v-motion-fade :delay="650"
-                 class="text-md bg-gradient-to-r from-transparent via-gray-950/45 to-transparent text-gray-50 px-2 py-0.5 text-center txt-shadow w-[540px] mt-2 md:mt-4">
+            <div v-motion-fade :delay="350" class="subtitle">
               Наша цель - Оказание полного комплекса консультационных услуг в области оценки и консалтинга (финансового,
               управленческого, налогового и строительного) специалистами, обладающими международными квалификациями и
               значительным опытом выполнения подобных проектов как в России, так и за рубежом.
@@ -16,7 +15,7 @@
             <div class="flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-4 flex justify-center mt-6">
 
               <di
-                  v-motion-fade :delay="650"
+                  v-motion-fade :delay="350"
                   class="font-semibold duration-300 hover:cursor-pointer hover:bg-transparent hover:backdrop-blur-md hover:text-gray-100 border border-gray-50/30 text-gray-900 bg-gray-50 pl-4 pr-0.5 py-1 rounded-2xl w-fit"
               >
                 <div class="flex items-center gap-x-3">
@@ -28,7 +27,7 @@
               </di>
 
               <div
-                  v-motion-fade :delay="750"
+                  v-motion-fade :delay="350"
                   @click="gotoFooter('#target-footer')"
                   class="font-semibold duration-300 hover:cursor-pointer hover:text-gray-900 hover:bg-gray-100 bg-transparent backdrop-blur-sm text-gray-100 border border-gray-50/30 pl-4 pr-0.5 py-1 rounded-2xl w-fit"
               >
@@ -93,7 +92,7 @@ export default {
 .banner-container {
   @apply overflow-hidden;
   @apply h-[100vh] relative w-full flex flex-col justify-center items-center shadow-gray-500;
-  @apply px-[40px] sm:px-[8vw] md:px-[15vw] lg:px-[12vw];
+  @apply px-[20px] sm:px-[8vw] md:px-[15vw] lg:px-[12vw];
   @apply pt-32 pb-10 py-[20vw] md:py-[16vw] lg:py-[9vw];
 }
 
@@ -104,14 +103,14 @@ export default {
   right: 0;
   bottom: 0;
   top: 0;
-  animation-duration: 1.15s;
+  animation-duration: 1.1s;
   animation-name: showBanner;
-  @apply z-10 duration-1000 bg-gray-950/50 bg-blend-multiply bg-top bg-fixed bg-[url("/assets/background/everest-1920.jpg")];
+  @apply z-10  bg-gray-950/50 bg-blend-multiply bg-top bg-fixed bg-[url("/assets/background/everest-1920.jpg")];
 }
 
 @keyframes showBanner {
   from {
-    transform: scale(250%);
+    transform: scale(135%);
   }
 
   to {
@@ -119,11 +118,13 @@ export default {
   }
 }
 
-.ev-b-title {
-  @apply text-center lg:text-left font-extrabold text-gray-100 duration-300;
+.subtitle {
+  @apply text-base md:text-lg;
+  @apply bg-gradient-to-r from-transparent via-gray-950/45 to-transparent text-gray-50 px-2 py-0.5 text-center txt-shadow max-w-[540px] mt-2 md:mt-4;
 }
 
-.ev-b-title {
+.title {
+  @apply text-center lg:text-left font-extrabold text-gray-100 duration-300;
   @apply z-10 text-4xl sm:text-4xl md:text-5xl lg:text-6xl;
 }
 </style>
