@@ -1,11 +1,7 @@
 <template>
   <header class="ev-header">
-    <NuxtLink v-if="backBtnIsShow" to="/" class="mr-auto font-extrabold text-gray-100 px-4">
-      <i class="pi pi-arrow-left"></i>
-    </NuxtLink>
     <NuxtLink
-        :class="{'mr-auto':backBtnIsShow, 'pr-8':backBtnIsShow}"
-        class="duration-150 text-gray-400 duration-300 flex items-center justify-center md:justify-start mr-3 sm:mr-0 gap-x-6 mt-1"
+        class="duration-150 text-gray-400 duration-300 flex items-center justify-center md:justify-start mr-3 sm:mr-0 gap-x-5 mt-1"
         to="/"
         @click="activeID = null"
     >
@@ -16,6 +12,9 @@
       >
       <div class="text-base text-gray-100 font-bold tracking-wide">Everest</div>
 
+    </NuxtLink>
+    <NuxtLink v-if="backBtnIsShow" to="/" class="font-extrabold text-gray-200 px-5 py-2 hover:bg-gray-100/5 duration-300 flex items-center bg-gray-100/10 border border-gray-800/25 rounded-lg">
+      <i class="pi pi-arrow-left text-gray-300"></i>
     </NuxtLink>
     <!--   Menu -->
     <!--    <div class="hidden lg:flex flex-row gap-x-3.5" >-->
@@ -141,10 +140,10 @@ export default {
 }
 
 .ev-header {
-  @apply z-50 fixed bg-gray-800 md:bg-transparent border-b border-b-gray-600/90 md:border-b-transparent;
+  @apply z-50 fixed bg-gray-900 md:bg-transparent border-b border-b-gray-600/90 md:border-b-transparent;
   @apply top-0 left-0 right-0 z-20 md:mt-2 md:mt-6;
-  @apply md:mx-2 sm:m-0 py-5 sm:py-6 px-4 sm:px-12 md:px-14 lg:px-16 xl:px-16;
-  @apply flex items-center justify-center md:justify-start;
+  @apply md:mx-2 sm:m-0 py-5 sm:py-6 px-6 sm:px-12 md:px-14 lg:px-16 xl:px-16;
+  @apply flex items-center justify-between;
   /*@apply sm:bg-transparent;*/
 }
 
