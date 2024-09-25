@@ -5,7 +5,9 @@
         <div class="z-10 flex flex-col items-center lg:items-start">
           <div class="w-full flex flex-col items-center lg:items-center">
 
-            <div class="title txt-shadow" v-motion-fade :delay="400">Эверест Консалтинг</div>
+            <div ref="titleRef" class="title txt-shadow tracking-wide" v-motion-fade :delay="400">
+              <div>Эверест Консалтинг</div>
+            </div>
 
             <div v-motion-fade :delay="350" class="subtitle txt-shadow">
               <div>Наша цель - Оказание полного комплекса консультационных услуг в области</div>
@@ -15,7 +17,8 @@
               <div>подобных проектов как в России,</div>
               <div>так и за рубежом.</div>
             </div>
-            <div class="flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-3.5 flex justify-center mt-6">
+            <div
+                class="flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-3.5 flex justify-center mt-6">
 
               <div
                   v-motion-fade :delay="350"
@@ -66,6 +69,12 @@ export default {
     directorBlock,
   },
 
+  data() {
+    return {
+      px: 12,
+    }
+  },
+
   methods: {
     gotoFooter(id) {
       const element = document.querySelector(id);
@@ -74,9 +83,9 @@ export default {
         top: topPosition,
         behavior: 'smooth'
       });
-    }
-  }
+    },
 
+  },
 }
 
 </script>
@@ -106,7 +115,7 @@ export default {
   top: 0;
   animation-duration: 2s;
   animation-name: showBanner;
-  @apply z-10  bg-gray-950/75 bg-blend-multiply bg-top bg-fixed bg-[url("/assets/background/everest-1920.jpg")];
+  @apply z-10  bg-gray-950/75 bg-blend-multiply bg-center bg-fixed bg-cover bg-[url("/assets/background/everest-1024.jpg")];
 }
 
 @keyframes showBanner {
