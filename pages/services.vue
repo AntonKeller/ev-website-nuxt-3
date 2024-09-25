@@ -12,7 +12,7 @@
             }"
             :delay="tab.id * 15"
             class="service-tab"
-            :class="{'bg-gray-700 text-gray-100': activeTabId===tab.id, 'bg-gray-100 text-gray-700': activeTabId!==tab.id}"
+            :class="{'bg-gray-800/85 border border-gray-950 text-gray-100': activeTabId===tab.id, 'bg-gray-100 text-gray-700': activeTabId!==tab.id}"
             v-for="tab of serviceTabs"
             @click="setActiveID(tab.id)"
         >
@@ -24,7 +24,7 @@
         <div
             @click="showMenu=!showMenu"
             class="bg-gray-200 py-1.5 text-center px-4 w-full rounded-sm w-fit text-base font-semibold"
-            :class="{'bg-red-700 text-gray-200':showMenu}"
+            :class="{'bg-red-800/85 text-gray-200':showMenu}"
         >
           Услуги
         </div>
@@ -175,7 +175,7 @@ export default {
 .service-tab {
   @apply px-5 py-1.5 border border-gray-900 transition-colors duration-300 shadow-md shadow-gray-800;
   @apply cursor-pointer rounded text-sm lg:text-base text-left;
-  @apply hover:bg-gray-700 hover:text-gray-100;
+  @apply hover:bg-gray-800/85 hover:text-gray-100;
 }
 
 .list-content {
