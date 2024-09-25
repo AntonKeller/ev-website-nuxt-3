@@ -1,12 +1,13 @@
 <template>
-  <div class="directors-section">
-    <div class="flex flex-col w-full sm:max-w-[920px]">
+  <div class="directors-section relative">
+
+    <div class="z-10 flex flex-col w-full sm:max-w-[920px]">
 
       <h1 class="text-gray-100 text-lg md:text-2xl lg:text-4xl font-bold duration-300 mt-2 md:mt-20 lg:mt-24">
         Руководство
       </h1>
 
-      <h2 class="mt-1 text-sm lg:text-lg text-gray-200 duration-300 space-y-0.5">
+      <h2 class="mt-1 mb-1 sm:mb-0 text-sm lg:text-lg text-gray-200 duration-300 space-y-0.5">
         Безупречная репутация на рынке консультационных услуг в течение более 12 лет
       </h2>
 
@@ -15,8 +16,8 @@
           :key="e.id"
           class="card-director duration-300 mt-2 sm:mt-4 lg:mt-6"
           v-motion
-          :initial="{ opacity: 0, scale: 0.85}"
-          :enter="{ opacity: 1, scale: 1}"
+          :initial="{ opacity: 0, scale: 0.85 }"
+          :visible="{ opacity: 1, y: 0, scale: 1 }"
           :delay="e.id * 150"
       >
         <img class="card-image" :src="`/assets/avatars/${e.img}`" alt="no img"/>
@@ -88,19 +89,19 @@ export default {
 .directors-section {
   @apply bg-gray-900 min-h-[100vh] overflow-hidden;
   @apply flex flex-col justify-center items-center w-full;
-  @apply px-4 sm:px-0 py-2;
+  @apply px-4 md:px-6 py-2;
 }
 
-.directors-section::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  opacity: 0.15;
-  background: top / cover no-repeat fixed url("/assets/background/everest-420-blur.png");
-}
+/*.directors-section::before {*/
+/*  content: "";*/
+/*  position: absolute;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  top: 0;*/
+/*  bottom: 0;*/
+/*  opacity: 0.15;*/
+/*  background: top / cover no-repeat fixed url("/assets/background/everest-420-blur.png");*/
+/*}*/
 
 .card-director {
   @apply bg-gray-50 border border-gray-600 rounded-sm py-2.5 px-3 lg:px-4 min-w-full max-w-[780px];

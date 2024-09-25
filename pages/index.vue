@@ -103,14 +103,14 @@ export default {
   right: 0;
   bottom: 0;
   top: 0;
-  animation-duration: 1.1s;
+  animation-duration: 2s;
   animation-name: showBanner;
   @apply z-10  bg-gray-950/50 bg-blend-multiply bg-top bg-fixed bg-[url("/assets/background/everest-1920.jpg")];
 }
 
 @keyframes showBanner {
   from {
-    transform: scale(135%);
+    transform: scale(130%);
   }
 
   to {

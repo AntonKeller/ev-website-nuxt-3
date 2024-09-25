@@ -1,7 +1,11 @@
 <template>
   <header class="ev-header">
+    <NuxtLink v-if="backBtnIsShow" to="/" class="mr-auto font-extrabold text-gray-100 px-4">
+      <i class="pi pi-arrow-left"></i>
+    </NuxtLink>
     <NuxtLink
-        class="duration-150 text-gray-400 flex items-center justify-center md:justify-start mr-3 sm:mr-0 gap-x-6"
+        :class="{'mr-auto':backBtnIsShow, 'pr-8':backBtnIsShow}"
+        class="duration-150 text-gray-400 duration-300 flex items-center justify-center md:justify-start mr-3 sm:mr-0 gap-x-6 mt-1"
         to="/"
         @click="activeID = null"
     >
@@ -11,6 +15,7 @@
           alt="no img"
       >
       <div class="text-base text-gray-100 font-semibold">Everest home</div>
+
     </NuxtLink>
     <!--   Menu -->
     <!--    <div class="hidden lg:flex flex-row gap-x-3.5" >-->
@@ -68,7 +73,36 @@
 export default {
   name: "ev-header",
 
+  computed: {
+    route() {
+      return this.$route.name;
+    }
+  },
+
+  mounted() {
+    this.routeServicesTest();
+  },
+
+  watch: {
+    route() {
+      // console.log('this.route', this.route)
+      // console.log('/\\/services/i.test(this.route)', /services/i.test(this.route));
+      this.routeServicesTest();
+    }
+  },
+
+  methods: {
+    routeServicesTest() {
+      if (/services/i.test(this.route)) {
+        this.backBtnIsShow = true;
+      } else {
+        this.backBtnIsShow = false;
+      }
+    }
+  },
+
   data: () => ({
+    backBtnIsShow: false,
     menuVisible: false,
     hover: false,
     activeID: null,
@@ -109,8 +143,8 @@ export default {
 .ev-header {
   @apply z-50 fixed bg-gray-800 md:bg-transparent border-b border-b-gray-600/90 md:border-b-transparent;
   @apply top-0 left-0 right-0 z-20 md:mt-2 md:mt-6;
-  @apply md:mx-2 sm:m-0 py-5 sm:py-10 px-4 sm:px-12 md:px-14 lg:px-16 xl:px-16;
-  /*@apply flex items-center;*/
+  @apply md:mx-2 sm:m-0 py-5 sm:py-6 px-4 sm:px-12 md:px-14 lg:px-16 xl:px-16;
+  @apply flex items-center justify-center md:justify-start;
   /*@apply sm:bg-transparent;*/
 }
 
