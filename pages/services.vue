@@ -68,18 +68,18 @@
           <p
               v-if="content.textContent.length"
               v-for="text of content.textContent"
-              class="text-sm md:text-base text-gray-300 font-sans"
+              class="text-sm md:text-base text-gray-300 font-sans mt-5"
           >
             {{ text }}
           </p>
 
           <ul
               v-if="content.enums.length"
-              class="flex gap-x-3 gap-y-1.5 justify-start items-stretch text-left flex-wrap py-1.5"
+              class="flex gap-x-3.5 gap-y-2 justify-start items-stretch text-left flex-wrap py-1.5 mt-4"
           >
             <li
                 v-for="enumValue of content.enums"
-                class="text-sm md:text-base text-gray-300 rounded-sm border-l-2 border-l-red-800 bg-red-700/15 px-2.5 py-1"
+                class="text-sm md:text-base text-gray-300 rounded-sm border-l-2 border-l-red-900 bg-blue-800/10 px-2.5 py-1"
             >
               {{ enumValue }}
             </li>
@@ -179,7 +179,7 @@ export default {
 }
 
 .list-content {
-  @apply w-full h-[82vh] overflow-y-scroll overflow-x-hidden rounded-md;
+  @apply w-full h-[70vh] overflow-y-scroll overflow-x-hidden;
   @apply ml-0 mt-3 md:mt-0 md:ml-8 lg:ml-12 xl:ml-16 overflow-y-scroll pr-3;
   @apply relative flex flex-col justify-start items-start text-gray-900;
 }
