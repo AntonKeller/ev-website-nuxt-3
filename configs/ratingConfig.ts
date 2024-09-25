@@ -12,6 +12,7 @@ export interface RatingType {
 }
 
 export const ratingConfig: Array<RatingType> = [
+
     {
         id: 1,
         year: 2024,
