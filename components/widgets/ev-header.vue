@@ -14,7 +14,7 @@
           src="/assets/logotypes/ev-logotype-4-gray-light.png"
           alt="no img"
       >
-      <div class="text-base text-gray-100 font-semibold">Everest home</div>
+      <div class="text-base text-gray-100 font-bold tracking-wide">Everest</div>
 
     </NuxtLink>
     <!--   Menu -->

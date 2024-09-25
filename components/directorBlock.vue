@@ -21,9 +21,9 @@
           :delay="e.id * 150"
       >
         <img class="card-image" :src="`/assets/avatars/${e.img}`" alt="no img"/>
-        <p class="mt-0 text-gray-900 font-extrabold text-base lg:text-lg">{{ e.fullName }}</p>
-        <p class="mt-0 text-gray-900/85 font-sans text-sm lg:text-base">{{ e.post }}</p>
-        <p class="mt-0 md:mt-3 text-base text-gray-700">{{ e.text }}</p>
+        <p class="mt-0 text-gray-900 font-extrabold text-sm text-base lg:text-lg">{{ e.fullName }}</p>
+        <p class="mt-0 text-gray-900/85 font-sans underline text-sm lg:text-base">{{ e.post }}</p>
+        <p class="mt-2 md:mt-3 text-sm sm:text-base text-gray-700">{{ e.text }}</p>
       </div>
 
       <h1 class="text-gray-100 text-lg md:text-2xl lg:text-4xl font-bold duration-300 mt-4 md:mt-20 lg:mt-24">
