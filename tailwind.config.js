@@ -8,6 +8,9 @@ module.exports = {
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
   ],
+  experimental: {
+    optimizeUniversalDefaults: true
+  },
   variants: {
     extend: {},
   },

@@ -5,16 +5,18 @@
 
       <h1 class="text-gray-100 text-lg md:text-2xl lg:text-4xl font-bold duration-300 mt-2 md:mt-20 lg:mt-24">
         Руководство
+        <div class="rounded-full mt-0.5 sm:mt-3 h-0.5 sm:h-1 w-[150px] translate-x-[-50px] bg-red-600/95"></div>
       </h1>
 
-      <h2 class="mt-1 mb-1 sm:mb-0 text-sm lg:text-lg text-gray-200 duration-300 space-y-0.5">
-        Безупречная репутация на рынке консультационных услуг в течение более 12 лет
+      <h2 class="mb-1 mt-1 sm:mb-4 text-sm lg:text-lg text-gray-200 duration-300 space-y-0.5">
+        Безупречная репутация на рынке консультационных услуг в течение
+        <span class="text-lg ld:text-3xl text-red-600/95 font-bold md:ml-1 text-nowrap">20 лет</span>
       </h2>
 
       <div
           v-for="e of employees"
           :key="e.id"
-          class="card-director duration-300 mt-2 sm:mt-4 lg:mt-6"
+          class="card-director z-10 duration-300 mt-2 sm:mt-4 lg:mt-6"
           v-motion
           :initial="{ opacity: 0, scale: 0.85 }"
           :visible="{ opacity: 1, y: 0, scale: 1 }"
@@ -40,6 +42,7 @@
         class="z-50 rounded-sm md:rounded-sm w-full h-[350px] md:h-[600px] mb-2 md:mb-0 mt-2 md:mt-4 lg:mt-6"
         src="https://yandex.ru/map-widget/v1/?um=constructor%3Aafd8686d54c13c498b1a79c66c5a343453e1df041ce335aebf229ee1ed8e9fa2&amp;source=constructor"
     />
+
   </div>
 </template>
 
@@ -92,19 +95,20 @@ export default {
   @apply px-4 md:px-6 py-2;
 }
 
-/*.directors-section::before {*/
-/*  content: "";*/
-/*  position: absolute;*/
-/*  left: 0;*/
-/*  right: 0;*/
-/*  top: 0;*/
-/*  bottom: 0;*/
-/*  opacity: 0.15;*/
-/*  background: top / cover no-repeat fixed url("/assets/background/everest-420-blur.png");*/
-/*}*/
+.directors-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  animation-duration: 2s;
+  animation-name: showBanner;
+  @apply z-10  bg-gray-950/75 bg-blend-multiply bg-center bg-fixed bg-cover bg-[url("/assets/background/scale_650.png")];
+}
 
 .card-director {
-  @apply bg-gray-50 border border-gray-600 rounded-sm py-2.5 px-3 lg:px-4 min-w-full max-w-[780px];
+  @apply bg-gray-50 rounded-sm border-2 border-gray-950 py-6 px-3 lg:px-6 min-w-full max-w-[780px];
 }
 
 .card-image {

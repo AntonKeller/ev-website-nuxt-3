@@ -5,11 +5,11 @@
         <div class="z-10 flex flex-col items-center lg:items-start">
           <div class="w-full flex flex-col items-center lg:items-center">
 
-            <div ref="titleRef" class="title txt-shadow tracking-wide" v-motion-fade :delay="400">
+            <div class="show-title title txt-shadow tracking-wide">
               <div>Эверест Консалтинг</div>
             </div>
 
-            <div v-motion-fade :delay="350" class="subtitle txt-shadow">
+            <div class="show-sub-title subtitle txt-shadow">
               <div>Наша цель - Оказание полного комплекса консультационных услуг в области</div>
               <div>оценки и консалтинга (финансового, управленческого, налогового и</div>
               <div> строительного) специалистами, обладающими международными</div>
@@ -17,12 +17,10 @@
               <div>подобных проектов как в России,</div>
               <div>так и за рубежом.</div>
             </div>
-            <div
-                class="flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-3.5 flex justify-center mt-6">
 
+            <div class=" flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-3.5 flex justify-center mt-6">
               <div
-                  v-motion-fade :delay="350"
-                  class="btn font-semibold duration-300 hover:cursor-pointer hover:bg-gray-300 hover:backdrop-blur-md border border-gray-600/70 text-gray-900 bg-gray-50 py-1.5 rounded-2xl w-fit"
+                  class="show-btns font-semibold duration-300 hover:cursor-pointer hover:bg-gray-300 hover:backdrop-blur-md border border-gray-600/70 text-gray-900 bg-gray-50 py-1.5 rounded-2xl w-fit"
               >
                 <div class="flex items-center justify-center">
                   <NuxtLink to="/services" class="pl-5 pr-2 md:text-lg">
@@ -33,14 +31,14 @@
               </div>
 
               <div
-                  v-motion-fade :delay="350"
                   @click="gotoFooter('#target-footer')"
-                  class="btn font-semibold duration-300 hover:cursor-pointer hover:bg-gray-900 bg-gray-950 text-gray-300 border border-gray-600/55 pr-0.5 py-1.5 rounded-2xl w-fit"
+                  class="show-btns font-semibold duration-300 hover:cursor-pointer hover:bg-gray-900 bg-gray-950 text-gray-300 border border-gray-600/55 pr-0.5 py-1.5 rounded-2xl w-fit"
               >
                 <i class="select-none text-gray-300 ml-4 pi pi-at h-fit"></i>
                 <span class="pr-5 pl-3 md:text-lg">Контакты</span>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -130,12 +128,34 @@ export default {
 
 .subtitle {
   @apply text-base text-sm md:text-base lg:text-lg font-extralight sm:text-nowrap;
-  @apply text-gray-50 px-2 py-0.5 text-center txt-shadow max-w-[740px] mt-2 md:mt-4;
+  @apply text-gray-50 px-2 py-0.5 text-center txt-shadow max-w-[760px] mt-2 md:mt-4;
 }
 
 .title {
   @apply text-center lg:text-left font-bold text-gray-100 duration-300;
   @apply z-10 text-4xl sm:text-5xl md:text-6xl lg:text-7xl sm:text-nowrap;
+}
+
+.show-title {
+  animation: 1.75s show ease;
+}
+
+.show-sub-title {
+  animation: 1.75s 1s show1 ease;
+}
+
+.show-btns {
+  animation: 1.75s 1s show1 ease;
+}
+
+@keyframes show {
+  from { opacity: 0; transform: translateY(-30px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes show1 {
+  from { opacity: 0 }
+  to { opacity: 1 }
 }
 
 
