@@ -431,14 +431,46 @@ export const serviceTabContent: Array<TTabContent> = [
 ];
 
 export const serviceTabs: Array<TTab> = [
-    {id: 1, sub: true, title: "Оценка"},
-    {id: 2, sub: false, title: "Для целей МСФО"},
-    {id: 3, sub: false, title: "Распределение цены сделки"},
-    {id: 4, sub: false, title: "Компонентный учет"},
-    {id: 5, sub: false, title: "МСФО 36. Обесценение активов"},
-    {id: 6, sub: false, title: "Для целей страхования"},
-    {id: 7, sub: false, title: "Для целей кредитования под залог"},
-    {id: 8, sub: false, title: "Для целей налогообложения"},
-    {id: 9, sub: true, title: "Финансовый консалтинг"},
-    {id: 10, sub: true, title: "Строительный консалтинг"}
+    {
+        id: 1,
+        title: "Оценка",
+        children: [
+            {
+                id: 2,
+                title: "Для целей МСФО"
+            },
+            {
+                id: 3,
+                title: "Распределение цены сделки"
+            },
+            {
+                id: 4,
+                title: "Компонентный учет"
+            },
+            {
+                id: 5,
+                title: "МСФО 36. Обесценение активов"
+            },
+            {
+                id: 6,
+                title: "Для целей страхования"
+            },
+            {
+                id: 7,
+                title: "Для целей кредитования под залог"
+            },
+            {
+                id: 8,
+                title: "Для целей налогообложения"
+            },
+        ]
+    },
+    {
+        id: 9,
+        title: "Финансовый консалтинг"
+    },
+    {
+        id: 10,
+        title: "Строительный консалтинг"
+    }
 ]

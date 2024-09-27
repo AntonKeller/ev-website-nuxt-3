@@ -1,22 +1,26 @@
 <template>
   <div>
     <div class="services-content-wrapper">
-
-      <ul class="services-list">
-        <li
-            v-motion
-            :initial="{x: -15, opacity: 0}"
-            :enter="{
-              x: 0,
-              opacity: 1,
-            }"
-            :delay="tab.id * 15"
-            class="service-tab"
-            :class="{'bg-gray-800/85 border border-gray-950 text-gray-100': activeTabId===tab.id, 'bg-gray-100 text-gray-700': activeTabId!==tab.id}"
-            v-for="tab of serviceTabs"
-            @click="setActiveID(tab.id)"
-        >
-          {{ tab.title }}
+      <ul class="min-w-[280px]">
+        <li v-for="item of serviceTabs" :key="item.id">
+          <div
+              class="tab up-tab"
+              :class="{'text-gray-50 bg-gray-300/10': activeTabId===item.id, 'bg-gray-400/5 opacity-60': activeTabId!==item.id}"
+              @click="setActiveID(item.id)"
+          >
+            {{ item.title }}
+          </div>
+          <ul class="" v-if="item.children">
+            <li
+                v-for="e of item.children"
+                :key="e.id"
+                class="tab sub-tab"
+                :class="{'text-gray-50 bg-gray-300/10': activeTabId===e.id, 'bg-gray-400/5 opacity-60': activeTabId!==e.id}"
+                @click="setActiveID(e.id)"
+            >
+              {{ e.title }}
+            </li>
+          </ul>
         </li>
       </ul>
 
@@ -122,12 +126,12 @@ export default {
   },
 
   data: () => ({
+    serviceTabs,
+    serviceTabContent,
     showMenu: false,
     dropMenuIsOpen: false,
     hoverTab: 0,
     activeTabId: 1,
-    serviceTabContent,
-    serviceTabs
   }),
 
   computed: {
@@ -169,13 +173,24 @@ export default {
 }
 
 .services-list {
-  @apply hidden md:flex w-full flex-col gap-y-1.5 justify-start items-stretch min-w-fit max-w-fit self-start;
+  /*@apply hidden md:flex w-full flex-col gap-y-0 justify-start items-stretch min-w-fit max-w-fit self-start;*/
 }
 
-.service-tab {
-  @apply px-5 py-1.5 border border-gray-900 transition-colors duration-300 shadow-md shadow-gray-800;
-  @apply cursor-pointer rounded text-sm lg:text-base text-left;
-  @apply hover:bg-gray-800/85 hover:text-gray-100;
+.tab {
+  @apply text-xs sm:text-sm md:text-base text-gray-50 rounded-sm;
+  @apply cursor-pointer hover:underline font-sans w-full backdrop-blur-sm px-2 py-0.5;
+}
+
+.up-tab {
+  @apply mb-3 uppercase;
+}
+
+.sub-tab {
+  @apply ml-3 mb-1.5;
+}
+
+.sub-tab:last-child {
+  @apply mb-3;
 }
 
 .list-content {

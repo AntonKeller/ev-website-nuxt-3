@@ -13,8 +13,8 @@
       <div class="text-base text-gray-100 font-bold tracking-wide">Everest</div>
 
     </NuxtLink>
-    <NuxtLink v-if="backBtnIsShow" to="/" class="font-extrabold text-gray-200 px-5 py-2 hover:bg-gray-100/5 duration-300 flex items-center bg-gray-100/10 border border-gray-800/25 rounded-lg">
-      <i class="pi pi-arrow-left text-gray-300"></i>
+    <NuxtLink v-if="backBtnIsShow" to="/" class="font-extrabold text-gray-200 px-5 py-2 hover:bg-gray-950 duration-300 flex items-center bg-transparent border border-gray-900/25 rounded-lg">
+      <i class="pi pi-arrow-left text-gray-100"></i>
     </NuxtLink>
     <!--   Menu -->
     <!--    <div class="hidden lg:flex flex-row gap-x-3.5" >-->

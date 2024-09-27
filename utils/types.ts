@@ -10,7 +10,7 @@ interface TContentObject {
 export interface TTab {
   id: Number,
   title: String,
-  sub: Boolean,
+  children?: Array<TTab>,
 }
 
 export interface TTabContent {

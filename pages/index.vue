@@ -3,13 +3,13 @@
     <div class="scroll-hidden bg-gray-50">
       <div class="banner-container">
         <div class="z-10 flex flex-col items-center lg:items-start">
-          <div class="w-full flex flex-col items-center lg:items-center">
+          <div class="w-full flex flex-col items-center lg:items-center text-gray-50">
 
-            <div class="show-title title txt-shadow tracking-wide">
+            <div class="show-title title txt-shadow">
               <div>Эверест Консалтинг</div>
             </div>
 
-            <div class="show-sub-title subtitle txt-shadow">
+            <div class="show-sub-title subtitle">
               <div>Наша цель - Оказание полного комплекса консультационных услуг в области</div>
               <div>оценки и консалтинга (финансового, управленческого, налогового и</div>
               <div> строительного) специалистами, обладающими международными</div>
@@ -18,9 +18,10 @@
               <div>так и за рубежом.</div>
             </div>
 
-            <div class=" flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-3.5 flex justify-center mt-6">
+            <div
+                class=" flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-3.5 flex justify-center mt-6">
               <div
-                  class="show-btns font-semibold duration-300 hover:cursor-pointer hover:bg-gray-300 hover:backdrop-blur-md border border-gray-600/70 text-gray-900 bg-gray-50 py-1.5 rounded-2xl w-fit"
+                  class="show-btn1 font-semibold duration-300 hover:cursor-pointer hover:bg-gray-300 hover:backdrop-blur-md border border-gray-600/70 text-gray-900 bg-gray-50 py-1.5 rounded-2xl w-fit"
               >
                 <div class="flex items-center justify-center">
                   <NuxtLink to="/services" class="pl-5 pr-2 md:text-lg">
@@ -32,13 +33,12 @@
 
               <div
                   @click="gotoFooter('#target-footer')"
-                  class="show-btns font-semibold duration-300 hover:cursor-pointer hover:bg-gray-900 bg-gray-950 text-gray-300 border border-gray-600/55 pr-0.5 py-1.5 rounded-2xl w-fit"
+                  class="show-btn2 font-semibold duration-300 hover:cursor-pointer hover:bg-gray-900 bg-gray-950 text-gray-300 border border-gray-600/55 pr-0.5 py-1.5 rounded-2xl w-fit"
               >
                 <i class="select-none text-gray-300 ml-4 pi pi-at h-fit"></i>
                 <span class="pr-5 pl-3 md:text-lg">Контакты</span>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -111,52 +111,58 @@ export default {
   right: 0;
   bottom: 0;
   top: 0;
-  animation-duration: 2s;
-  animation-name: showBanner;
-  @apply z-10  bg-gray-950/75 bg-blend-multiply bg-center bg-fixed bg-cover bg-[url("/assets/background/everest-1024.jpg")];
+  /*animation: 3s showBanner ease forwards;*/
+  @apply z-10 bg-gray-950/75 bg-blend-multiply bg-center bg-fixed bg-cover bg-[url("/assets/background/everest-1024.jpg")];
 }
-
-@keyframes showBanner {
-  from {
-    transform: scale(130%);
-  }
-
-  to {
-    transform: scale(100%);
-  }
-}
+/*@keyframes showBanner {*/
+/*  to {*/
+/*    transform: scale(100%);*/
+/*    @apply  bg-fixed;*/
+/*  }*/
+/*}*/
 
 .subtitle {
   @apply text-base text-sm md:text-base lg:text-lg font-extralight sm:text-nowrap;
-  @apply text-gray-50 px-2 py-0.5 text-center txt-shadow max-w-[760px] mt-2 md:mt-4;
+  @apply px-2 py-0.5 text-center txt-shadow max-w-[760px] mt-2 md:mt-4;
 }
 
 .title {
-  @apply text-center lg:text-left font-bold text-gray-100 duration-300;
+  @apply text-center lg:text-left font-bold duration-300;
   @apply z-10 text-4xl sm:text-5xl md:text-6xl lg:text-7xl sm:text-nowrap;
 }
 
 .show-title {
-  animation: 1.75s show ease;
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: 1.45s show ease forwards;
 }
 
 .show-sub-title {
-  animation: 1.75s 1s show1 ease;
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: 1.45s 0.35s show ease forwards;
 }
 
-.show-btns {
-  animation: 1.75s 1s show1 ease;
+.show-btn1 {
+  opacity: 0;
+  transform: translateX(-15px);
+  animation: 1.45s 1s showBtn ease forwards;
 }
-
+.show-btn2 {
+  opacity: 0;
+  transform: translateX(-15px);
+  animation: 1.15s 1.35s showBtn ease forwards;
+}
+@keyframes showBtn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 @keyframes show {
-  from { opacity: 0; transform: translateY(-30px) }
-  to { opacity: 1; transform: translateY(0) }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-@keyframes show1 {
-  from { opacity: 0 }
-  to { opacity: 1 }
-}
-
-
 </style>

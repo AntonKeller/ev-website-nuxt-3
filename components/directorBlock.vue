@@ -5,12 +5,12 @@
 
       <h1 class="text-gray-100 text-lg md:text-2xl lg:text-4xl font-bold duration-300 mt-2 md:mt-20 lg:mt-24">
         Руководство
-        <div class="rounded-full mt-0.5 sm:mt-3 h-0.5 sm:h-1 w-[150px] translate-x-[-50px] bg-red-600/95"></div>
+        <div class=" mt-0.5 sm:mt-3 h-0.5 sm:h-1.5 w-[150px] translate-x-[0] bg-red-600/95"></div>
       </h1>
 
       <h2 class="mb-1 mt-1 sm:mb-4 text-sm lg:text-lg text-gray-200 duration-300 space-y-0.5">
         Безупречная репутация на рынке консультационных услуг в течение
-        <span class="text-lg ld:text-3xl text-red-600/95 font-bold md:ml-1 text-nowrap">20 лет</span>
+        <span class="text-lg ld:text-3xl text-red-600/95 font-bold md:ml-1 text-nowrap">27 лет</span>
       </h2>
 
       <div
@@ -18,8 +18,8 @@
           :key="e.id"
           class="card-director z-10 duration-300 mt-2 sm:mt-4 lg:mt-6"
           v-motion
-          :initial="{ opacity: 0, scale: 0.85 }"
-          :visible="{ opacity: 1, y: 0, scale: 1 }"
+          :initial="{ opacity: 0, translateX: -30 }"
+          :visible="{ opacity: 1, translateX: 0 }"
           :delay="e.id * 150"
       >
         <img class="card-image" :src="`/assets/avatars/${e.img}`" alt="no img"/>
