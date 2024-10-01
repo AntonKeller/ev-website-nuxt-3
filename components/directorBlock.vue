@@ -5,12 +5,12 @@
 
       <h1 class="text-gray-100 text-lg md:text-2xl lg:text-4xl font-bold duration-300 mt-2 md:mt-20 lg:mt-24">
         Руководство
-        <div class=" mt-0.5 sm:mt-3 h-0.5 sm:h-1.5 w-[150px] translate-x-[0] bg-red-600/95"></div>
+        <div class=" mt-0.5 sm:mt-3 h-0.5 sm:h-1 w-[150px] translate-x-[0] bg-red-600/95"></div>
       </h1>
 
       <h2 class="mb-1 mt-1 sm:mb-4 text-sm lg:text-lg text-gray-200 duration-300 space-y-0.5">
         Безупречная репутация на рынке консультационных услуг в течение
-        <span class="text-lg ld:text-3xl text-red-600/95 font-bold md:ml-1 text-nowrap">27 лет</span>
+        <span class="text-lg ld:text-3xl text-blue-500/95 font-semibold md:ml-1 text-nowrap">27 лет</span>
       </h2>
 
       <div
@@ -104,11 +104,11 @@ export default {
   top: 0;
   animation-duration: 2s;
   animation-name: showBanner;
-  @apply z-10  bg-gray-950/75 bg-blend-multiply bg-center bg-fixed bg-cover bg-[url("/assets/background/scale_650.png")];
+  @apply z-10  bg-violet-950/70 bg-blend-multiply bg-center bg-fixed bg-cover bg-[url("/assets/background/scale_650.png")];
 }
 
 .card-director {
-  @apply bg-gray-50 rounded-sm border-2 border-gray-950 py-6 px-3 lg:px-6 min-w-full max-w-[780px];
+  @apply bg-gray-50 rounded-md border-2 border-gray-950 py-6 px-3 lg:px-6 min-w-full max-w-[780px];
 }
 
 .card-image {

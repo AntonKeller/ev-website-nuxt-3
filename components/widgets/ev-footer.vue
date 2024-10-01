@@ -3,7 +3,7 @@
 
     <div class="element md:mt-2">
       <img class="opacity-75 w-[38px] h-[29px]" :src="'/assets/logotypes/ev-logotype-4-gray.png'" alt="no img">
-      <div class="ml-2 md:ml-4 lg:ml-5">© 2024, ООО Эверест Консалтиг</div>
+      <div class="ml-2 md:ml-4 lg:ml-5">© 2024, ООО Эверест Консалтинг</div>
     </div>
 
     <div class="w-[50%] mt-3 md:mt-6 h-[1px] bg-gray-300"></div>
