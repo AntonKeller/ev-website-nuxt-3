@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="services-content-wrapper">
-      <ul class="min-w-[280px]">
+      <ul class="hidden md:block min-w-[280px]">
         <li v-for="item of serviceTabs" :key="item.id">
           <div
               class="tab up-tab"
@@ -32,28 +32,51 @@
         >
           Услуги
         </div>
-        <ul
-            v-motion
-            :initial="{opacity: 0}"
-            :enter="{opacity: 1}"
-            v-if="showMenu"
-            class="mt-1 bg-gray-100 z-10 absolute max-w-full flex flex-wrap gap-1.5 left-0 right-0 text-left rounded-md pl-3 py-3"
-        >
-          <li
-              v-motion
-              :initial="{x: -15, opacity: 0}"
-              :enter="{
-              x: 0,
-              opacity: 1,
-            }"
-              class="px-2.5 py-0.5 bg-gray-300/90 rounded-md text-sm text-gray-900 h-fit w-fit"
-              :delay="tab.id * 35"
-              v-for="tab of serviceTabs"
-              @click="setActiveID(tab.id); showMenu=!showMenu"
-          >
-            {{ tab.title }}
+        <ul v-if="showMenu" class="mt-1 bg-gray-200 z-10 absolute max-w-full flex flex-wrap gap-1.5 left-0 right-0 text-left rounded-md pl-3 py-3 ">
+          <li v-for="item of serviceTabs" :key="item.id">
+            <div
+                class="up-tab px-2.5 py-0.5 rounded-md text-sm text-gray-900 h-fit w-fit"
+                :class="{'text-gray-50 bg-gray-300/10': activeTabId===item.id, 'bg-gray-400/5 opacity-60': activeTabId!==item.id}"
+                @click="setActiveID(item.id)"
+            >
+              {{ item.title }}
+            </div>
+            <ul class="" v-if="item.children">
+              <li
+                  v-for="e of item.children"
+                  :key="e.id"
+                  class="sub-tab px-2.5 py-0.5 bg-gray-300 rounded-md text-sm text-gray-900 h-fit w-fit"
+                  :class="{'text-gray-50 bg-gray-300/10': activeTabId===e.id, 'bg-gray-400/5 opacity-60': activeTabId!==e.id}"
+                  @click="setActiveID(e.id)"
+              >
+                {{ e.title }}
+              </li>
+            </ul>
           </li>
         </ul>
+
+<!--        <ul-->
+<!--            v-motion-->
+<!--            :initial="{opacity: 0}"-->
+<!--            :enter="{opacity: 1}"-->
+<!--            v-if="showMenu"-->
+<!--            class="mt-1 bg-gray-100 z-10 absolute max-w-full flex flex-wrap gap-1.5 left-0 right-0 text-left rounded-md pl-3 py-3"-->
+<!--        >-->
+<!--          <li-->
+<!--              v-motion-->
+<!--              :initial="{x: -15, opacity: 0}"-->
+<!--              :enter="{-->
+<!--              x: 0,-->
+<!--              opacity: 1,-->
+<!--            }"-->
+<!--              class="px-2.5 py-0.5 bg-gray-300/90 rounded-md text-sm text-gray-900 h-fit w-fit"-->
+<!--              :delay="tab.id * 35"-->
+<!--              v-for="tab of serviceTabs"-->
+<!--              @click="setActiveID(tab.id); showMenu=!showMenu"-->
+<!--          >-->
+<!--            {{ tab.title }}-->
+<!--          </li>-->
+<!--        </ul>-->
       </div>
 
       <div class="list-content">
