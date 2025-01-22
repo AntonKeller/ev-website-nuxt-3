@@ -44,6 +44,8 @@
       </div>
     </div>
 
+    <news-block />
+
     <ratingBlock id="target-rating"/>
 
     <directorBlock id="target-directors"/>
