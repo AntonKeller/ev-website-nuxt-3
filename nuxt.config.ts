@@ -91,7 +91,7 @@ export default defineNuxtConfig({
   components: true,
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/tailwindcss', '@vueuse/motion/nuxt', '@nuxtjs/robots', 'nuxt-swiper'],
+  modules: ['@nuxtjs/tailwindcss', '@vueuse/motion/nuxt', '@nuxtjs/robots'],
 
   robots: {
       UserAgent: '*',
