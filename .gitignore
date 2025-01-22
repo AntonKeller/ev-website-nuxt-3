@@ -4,7 +4,7 @@
 .nitro
 .cache
 .dist
-.output
+#.output
 #dist
 
 # Node dependencies
