@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import 'vue3-carousel/carousel.css';
+import 'vue3-carousel/dist/carousel.css';
 import {Carousel, Pagination, Slide} from "vue3-carousel";
 
 export default {
