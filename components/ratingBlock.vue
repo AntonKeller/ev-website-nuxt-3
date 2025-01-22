@@ -95,7 +95,7 @@
         </carousel>
       </div>
 
-      <div class="flex flex-wrap justify-between items-start w-full bg-gray-100/50 mt-4 md:mt-8 lg:mt-12">
+      <div class="flex flex-wrap justify-between items-start w-full bg-transparent mt-4 md:mt-8 lg:mt-12">
         <div
             v-motion
             :initial="{ opacity: 0, scale: 0.85 }"
@@ -107,6 +107,7 @@
         >
           <i class="underline text-3xl md:text-4xl mt-3 font-sans select-none cursor-pointer text-blue-600 mr-2 pi h-fit"
              :class="e.icon"></i>
+
           <div class="mt-3 sm:mt-4">{{ e.title }}</div>
         </div>
       </div>

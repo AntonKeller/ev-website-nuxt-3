@@ -7,7 +7,7 @@
         Новости компании
       </div>
 
-      <Carousel v-bind="carouselConfig" class="w-full max-w-[920px] mt-2 md:mt-4">
+      <Carousel v-bind="carouselConfig" class="w-full max-w-[920px] mt-2 md:mt-4 cursor-pointer">
         <Slide v-for="item in news" :key="item._id" :style="{height: 'fit-content'}">
 
           <div class="text-left px-4 py-2 pb-6">
