@@ -1,50 +1,73 @@
 <template>
   <div>
-    <div class="scroll-hidden bg-gray-50">
-      <div class="banner-container">
-        <div class="z-10 flex flex-col items-center lg:items-start">
-          <div class="w-full flex flex-col items-center lg:items-center text-gray-50">
 
-            <div class="show-title title txt-shadow">
-              <div>Эверест Консалтинг</div>
-            </div>
-
-            <div class="show-sub-title subtitle">
-              <div>Наша цель - Оказание полного комплекса консультационных услуг в области</div>
-              <div>оценки и консалтинга (финансового, управленческого, налогового и</div>
-              <div> строительного) специалистами, обладающими международными</div>
-              <div> квалификациямии значительным опытом выполнения</div>
-              <div>подобных проектов как в России,</div>
-              <div>так и за рубежом.</div>
+    <div class="relative bg-gray-950 h-[100vh]">
+      <div
+          class="absolute left-0 right-0 top-0 bottom-0 bg-mountain flex flex-col items-center lg:items-center justify-center text-gray-200">
+        <div class="flex flex-col items-center">
+          <div class="title  px-4 py-3 rounded-md">
+            Everest Consulting
+          </div>
+          <div class="show-sub-title subtitle">
+            <div>Наша цель - Оказание полного комплекса консультационных услуг в области</div>
+            <div>оценки и консалтинга (финансового, управленческого, налогового и</div>
+            <div> строительного) специалистами, обладающими международными</div>
+            <div> квалификациямии значительным опытом выполнения</div>
+            <div>подобных проектов как в России,</div>
+            <div>так и за рубежом.</div>
+          </div>
+          <div
+              class=" flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-3.5 flex justify-center mt-6">
+            <div
+                class="show-btn1 font-semibold duration-300 hover:cursor-pointer hover:bg-gray-300 hover:backdrop-blur-md border border-gray-600/70 text-gray-900 bg-gray-50 py-1.5 rounded-lg w-fit"
+            >
+              <div class="flex items-center justify-center">
+                <NuxtLink to="/services" class="pl-5 pr-2 md:text-lg">
+                  К услугам
+                </NuxtLink>
+                <i class="select-none text-gray-800 mr-3.5 pi pi-angle-right h-fit"></i>
+              </div>
             </div>
 
             <div
-                class=" flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-3.5 flex justify-center mt-6">
-              <div
-                  class="show-btn1 font-semibold duration-300 hover:cursor-pointer hover:bg-gray-300 hover:backdrop-blur-md border border-gray-600/70 text-gray-900 bg-gray-50 py-1.5 rounded-2xl w-fit"
-              >
-                <div class="flex items-center justify-center">
-                  <NuxtLink to="/services" class="pl-5 pr-2 md:text-lg">
-                    К услугам
-                  </NuxtLink>
-                  <i class="select-none text-gray-800 mr-3.5 pi pi-angle-right h-fit"></i>
-                </div>
-              </div>
-
-              <div
-                  @click="gotoFooter('#target-footer')"
-                  class="show-btn2 font-semibold duration-300 hover:cursor-pointer hover:bg-gray-900 bg-gray-950 text-gray-300 border border-gray-600/55 pr-0.5 py-1.5 rounded-2xl w-fit"
-              >
-                <i class="select-none text-gray-300 ml-4 pi pi-at h-fit"></i>
-                <span class="pr-5 pl-3 md:text-lg">Контакты</span>
-              </div>
+                @click="gotoFooter('#target-footer')"
+                class="show-btn2 font-semibold duration-300 hover:cursor-pointer hover:bg-gray-900 bg-gray-950 text-gray-300 border border-gray-600/55 pr-0.5 py-1.5 rounded-lg w-fit"
+            >
+              <i class="select-none text-gray-300 ml-4 pi pi-at h-fit"></i>
+              <span class="pr-5 pl-3 md:text-lg">Контакты</span>
             </div>
           </div>
         </div>
+        <!--        <div class="w-full flex flex-col items-center lg:items-center justify-center">-->
+        <!--          -->
+        <!--        </div>-->
       </div>
     </div>
 
-    <news-block />
+
+<!--    <div class="bg-gray-50">-->
+<!--      <div class="banner-container">-->
+<!--        <div class="z-10 flex flex-col items-center lg:items-start">-->
+<!--          <div class="w-full flex flex-col items-center lg:items-center text-gray-50">-->
+
+<!--            <div class="show-title title txt-shadow">Everest Consulting</div>-->
+
+<!--            <div class="show-sub-title subtitle">-->
+<!--              <div>Наша цель - Оказание полного комплекса консультационных услуг в области</div>-->
+<!--              <div>оценки и консалтинга (финансового, управленческого, налогового и</div>-->
+<!--              <div> строительного) специалистами, обладающими международными</div>-->
+<!--              <div> квалификациямии значительным опытом выполнения</div>-->
+<!--              <div>подобных проектов как в России,</div>-->
+<!--              <div>так и за рубежом.</div>-->
+<!--            </div>-->
+
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <news-block/>
 
     <ratingBlock id="target-rating"/>
 
@@ -91,6 +114,11 @@ export default {
 </script>
 
 <style scoped>
+
+.bg-mountain {
+  @apply z-10 bg-gray-900/60 bg-blend-multiply bg-center bg-fixed bg-cover bg-[url("/assets/background/mauntain2.webp")];
+}
+
 .scroll-hidden::-webkit-scrollbar {
   width: 0;
 }
@@ -114,8 +142,9 @@ export default {
   bottom: 0;
   top: 0;
   /*animation: 3s showBanner ease forwards;*/
-  @apply z-10 bg-gray-950/75 bg-blend-multiply bg-center bg-fixed bg-cover bg-[url("/assets/background/everest-1024.jpg")];
+  @apply z-10 bg-gray-900/60 bg-blend-multiply bg-center bg-fixed bg-cover bg-[url("/assets/background/mauntain2.webp")];
 }
+
 /*@keyframes showBanner {*/
 /*  to {*/
 /*    transform: scale(100%);*/
@@ -150,17 +179,20 @@ export default {
   transform: translateX(-15px);
   animation: 1.45s 1s showBtn ease forwards;
 }
+
 .show-btn2 {
   opacity: 0;
   transform: translateX(-15px);
   animation: 1.15s 1.35s showBtn ease forwards;
 }
+
 @keyframes showBtn {
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes show {
   to {
     opacity: 1;

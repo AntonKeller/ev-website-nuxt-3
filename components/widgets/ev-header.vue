@@ -1,5 +1,6 @@
 <template>
   <header class="ev-header">
+
     <NuxtLink
         class="duration-150 text-gray-400 duration-300 flex items-center justify-center md:justify-start mr-3 sm:mr-0 gap-x-5 mt-1"
         to="/"
@@ -13,57 +14,16 @@
       <div class="text-base text-gray-100 font-bold tracking-wide">Everest</div>
 
     </NuxtLink>
-    <NuxtLink v-if="backBtnIsShow" to="/" class="font-extrabold text-gray-200 px-5 py-2 hover:bg-gray-950 duration-300 flex items-center bg-transparent border border-gray-900/25 rounded-lg">
+
+    <div class="text-sm sm:text-base text-gray-200 flex items-center">
+      <i class="pi pi-phone text-gray-200"></i>
+      <span class="ml-3">8 (495) 717-01-01</span>
+    </div>
+
+    <NuxtLink v-if="backBtnIsShow" to="/"
+              class="font-extrabold text-gray-200 px-5 py-2 hover:bg-gray-950 duration-300 flex items-center bg-transparent border border-gray-900/25 rounded-lg">
       <i class="pi pi-arrow-left text-gray-100"></i>
     </NuxtLink>
-    <!--   Menu -->
-    <!--    <div class="hidden lg:flex flex-row gap-x-3.5" >-->
-    <!--      <NuxtLink-->
-    <!--          v-for="link of links"-->
-    <!--          :key="link.id"-->
-    <!--          :to="link.location"-->
-    <!--          :class="{'active': link.id === activeID, 'text-gray-100': link.id !== activeID}"-->
-    <!--          @click="activeID = link.id; menuVisible = false"-->
-    <!--          class="active:scale-95 hovered rounded-md py-0.5 px-3 cursor-pointer hover:text-gray-400 duration-200"-->
-    <!--      >-->
-    <!--        {{ link.title }}-->
-    <!--      </NuxtLink>-->
-    <!--    </div>-->
-
-    <!--   Drop Menu -->
-    <!--    <div-->
-    <!--        class="  lg:hidden relative ml-auto w-[50px] sm:w-[150px] text-right pl-4"-->
-    <!--        @mouseleave="menuVisible=false"-->
-    <!--    >-->
-    <!--        <div-->
-    <!--            @click="this.menuVisible = !this.menuVisible"-->
-    <!--            :class="{'activeMenu': menuVisible}"-->
-    <!--            class="min-w-[35px] max-w-[35px] z-50 ml-auto py-2 flex flex-col gap-y-2 select-none cursor-pointer"-->
-    <!--        >-->
-    <!--          <div class="w-full h-[2px] bg-gray-200"> </div>-->
-    <!--          <div class="w-full h-[2px] bg-gray-200"> </div>-->
-    <!--          <div class="w-full h-[2px] bg-gray-200"> </div>-->
-    <!--        </div>-->
-
-    <!--      <div-->
-    <!--          :class="{'opacity-100': menuVisible, 'hidden opacity-0': !menuVisible}"-->
-    <!--          class="overflow-hidden absolute right-0 p-6 w-[200px] sm:w-[200px] bg-gray-950/75 rounded flex flex-col gap-y-1.5 duration-300 text-left"-->
-    <!--      >-->
-
-    <!--        <NuxtLink-->
-    <!--            v-motion-slide-visible-right-->
-    <!--            v-for="link of links"-->
-    <!--            :key="link.id"-->
-    <!--            :to="link.location"-->
-    <!--            :class="{'active': link.id === activeID}"-->
-    <!--            @click="activeID = link.id; menuVisible = false"-->
-    <!--            class="hovered cursor-pointer text-gray-300 rounded-sm py-0.5 px-1 duration-100"-->
-    <!--        >-->
-    <!--          {{ link.title }}-->
-    <!--        </NuxtLink>-->
-    <!--      </div>-->
-    <!--    </div>-->
-
   </header>
 </template>
 
@@ -140,7 +100,7 @@ export default {
 }
 
 .ev-header {
-  @apply z-50 fixed bg-gray-900 md:bg-transparent border-b border-b-gray-600/90 md:border-b-transparent;
+  @apply z-50 fixed bg-gray-900 md:bg-transparent border-b border-b-gray-950 md:border-b-transparent;
   @apply top-0 left-0 right-0 z-20 md:mt-2 md:mt-6;
   @apply md:mx-2 sm:m-0 py-5 sm:py-6 px-6 sm:px-12 md:px-14 lg:px-16 xl:px-16;
   @apply flex items-center justify-between;
