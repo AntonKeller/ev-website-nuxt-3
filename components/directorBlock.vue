@@ -1,6 +1,8 @@
 <template>
   <div class="directors-section relative">
 
+    <div class="absolute left-0 bottom-0 right-0 top-0 background-offices"></div>
+
     <div class="z-10 flex flex-col w-full sm:max-w-[920px]">
 
       <h1 class="text-gray-100 text-lg md:text-2xl lg:text-4xl font-bold duration-300 mt-2 md:mt-20 lg:mt-24">
@@ -18,8 +20,8 @@
           :key="e.id"
           class="card-director z-10 duration-300 mt-2 sm:mt-4 lg:mt-6"
           v-motion
-          :initial="{ opacity: 0, translateX: -30 }"
-          :visible="{ opacity: 1, translateX: 0 }"
+          :initial="{ opacity: 0, scale: 0.9 }"
+          :visible="{ opacity: 1, scale: 1 }"
           :delay="e.id * 150"
       >
         <img class="card-image" :src="`/assets/avatars/${e.img}`" alt="no img"/>
@@ -39,7 +41,7 @@
     </div>
 
     <iframe
-        class="z-10 rounded-sm md:rounded-sm w-full h-[350px] md:h-[600px] mb-2 md:mb-0 mt-2 md:mt-4 lg:mt-6"
+        class="z-10  md:rounded-sm w-full h-[350px] md:h-[600px] max-w-[920px] mb-2 md:mb-0 mt-2 md:mt-4 lg:mt-6"
         src="https://yandex.ru/map-widget/v1/?um=constructor%3Aafd8686d54c13c498b1a79c66c5a343453e1df041ce335aebf229ee1ed8e9fa2&amp;source=constructor"
     />
 
@@ -97,20 +99,13 @@ export default {
   @apply px-4 md:px-6 py-2;
 }
 
-.directors-section::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  animation-duration: 2s;
-  animation-name: showBanner;
-  @apply z-10  bg-violet-950/70 bg-blend-multiply bg-center bg-fixed bg-cover bg-[url("/assets/background/scale_650.png")];
+.background-offices {
+  background: rgb(17 24 39 / 0.6) url("/assets/background/city-road.webp") center/cover;
+  background-blend-mode: multiply;
 }
 
 .card-director {
-  @apply bg-gray-50 rounded-md border-2 border-gray-950 py-6 px-3 lg:px-6 min-w-full max-w-[780px];
+  @apply bg-gray-50 rounded-lg border-2 border-gray-300 py-6 px-3 lg:px-6 min-w-full max-w-[780px];
 }
 
 .card-image {
