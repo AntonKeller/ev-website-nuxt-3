@@ -6,23 +6,27 @@
       <div class="ml-2 md:ml-4 lg:ml-5">© 2024, ООО Эверест Консалтинг</div>
     </div>
 
-    <div class="w-[50%] mt-3 md:mt-6 h-[1px] bg-gray-300"></div>
+    <div class="w-[50%] md:mt-6 h-[1px] bg-gray-300 mt-2 sm:mt-6 md:mt-8"></div>
 
-    <div class="flex flex-col sm:flex-row items-center">
-      <span class="element mt-3 md:mt-5 bg-gray-200/50 border border200/80 py-1 px-1.5 sm:px-2 rounded-md">
+    <div class="flex flex-col sm:flex-row items-center mt-2 sm:mt-6 md:mt-8">
+
+      <span class="element bg-gray-200/50 border border200/80 py-1 px-1.5 sm:px-2 rounded-md">
         <i class=" text-xs sm:text-sm select-none cursor-pointer text-gray-800 sm:mr-1 pi pi-inbox h-fit"></i>
         <span class="ml-2">info@evcons.ru</span>
       </span>
 
-      <div class="element mt-3 md:mt-5">
-      <span class="ml-1 sm:ml-2 md:ml-4 bg-gray-200/50 border border200/80 py-1 px-1.5 sm:px-2 rounded-md">
-        <i class=" text-xs sm:text-sm select-none cursor-pointer text-gray-800 sm:mr-1 pi pi-phone h-fit"></i>
-       <span class="ml-2">8 495 717-01-01</span>
-      </span>
+      <div class="element">
+
         <span class="ml-1 sm:ml-2 md:ml-4 bg-gray-200/50 border border200/80 py-1 px-1.5 sm:px-2 rounded-md">
-        <i class=" text-xs sm:text-sm select-none cursor-pointer text-gray-800 sm:mr-1 pi pi-phone h-fit"></i>
-        <span class="ml-2">8 499 557 07 97</span>
-      </span>
+          <i class=" text-xs sm:text-sm select-none cursor-pointer text-gray-800 sm:mr-1 pi pi-phone h-fit"></i>
+          <span class="ml-2">8 495 717-01-01</span>
+        </span>
+
+        <span class="ml-1 sm:ml-2 md:ml-4 bg-gray-200/50 border border200/80 py-1 px-1.5 sm:px-2 rounded-md">
+          <i class=" text-xs sm:text-sm select-none cursor-pointer text-gray-800 sm:mr-1 pi pi-phone h-fit"></i>
+          <span class="ml-2">8 499 557 07 97</span>
+        </span>
+
       </div>
     </div>
 
@@ -44,7 +48,7 @@ export default {
 
 .footer-container {
   @apply w-full flex flex-col items-center text-gray-50 text-center;
-  @apply py-6 sm:py-8 md:py-8 bg-gray-100 border-t border-t-gray-300/90 border-b border-b-gray-300/90;
+  @apply py-6 sm:py-8 md:py-14 bg-gray-100 border-t border-t-gray-300/90 border-b border-b-gray-300/90;
 }
 
 .element {

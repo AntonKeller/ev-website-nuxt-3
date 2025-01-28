@@ -1,13 +1,16 @@
 <template>
-  <div class="square relative w-full bg-gray-50 flex flex-col items-center py-2 md:py-6 lg:py-8 overflow-hidden">
+  <div class="square relative w-full bg-gray-100 flex flex-col items-center py-2 md:py-6 lg:py-8 overflow-hidden">
 
-    <div class="z-10 absolute bottom-[-25vw] md:bottom-[-20vw] opacity-15 sm:opacity-15 w-[100vw] md:w-[90vw]">
-      <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <path
-            d="M403.2 776l-62.4 62.4c-1.6 1.6-3.2 1.6-6.4 1.6h-88c-4.8 0-8-3.2-8-8s3.2-8 8-8h84.8l59.2-59.2v-68.8c0-4.8 3.2-8 8-8s8 3.2 8 8v64H576c4.8 0 8 3.2 8 8s-3.2 8-8 8H403.2z m-11.2-436.8l-108.8-94.4c-3.2-3.2-3.2-8-1.6-11.2 3.2-3.2 8-3.2 11.2-1.6l110.4 94.4H528c4.8 0 8 3.2 8 8s-3.2 8-8 8h-120V400c0 4.8-3.2 8-8 8s-8-3.2-8-8v-60.8zM800 728c-4.8 0-8-3.2-8-8s3.2-8 8-8h88c4.8 0 8 3.2 8 8s-3.2 8-8 8H800z m-49.6-435.2c-3.2 3.2-8 3.2-11.2 1.6-3.2-3.2-3.2-8-1.6-11.2l96-112c3.2-3.2 8-3.2 11.2-1.6 3.2 3.2 3.2 8 1.6 11.2l-96 112zM160 504c-4.8 0-8-3.2-8-8s3.2-8 8-8h112c4.8 0 8 3.2 8 8s-3.2 8-8 8h-112z m536 144c0 4.8-3.2 8-8 8s-8-3.2-8-8V544c0-4.8 3.2-8 8-8s8 3.2 8 8v104z"
-            fill="rgba(109, 40, 217, .75)"/>
-      </svg>
-    </div>
+    <div class="absolute left-0 bottom-0 right-0 top-0 bg-flashes opacity-70"></div>
+
+
+    <!--    <div class="z-10 absolute bottom-[-25vw] md:bottom-[-20vw] opacity-15 sm:opacity-15 w-[100vw] md:w-[90vw]">-->
+    <!--      <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">-->
+    <!--        <path-->
+    <!--            d="M403.2 776l-62.4 62.4c-1.6 1.6-3.2 1.6-6.4 1.6h-88c-4.8 0-8-3.2-8-8s3.2-8 8-8h84.8l59.2-59.2v-68.8c0-4.8 3.2-8 8-8s8 3.2 8 8v64H576c4.8 0 8 3.2 8 8s-3.2 8-8 8H403.2z m-11.2-436.8l-108.8-94.4c-3.2-3.2-3.2-8-1.6-11.2 3.2-3.2 8-3.2 11.2-1.6l110.4 94.4H528c4.8 0 8 3.2 8 8s-3.2 8-8 8h-120V400c0 4.8-3.2 8-8 8s-8-3.2-8-8v-60.8zM800 728c-4.8 0-8-3.2-8-8s3.2-8 8-8h88c4.8 0 8 3.2 8 8s-3.2 8-8 8H800z m-49.6-435.2c-3.2 3.2-8 3.2-11.2 1.6-3.2-3.2-3.2-8-1.6-11.2l96-112c3.2-3.2 8-3.2 11.2-1.6 3.2 3.2 3.2 8 1.6 11.2l-96 112zM160 504c-4.8 0-8-3.2-8-8s3.2-8 8-8h112c4.8 0 8 3.2 8 8s-3.2 8-8 8h-112z m536 144c0 4.8-3.2 8-8 8s-8-3.2-8-8V544c0-4.8 3.2-8 8-8s8 3.2 8 8v104z"-->
+    <!--            fill="rgba(109, 40, 217, .75)"/>-->
+    <!--      </svg>-->
+    <!--    </div>-->
 
     <div class="z-10 text-gray-950 w-full rounded-sm py-4 pb-4 px-4 max-w-[920px]">
       <div
@@ -60,7 +63,7 @@
 
       </div>
 
-      <div class="border-t border-b border-gray-300/15 mt-1 md:mt-2">
+      <div class="border-l border-r border-gray-300/15 mt-1 md:mt-2">
 
         <carousel
             v-model="slide"
@@ -73,7 +76,7 @@
           <slide
               v-for="item of ratingConfig"
               :key="item.id"
-              class="cursor-pointer w-full text-left py-4 border border-gray-200/75 bg-gray-100/75 backdrop-blur-md rounded"
+              class="cursor-pointer w-full text-left py-10 border border-gray-200/75 bg-gray-100/75 backdrop-blur-md rounded"
           >
             <div class="flex items-center sm:items-start justify-start flex-col text-left">
               <div
@@ -117,10 +120,10 @@
 </template>
 
 <script>
-import {ratingConfig} from "~/configs/ratingConfig";
-import 'vue3-carousel/dist/carousel.css';
 import {Carousel, Navigation, Pagination, Slide} from 'vue3-carousel';
 import evFooter from "~/components/widgets/ev-footer";
+import {ratingConfig} from "~/configs/ratingConfig";
+import 'vue3-carousel/dist/carousel.css';
 
 export default {
   name: "ratingBlock",
@@ -196,6 +199,13 @@ export default {
 </script>
 
 <style>
+
+.bg-flashes {
+  background: url("/assets/background/background around.webp") center/cover;
+  /*background-blend-mode: multiply;*/
+}
+
+/*background around.webp*/
 
 @keyframes ch-color-1 {
   from {

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-950">
+  <div>
 
     <div class="bg-gray-100 flex flex-col items-center justify-start lg:py-6 text-gray-800/95  py-2 md:py-6 lg:py-8">
       <div

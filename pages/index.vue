@@ -1,8 +1,14 @@
 <template>
   <div>
-    <div class="relative bg-gray-950 h-[80vh] md:h-[100vh]">
+    <div class="relative bg-gray-950 h-[80vh] md:h-[100vh] overflow-hidden">
+
       <div
-          class="bg-mountain h-[100%] flex flex-col items-center lg:items-center justify-center text-gray-200">
+          class="absolute left-0 bottom-0 right-0 top-0 bg-mountain"
+          :style="`transform: scale(${backgroundScale});`"
+      ></div>
+
+      <div
+          class="h-[100%] flex flex-col items-center lg:items-center justify-center text-gray-200">
         <div class="flex flex-col items-center" :style="`transform: scale(${titleScale})`">
           <div class="title px-4 py-3 rounded-md">
             Everest Consulting
@@ -67,7 +73,7 @@ export default {
 
   mounted() {
     // Добавляем обработчик события прокрутки
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll, {passive: true});
 
     this.handleScroll();
   },
@@ -83,6 +89,7 @@ export default {
       headerVisibility: false,
       scrollPercentage: 0,
       titleScale: 1,
+      backgroundScale: 1,
     }
   },
 
@@ -91,8 +98,9 @@ export default {
     gotoFooter(id) {
       const element = document.querySelector(id);
       const topPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      // console.log('topPosition', topPosition)
       window.scrollTo({
-        top: topPosition,
+        top: topPosition - 72,
         behavior: 'smooth'
       });
     },
@@ -111,6 +119,8 @@ export default {
       // Обновляем значение процента прокрутки
       this.scrollPercentage = Math.min(Math.max(percentage, 0), 100);
       this.titleScale = Math.abs(1 - this.scrollPercentage / 55);
+      this.backgroundScale = 1 + (1 - this.titleScale);
+      // console.log('this.backgroundScale', this.backgroundScale)
       // console.log('this.titleScale:', this.titleScale);
     },
 

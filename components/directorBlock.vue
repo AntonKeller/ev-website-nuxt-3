@@ -39,7 +39,7 @@
     </div>
 
     <iframe
-        class="z-50 rounded-sm md:rounded-sm w-full h-[350px] md:h-[600px] mb-2 md:mb-0 mt-2 md:mt-4 lg:mt-6"
+        class="z-10 rounded-sm md:rounded-sm w-full h-[350px] md:h-[600px] mb-2 md:mb-0 mt-2 md:mt-4 lg:mt-6"
         src="https://yandex.ru/map-widget/v1/?um=constructor%3Aafd8686d54c13c498b1a79c66c5a343453e1df041ce335aebf229ee1ed8e9fa2&amp;source=constructor"
     />
 
@@ -81,9 +81,11 @@ export default {
     Navigation
   },
 
-  data: () => ({
-    employees,
-  })
+  data() {
+    return {
+      employees,
+    }
+  }
 }
 </script>
 

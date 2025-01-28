@@ -91,7 +91,7 @@ export default {
       const percentage = (scrollTop / (documentHeight - windowHeight)) * 100;
 
       // Обновляем значение процента прокрутки
-      this.headerVisible = Math.min(Math.max(percentage, 0), 100) > 25
+      this.headerVisible = Math.min(Math.max(percentage, 0), 100) > 24
     },
   },
 }
@@ -107,18 +107,18 @@ export default {
   @apply bg-gray-400;
 }
 
-.visibleHeader{
+.visibleHeader {
   @apply bg-gray-950 duration-500 ease-out;
 }
 
-.hiddenHeader{
-  @apply bg-gray-900 md:bg-transparent duration-500 ease-out;
+.hiddenHeader {
+  @apply bg-gray-900 md:bg-transparent duration-500 ease-in-out;
 }
 
 .ev-header {
-  @apply z-50 fixed md:border-b-transparent;
+  @apply z-20 fixed md:border-b-transparent;
   @apply top-0 left-0 right-0 z-20;
-  @apply py-5 sm:py-6 px-6 sm:px-12 md:px-14 lg:px-16 xl:px-16;
+  @apply py-4 px-6 sm:px-12 md:px-14;
   @apply flex items-center justify-between;
   /*@apply sm:bg-transparent;*/
 }
