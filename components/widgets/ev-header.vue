@@ -1,5 +1,5 @@
 <template>
-  <header class="ev-header">
+  <header class="ev-header" :class="`${headerVisible ? 'visibleHeader' : 'hiddenHeader'}`">
 
     <NuxtLink
         class="duration-150 text-gray-400 duration-300 flex items-center justify-center md:justify-start mr-3 sm:mr-0 gap-x-5 mt-1"
@@ -32,6 +32,16 @@
 export default {
   name: "ev-header",
 
+  data() {
+    return {
+      backBtnIsShow: false,
+      menuVisible: false,
+      hover: false,
+      activeID: null,
+      headerVisible: false,
+    }
+  },
+
   computed: {
     route() {
       return this.$route.name;
@@ -40,6 +50,15 @@ export default {
 
   mounted() {
     this.routeServicesTest();
+
+    // Добавляем обработчик события прокрутки
+    window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll();
+  },
+
+  beforeDestroy() {
+    // Убираем обработчик события перед удалением компонента
+    window.removeEventListener('scroll', this.handleScroll);
   },
 
   watch: {
@@ -51,41 +70,30 @@ export default {
   },
 
   methods: {
+
     routeServicesTest() {
       if (/services/i.test(this.route)) {
         this.backBtnIsShow = true;
       } else {
         this.backBtnIsShow = false;
       }
-    }
-  },
+    },
 
-  data: () => ({
-    backBtnIsShow: false,
-    menuVisible: false,
-    hover: false,
-    activeID: null,
-    links: [
-      // {
-      //   id: 1,
-      //   title: "Услуги",
-      //   location: "/services",
-      //   iconClass: "pi pi-briefcase"
-      // },
-      // {
-      //   id: 2,
-      //   title: "Достижения",
-      //   location: "/rating",
-      //   iconClass: "pi pi-briefcase"
-      // },
-      // {
-      //   id: 3,
-      //   title: "Опыт",
-      //   location: "/experience",
-      //   iconClass: "pi pi-briefcase"
-      // },
-    ],
-  }),
+    handleScroll() {
+      // Код для header
+      // this.headerVisibility = window.pageYOffset >= 400;
+
+      const scrollTop = window.scrollY; // Текущая прокрученная позиция сверху
+      const documentHeight = document.documentElement.scrollHeight; // Общая высота документа
+      const windowHeight = window.innerHeight; // Высота окна браузера
+
+      // Вычисляем процент прокрутки
+      const percentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+      // Обновляем значение процента прокрутки
+      this.headerVisible = Math.min(Math.max(percentage, 0), 100) > 25
+    },
+  },
 }
 </script>
 
@@ -99,10 +107,18 @@ export default {
   @apply bg-gray-400;
 }
 
+.visibleHeader{
+  @apply bg-gray-950 duration-500 ease-out;
+}
+
+.hiddenHeader{
+  @apply bg-gray-900 md:bg-transparent duration-500 ease-out;
+}
+
 .ev-header {
-  @apply z-50 fixed bg-gray-900 md:bg-transparent border-b border-b-gray-950 md:border-b-transparent;
-  @apply top-0 left-0 right-0 z-20 md:mt-2 md:mt-6;
-  @apply md:mx-2 sm:m-0 py-5 sm:py-6 px-6 sm:px-12 md:px-14 lg:px-16 xl:px-16;
+  @apply z-50 fixed md:border-b-transparent;
+  @apply top-0 left-0 right-0 z-20;
+  @apply py-5 sm:py-6 px-6 sm:px-12 md:px-14 lg:px-16 xl:px-16;
   @apply flex items-center justify-between;
   /*@apply sm:bg-transparent;*/
 }

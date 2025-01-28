@@ -1,13 +1,17 @@
 <template>
   <div class="bg-gray-950">
 
-    <div class="bg-gray-100 flex flex-col items-center justify-start lg:py-6 text-gray-800/95">
+    <div class="bg-gray-100 flex flex-col items-center justify-start lg:py-6 text-gray-800/95  py-2 md:py-6 lg:py-8">
       <div
           class="w-full px-4 py-1 max-w-[920px]  text-lg md:text-2xl lg:text-4xl font-bold rounded-sm">
         Новости компании
       </div>
 
-      <Carousel v-bind="carouselConfig" class="w-full max-w-[920px] mt-2 md:mt-4 cursor-pointer">
+      <Carousel
+          v-bind="carouselConfig"
+          class="w-full max-w-[920px] mt-2 md:mt-4 cursor-pointer"
+      >
+
         <Slide v-for="item in news" :key="item._id" :style="{height: 'fit-content'}">
 
           <div class="text-left px-4 py-2 pb-6">
@@ -38,13 +42,13 @@
 
     <!--    <div class="news-background"></div>-->
 
-<!--    -->
+    <!--    -->
   </div>
 </template>
 
 <script>
-import 'vue3-carousel/dist/carousel.css';
 import {Carousel, Pagination, Slide} from "vue3-carousel";
+import 'vue3-carousel/dist/carousel.css';
 
 export default {
   name: "news-block",

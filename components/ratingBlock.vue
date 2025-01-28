@@ -1,5 +1,5 @@
 <template>
-  <div class="square z-20 relative w-full bg-gray-50 flex flex-col items-center py-2 md:py-6 lg:py-8 overflow-hidden">
+  <div class="square relative w-full bg-gray-50 flex flex-col items-center py-2 md:py-6 lg:py-8 overflow-hidden">
 
     <div class="z-10 absolute bottom-[-25vw] md:bottom-[-20vw] opacity-15 sm:opacity-15 w-[100vw] md:w-[90vw]">
       <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
