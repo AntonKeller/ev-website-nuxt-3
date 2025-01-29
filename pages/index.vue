@@ -7,8 +7,7 @@
           :style="`transform: scale(${backgroundScale});`"
       ></div>
 
-      <div
-          class="h-[100%] flex flex-col items-center lg:items-center justify-center text-gray-200">
+      <div class="h-[100%] flex flex-col items-center lg:items-center justify-center text-gray-200">
         <div class="flex flex-col items-center" :style="`transform: scale(${titleScale})`">
           <div class="title px-4 py-3 rounded-md">
             Everest Consulting
@@ -22,7 +21,7 @@
             <div>так и за рубежом.</div>
           </div>
           <div
-              class="z-50 flex flex-col sm:flex-row items-center gap-y-2 sm:gap-y-0 sm:gap-x-3.5 flex justify-center mt-6">
+              class="z-50 flex flex-row items-center gap-x-3 sm:gap-x-3.5 flex justify-center mt-6">
             <div
                 class="show-btn1 font-semibold duration-300 hover:cursor-pointer hover:bg-gray-300 hover:backdrop-blur-md border border-gray-600/70 text-gray-900 bg-gray-50 py-1.5 rounded-lg w-fit"
             >

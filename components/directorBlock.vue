@@ -25,9 +25,9 @@
           :delay="e.id * 150"
       >
         <img class="card-image" :src="`/assets/avatars/${e.img}`" alt="no img"/>
-        <p class="mt-0 text-gray-900 font-extrabold text-sm text-base lg:text-lg">{{ e.fullName }}</p>
-        <p class="mt-0 text-gray-900/85 font-sans underline text-sm lg:text-base">{{ e.post }}</p>
-        <p class="mt-2 md:mt-3 text-sm sm:text-base text-gray-700">{{ e.text }}</p>
+        <p class="mt-0 text-orange-400/90 font-extrabold text-sm text-base lg:text-lg">{{ e.fullName }}</p>
+        <p class="mt-0 text-gray-300/85 font-sans text-sm lg:text-base">{{ e.post }}</p>
+        <p class="mt-2 md:mt-3 text-sm sm:text-base text-gray-400">{{ e.text }}</p>
       </div>
 
       <h1 class="text-gray-100 text-lg md:text-2xl lg:text-4xl font-bold duration-300 mt-4 md:mt-20 lg:mt-24">
@@ -105,7 +105,7 @@ export default {
 }
 
 .card-director {
-  @apply bg-gray-50 rounded-lg border-2 border-gray-300 py-6 px-3 lg:px-6 min-w-full max-w-[780px];
+  @apply bg-gray-950/25 backdrop-blur-sm rounded-md border border-gray-500/10 py-6 px-3 lg:px-6 min-w-full max-w-[780px];
 }
 
 .card-image {
