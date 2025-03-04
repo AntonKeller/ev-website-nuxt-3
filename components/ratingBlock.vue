@@ -1,7 +1,7 @@
 <template>
-  <div class="square relative w-full bg-gray-100 flex flex-col items-center py-2 md:py-6 lg:py-8 overflow-hidden">
+  <div class="square relative w-full bg-gray-50 flex flex-col items-center py-2 md:py-6 lg:py-8 overflow-hidden">
 
-    <div class="absolute left-0 bottom-0 right-0 top-0 bg-flashes"></div>
+<!--    <div class="bg-flashes"></div>-->
 
     <div class="z-10 text-gray-950 w-full rounded-sm py-4 pb-4 px-4 max-w-[920px]">
       <div
@@ -158,22 +158,22 @@ export default {
     yearMin: null,
     inProcess: false,
     titles: [
-      {
-        id: 2,
-        title: "Эффективное планирование задач в рамках проектов благодаря значительному опыту сотрудников команды.",
-        icon: "pi-pencil"
-      },
-      {
-        id: 1,
-        title: "Детальное понимание требований к оценочным и консалтинговым продуктам со стороны аудиторских компаний,\n" +
-            "коммерческих и инвестиционных банков, страховых компаний.",
-        icon: "pi-info-circle",
-      },
-      {
-        id: 3,
-        title: "Выполнение проектов в сжатые сроки благодаря существующим наработкам и базе знаний.",
-        icon: "pi-database"
-      },
+      // {
+      //   id: 2,
+      //   title: "Эффективное планирование задач в рамках проектов благодаря значительному опыту сотрудников команды.",
+      //   icon: "pi-pencil"
+      // },
+      // {
+      //   id: 1,
+      //   title: "Детальное понимание требований к оценочным и консалтинговым продуктам со стороны аудиторских компаний,\n" +
+      //       "коммерческих и инвестиционных банков, страховых компаний.",
+      //   icon: "pi-info-circle",
+      // },
+      // {
+      //   id: 3,
+      //   title: "Выполнение проектов в сжатые сроки благодаря существующим наработкам и базе знаний.",
+      //   icon: "pi-database"
+      // },
       // {
       //   id: 4,
       //   title: "Оптимальное соотношение «цена-качество».",
@@ -193,7 +193,10 @@ export default {
 <style>
 
 .bg-flashes {
-  background: url("/assets/background/background around.webp") center/cover;
+  position: absolute;
+  background: url("/assets/background/office-building.png") center/contain no-repeat;
+  @apply w-[300px] h-[400px] md:w-[450px] md:h-[550px]  lg:w-[500px] lg:h-[600px] lg:w-[600px] lg:h-[700px]  left-[-100px] bottom-[0];
+  bottom: 0;
   /*background-blend-mode: multiply;*/
 }
 
